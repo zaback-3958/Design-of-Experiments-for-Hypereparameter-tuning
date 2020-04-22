@@ -19,10 +19,8 @@ For the fisrt design the Fractional design of 2^7-2 with resolution (Iv) which w
 # Requirements
 Markup : ```javascript
          ```
-Markup : - Bullet list
-              - Nested bullet
-                  - Sub-nested bullet etc
-          - Bullet list item 2 
+Markup : * Bullet list
+         * Bullet list item 2 
 
 R v3.6.2
 R packages: gdata, EnvStats, ggplot2, tidyr, dplyr, rstan, data.table, lubridate, gdata, matrixStats, scales, gridExtra, ggpubr, bayesplot, cowplot, readr
