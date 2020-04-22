@@ -20,4 +20,6 @@ For the fisrt design the Fractional design of 2^7-2 with resolution (Iv) which w
 * R v3.6.2
 * packages: FrF2, DoE.base, RandomForest, RSM
 # How to execute the pipeline
+# Input file
+# Main output files
 
