@@ -24,7 +24,7 @@ http://reliawiki.org/index.php/File:Doe7.34.png
 ![Test Image 1](http://reliawiki.org/images/c/c8/Doe7.34.png)
 
 
-The figure (a) shows the Full Factorial design of three factors and figures (b) and (c) show the half fraction of it where interaction ``ABC`` is at its high and low level respectively. 
+Figure (a) shows the Full Factorial design of three factors and figures (b) and (c) show the half fraction of it where interaction ``ABC`` is at its high and low level respectively. 
 
 A half-fraction of the  design involves running only half of the treatments of the full factorial design. For example, consider a  design that requires eight runs in all. The design matrix for this design is shown in the figure (a) below. A half-fraction of this design is the design in which only four of the eight treatments are run. The fraction is denoted as  with the "" in the index denoting a half-fraction. Assume that the treatments chosen for the half-fraction design are the ones where the interaction  is at the high level (i.e., only those rows are chosen from the following figure (a) where the column for  has entries of 1). The resulting  design has a design matrix as shown in figure (b) below.
 
