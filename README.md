@@ -12,6 +12,10 @@ An experiment is a series of tests to identify the factors that have the greates
 ```math #yourmathlabel
 y_{ijk} =\mu + \tau_{i} +\beta_{j} + (\Tau\beta)_{ij} + \epsilon_{ijk}
 ```
+in this :
+@equation(id)
+x = \sum_{i=1}{N} i
+@/
 ## Two-level Factorial Designs
 This method is represented as ``2^K`` for ``K``  factors with two different levels as low and high. The simplest case of this type of method is the experiments with only two factors which will result is ``2^2=4`` runs of experiment. Tise method of DoE will enable the experimenter to identify which main effects have the significant effect on the response. It also shows if there is any interaction among them and if it has effect on the response. The number of runs in this type experiment increase when number of factor increases which needs more time as number of factor increases. According to some experiments the effect of the higher order interactions of three and more factors tend to be small and can often be ignored. In this case to make the experiment more efficient another method of DoE design, Fractional Factorial Design, can be used to reduce the running time but at the same time it makes some of the factors to be aliased or confounded. Fractional Factorial design has three characteristics which makes it very useful. The first one is that in this method very few effects are siginificant and the final model is very simple with lower order terms. The next one is the projection property which is when the model is reduced to the lower dimensinality.It also uses the fold over technique to isolate effect of some of the factors that are more interterest to the experimenter. 
 ```math #yourmathlabel
