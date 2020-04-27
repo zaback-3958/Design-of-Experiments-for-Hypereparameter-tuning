@@ -30,8 +30,8 @@ code.files <- c(
 	"RF-frcfac-results.R",
 	#"RF-results.R",
 	"lm-fractional-design.R",
-	"test-RF.R",
-	"visualize-effects.R"
+	"test-RF.R"
+	#"visualize-effects.R"
 	# "initializePlot.R",
 	# "visualize-data.R"
 	);
