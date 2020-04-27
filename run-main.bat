@@ -16,7 +16,7 @@ PATH=E:\softwares\R\R-3.6.3\bin;%PATH%
 
 :: defining folder names
 set codeDIR=%thisFolder%\code
-set dataDIR =%thisFolder%\data
+set dataDIR=%thisFolder%\data
 set outROOT=%thisFolder%\output
 
 :: make output root directory if not already exists
