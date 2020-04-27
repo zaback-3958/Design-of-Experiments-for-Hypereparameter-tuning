@@ -56,7 +56,7 @@ Change directory to the folder of this pipeline in the local cloned repository:
 
 ``cd <LOCAL CLONED REPOSITORY>/ML-DoE/``
 
-If you are using a Windows computer, execute the following batch script at the Command Prompt instead (NOT tested):
+If you are using a Windows computer, execute the following batch script at the Command Prompt instead:
 
 ``.\run-main.bat``
 
@@ -65,6 +65,7 @@ If you are using a Linux or macOS computer, execute the following shell script i
 ``.\run-main.sh``
 
 This will trigger the creation of the output folder <LOCAL CLONED REPOSITORY>/ML-DoE/output/ if it does not already exist, followed by execution of the pipeline. All output and log files will be saved to the output folder. See below for information about the contents of the output folder.
+  
 # Input file
 # Main output files
 
