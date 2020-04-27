@@ -50,7 +50,7 @@ replace1:nodesize1, replace:classwt, nodesize:cutoff, nodesize:maxnodes, classwt
 # How to execute the pipeline
 Clone this repository by running the following at the command line:
 
-git clone https://github.com/kennethchu-statcan/covid19.git
+git clone https://github.com/zaback-3958/ML-DoE.git
 Change directory to the folder of this pipeline in the local cloned repository:
 
 cd <LOCAL CLONED REPOSITORY>/ML-DoE/
