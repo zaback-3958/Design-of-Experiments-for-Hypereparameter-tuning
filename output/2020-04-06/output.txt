@@ -1,0 +1,2671 @@
+retained.predictors <- setdiff(colnames(df),"my_res");
+> 
+> hyperparameters <- c("ntree","mtry", "replace","nodesize","classwt","cutoff","maxnodes")
+> 
+> numFactors <- 7
+> # n here represents 2^(7-n) type design
+> n <- 2
+> design <- FrF2( (2^(numFactors-n)), numFactors, factor.names = list(ntree = c(-1,1),
++                                                                     mtry = c(-1,1),
++                                                                     replace = c(-1,1),
++                                                                     nodesize = c(-1,1),
++                                                                     classwt = c(-1,1),
++                                                                     cutoff = c(-1,1),
++                                                                     maxnodes = c(-1,1) ) ,  seed = 6285)
+> 
+> print(design)
+   ntree mtry replace nodesize classwt cutoff maxnodes
+1     -1    1      -1       -1       1      1        1
+2      1   -1      -1        1      -1      1        1
+3      1    1       1        1       1      1        1
+4      1    1      -1        1       1     -1        1
+5     -1    1      -1        1       1      1       -1
+6      1   -1       1       -1       1     -1        1
+7      1   -1       1        1      -1     -1        1
+8     -1   -1       1        1       1      1        1
+9     -1    1       1       -1       1     -1        1
+10    -1    1      -1       -1      -1      1       -1
+11    -1    1       1       -1      -1     -1       -1
+12    -1   -1      -1       -1      -1     -1        1
+13    -1   -1      -1        1       1     -1        1
+14    -1   -1       1       -1      -1      1        1
+15    -1   -1       1        1      -1      1       -1
+16     1    1       1       -1      -1      1        1
+17    -1   -1      -1        1      -1     -1       -1
+18    -1    1       1        1      -1     -1        1
+19     1   -1      -1       -1       1      1        1
+20     1    1       1        1      -1      1       -1
+21     1    1      -1        1      -1     -1       -1
+22     1   -1      -1        1       1      1       -1
+23    -1    1      -1        1      -1      1        1
+24     1    1      -1       -1      -1     -1        1
+25     1    1       1       -1       1      1       -1
+26     1   -1       1        1       1     -1       -1
+27    -1   -1       1       -1       1      1       -1
+28    -1   -1      -1       -1       1     -1       -1
+29     1   -1      -1       -1      -1      1       -1
+30     1   -1       1       -1      -1     -1       -1
+31     1    1      -1       -1       1     -1       -1
+32    -1    1       1        1       1     -1       -1
+class=design, type= FrF2 
+> print(summary(design))
+Call:
+FrF2((2^(numFactors - n)), numFactors, factor.names = list(ntree = c(-1, 
+    1), mtry = c(-1, 1), replace = c(-1, 1), nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), seed = 6285)
+
+Experimental design of type  FrF2 
+32  runs
+
+Factor settings (scale ends):
+  ntree mtry replace nodesize classwt cutoff maxnodes
+1    -1   -1      -1       -1      -1     -1       -1
+2     1    1       1        1       1      1        1
+
+Design generating information:
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+$generators
+[1] F=ABC  G=ABDE
+
+
+Alias structure:
+$fi2
+[1] AB=CF AC=BF AF=BC
+
+
+The design itself:
+   ntree mtry replace nodesize classwt cutoff maxnodes
+1     -1    1      -1       -1       1      1        1
+2      1   -1      -1        1      -1      1        1
+3      1    1       1        1       1      1        1
+4      1    1      -1        1       1     -1        1
+5     -1    1      -1        1       1      1       -1
+6      1   -1       1       -1       1     -1        1
+7      1   -1       1        1      -1     -1        1
+8     -1   -1       1        1       1      1        1
+9     -1    1       1       -1       1     -1        1
+10    -1    1      -1       -1      -1      1       -1
+11    -1    1       1       -1      -1     -1       -1
+12    -1   -1      -1       -1      -1     -1        1
+13    -1   -1      -1        1       1     -1        1
+14    -1   -1       1       -1      -1      1        1
+15    -1   -1       1        1      -1      1       -1
+16     1    1       1       -1      -1      1        1
+17    -1   -1      -1        1      -1     -1       -1
+18    -1    1       1        1      -1     -1        1
+19     1   -1      -1       -1       1      1        1
+20     1    1       1        1      -1      1       -1
+21     1    1      -1        1      -1     -1       -1
+22     1   -1      -1        1       1      1       -1
+23    -1    1      -1        1      -1      1        1
+24     1    1      -1       -1      -1     -1        1
+25     1    1       1       -1       1      1       -1
+26     1   -1       1        1       1     -1       -1
+27    -1   -1       1       -1       1      1       -1
+28    -1   -1      -1       -1       1     -1       -1
+29     1   -1      -1       -1      -1      1       -1
+30     1   -1       1       -1      -1     -1       -1
+31     1    1      -1       -1       1     -1       -1
+32    -1    1       1        1       1     -1       -1
+class=design, type= FrF2 
+NULL
+> aliasprint(design)
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+$main
+character(0)
+
+$fi2
+[1] AB=CF AC=BF AF=BC
+
+> 
+> results5 <- c()
+> Sys.time()
+[1] "2020-04-06 08:24:10 EDT"
+> 
+> for (i in 1:nrow(design)){
++   if (design$ntree[i] == -1)     {ntree <- 100} else {ntree <- 500}
++   if (design$mtry[i] == -1)      {mtry <- floor(log(ncol(df)-1))} else {mtry <- ceiling(sqrt(ncol(df)-1))}
++   if (design$replace[i] == -1)   {replace <- FALSE} else {replace <- TRUE}
++   if (design$nodesize[i] == -1)  {nodesize <- 1} else {nodesize <- floor(0.1*nrow(df))}
++   if (design$classwt[i] == -1)   {classwt <- c(1,10)} else {classwt <- c(10,1)}
++   if (design$cutoff[i] == -1)    {cutoff <- c(0.2, 1 -0.2)} else {cutoff <- c(0.8,1-0.8)}
++   if (design$maxnodes[i] == -1)  {maxnodes <- 5} else {maxnodes <- NULL}
++ 
++   #cross-validation
++   createIndex <- rep(1:10, length.out = nrow(df))
++   randomIndex <- sample(createIndex)
++ 
++   innerResults <- c()
++ 
++   TP   <-  0
++   FN   <-  0
++   FP   <-  0
++   TN   <-  0
++ 
++   for (j in 1:10){
++ 
++     print(paste("fold",j,"of run", i))
++     train <- df[-which(randomIndex == j),]
++     test <-  df[ which(randomIndex == j),]
++ 
++ 
++ 
++     RFmodel <- randomForest(x = train[,retained.predictors], y = train[,"my_res"],
++                             xtest = test[,retained.predictors], ytest = test[,"my_res"],
++                             ntree = ntree,
++                             mtry = mtry,
++                             replace = replace,
++                             nodesize = nodesize,
++                             classwt = classwt,
++                             cutoff = cutoff,
++                             maxnodes = maxnodes)
++ 
++     confu <- as.data.frame(RFmodel$test$confusion)
++ 
++     TP   <-  TP + confu[labels[2], labels[2]]
++     FN   <-  FN + confu[labels[2], labels[1]]
++     FP   <-  FP + confu[labels[1], labels[2]]
++     TN   <-  TN + confu[labels[1], labels[1]]
++ 
++   }
++ 
++   TPR <- TP/(TP+FN)
++   TNR <- TN/(TN+FP)
++   BACC <- (TPR + TNR)/2
++   print(BACC)
++   results5 <- c(results5, BACC)
++ 
++ }
+[1] "fold 1 of run 1"
+[1] "fold 2 of run 1"
+[1] "fold 3 of run 1"
+[1] "fold 4 of run 1"
+[1] "fold 5 of run 1"
+[1] "fold 6 of run 1"
+[1] "fold 7 of run 1"
+[1] "fold 8 of run 1"
+[1] "fold 9 of run 1"
+[1] "fold 10 of run 1"
+[1] 0.6961748
+[1] "fold 1 of run 2"
+[1] "fold 2 of run 2"
+[1] "fold 3 of run 2"
+[1] "fold 4 of run 2"
+[1] "fold 5 of run 2"
+[1] "fold 6 of run 2"
+[1] "fold 7 of run 2"
+[1] "fold 8 of run 2"
+[1] "fold 9 of run 2"
+[1] "fold 10 of run 2"
+[1] 0.5
+[1] "fold 1 of run 3"
+[1] "fold 2 of run 3"
+[1] "fold 3 of run 3"
+[1] "fold 4 of run 3"
+[1] "fold 5 of run 3"
+[1] "fold 6 of run 3"
+[1] "fold 7 of run 3"
+[1] "fold 8 of run 3"
+[1] "fold 9 of run 3"
+[1] "fold 10 of run 3"
+[1] 0.7416326
+[1] "fold 1 of run 4"
+[1] "fold 2 of run 4"
+[1] "fold 3 of run 4"
+[1] "fold 4 of run 4"
+[1] "fold 5 of run 4"
+[1] "fold 6 of run 4"
+[1] "fold 7 of run 4"
+[1] "fold 8 of run 4"
+[1] "fold 9 of run 4"
+[1] "fold 10 of run 4"
+[1] 0.5759212
+[1] "fold 1 of run 5"
+[1] "fold 2 of run 5"
+[1] "fold 3 of run 5"
+[1] "fold 4 of run 5"
+[1] "fold 5 of run 5"
+[1] "fold 6 of run 5"
+[1] "fold 7 of run 5"
+[1] "fold 8 of run 5"
+[1] "fold 9 of run 5"
+[1] "fold 10 of run 5"
+[1] 0.7298919
+[1] "fold 1 of run 6"
+[1] "fold 2 of run 6"
+[1] "fold 3 of run 6"
+[1] "fold 4 of run 6"
+[1] "fold 5 of run 6"
+[1] "fold 6 of run 6"
+[1] "fold 7 of run 6"
+[1] "fold 8 of run 6"
+[1] "fold 9 of run 6"
+[1] "fold 10 of run 6"
+[1] 0.7713593
+[1] "fold 1 of run 7"
+[1] "fold 2 of run 7"
+[1] "fold 3 of run 7"
+[1] "fold 4 of run 7"
+[1] "fold 5 of run 7"
+[1] "fold 6 of run 7"
+[1] "fold 7 of run 7"
+[1] "fold 8 of run 7"
+[1] "fold 9 of run 7"
+[1] "fold 10 of run 7"
+[1] 0.593531
+[1] "fold 1 of run 8"
+[1] "fold 2 of run 8"
+[1] "fold 3 of run 8"
+[1] "fold 4 of run 8"
+[1] "fold 5 of run 8"
+[1] "fold 6 of run 8"
+[1] "fold 7 of run 8"
+[1] "fold 8 of run 8"
+[1] "fold 9 of run 8"
+[1] "fold 10 of run 8"
+[1] 0.7388033
+[1] "fold 1 of run 9"
+[1] "fold 2 of run 9"
+[1] "fold 3 of run 9"
+[1] "fold 4 of run 9"
+[1] "fold 5 of run 9"
+[1] "fold 6 of run 9"
+[1] "fold 7 of run 9"
+[1] "fold 8 of run 9"
+[1] "fold 9 of run 9"
+[1] "fold 10 of run 9"
+[1] 0.8189826
+[1] "fold 1 of run 10"
+[1] "fold 2 of run 10"
+[1] "fold 3 of run 10"
+[1] "fold 4 of run 10"
+[1] "fold 5 of run 10"
+[1] "fold 6 of run 10"
+[1] "fold 7 of run 10"
+[1] "fold 8 of run 10"
+[1] "fold 9 of run 10"
+[1] "fold 10 of run 10"
+[1] 0.5
+[1] "fold 1 of run 11"
+[1] "fold 2 of run 11"
+[1] "fold 3 of run 11"
+[1] "fold 4 of run 11"
+[1] "fold 5 of run 11"
+[1] "fold 6 of run 11"
+[1] "fold 7 of run 11"
+[1] "fold 8 of run 11"
+[1] "fold 9 of run 11"
+[1] "fold 10 of run 11"
+[1] 0.5885945
+[1] "fold 1 of run 12"
+[1] "fold 2 of run 12"
+[1] "fold 3 of run 12"
+[1] "fold 4 of run 12"
+[1] "fold 5 of run 12"
+[1] "fold 6 of run 12"
+[1] "fold 7 of run 12"
+[1] "fold 8 of run 12"
+[1] "fold 9 of run 12"
+[1] "fold 10 of run 12"
+[1] 0.7767813
+[1] "fold 1 of run 13"
+[1] "fold 2 of run 13"
+[1] "fold 3 of run 13"
+[1] "fold 4 of run 13"
+[1] "fold 5 of run 13"
+[1] "fold 6 of run 13"
+[1] "fold 7 of run 13"
+[1] "fold 8 of run 13"
+[1] "fold 9 of run 13"
+[1] "fold 10 of run 13"
+[1] 0.5258697
+[1] "fold 1 of run 14"
+[1] "fold 2 of run 14"
+[1] "fold 3 of run 14"
+[1] "fold 4 of run 14"
+[1] "fold 5 of run 14"
+[1] "fold 6 of run 14"
+[1] "fold 7 of run 14"
+[1] "fold 8 of run 14"
+[1] "fold 9 of run 14"
+[1] "fold 10 of run 14"
+[1] 0.6178277
+[1] "fold 1 of run 15"
+[1] "fold 2 of run 15"
+[1] "fold 3 of run 15"
+[1] "fold 4 of run 15"
+[1] "fold 5 of run 15"
+[1] "fold 6 of run 15"
+[1] "fold 7 of run 15"
+[1] "fold 8 of run 15"
+[1] "fold 9 of run 15"
+[1] "fold 10 of run 15"
+[1] 0.5
+[1] "fold 1 of run 16"
+[1] "fold 2 of run 16"
+[1] "fold 3 of run 16"
+[1] "fold 4 of run 16"
+[1] "fold 5 of run 16"
+[1] "fold 6 of run 16"
+[1] "fold 7 of run 16"
+[1] "fold 8 of run 16"
+[1] "fold 9 of run 16"
+[1] "fold 10 of run 16"
+[1] 0.6560594
+[1] "fold 1 of run 17"
+[1] "fold 2 of run 17"
+[1] "fold 3 of run 17"
+[1] "fold 4 of run 17"
+[1] "fold 5 of run 17"
+[1] "fold 6 of run 17"
+[1] "fold 7 of run 17"
+[1] "fold 8 of run 17"
+[1] "fold 9 of run 17"
+[1] "fold 10 of run 17"
+[1] 0.5872118
+[1] "fold 1 of run 18"
+[1] "fold 2 of run 18"
+[1] "fold 3 of run 18"
+[1] "fold 4 of run 18"
+[1] "fold 5 of run 18"
+[1] "fold 6 of run 18"
+[1] "fold 7 of run 18"
+[1] "fold 8 of run 18"
+[1] "fold 9 of run 18"
+[1] "fold 10 of run 18"
+[1] 0.5944937
+[1] "fold 1 of run 19"
+[1] "fold 2 of run 19"
+[1] "fold 3 of run 19"
+[1] "fold 4 of run 19"
+[1] "fold 5 of run 19"
+[1] "fold 6 of run 19"
+[1] "fold 7 of run 19"
+[1] "fold 8 of run 19"
+[1] "fold 9 of run 19"
+[1] "fold 10 of run 19"
+[1] 0.7774695
+[1] "fold 1 of run 20"
+[1] "fold 2 of run 20"
+[1] "fold 3 of run 20"
+[1] "fold 4 of run 20"
+[1] "fold 5 of run 20"
+[1] "fold 6 of run 20"
+[1] "fold 7 of run 20"
+[1] "fold 8 of run 20"
+[1] "fold 9 of run 20"
+[1] "fold 10 of run 20"
+[1] 0.5
+[1] "fold 1 of run 21"
+[1] "fold 2 of run 21"
+[1] "fold 3 of run 21"
+[1] "fold 4 of run 21"
+[1] "fold 5 of run 21"
+[1] "fold 6 of run 21"
+[1] "fold 7 of run 21"
+[1] "fold 8 of run 21"
+[1] "fold 9 of run 21"
+[1] "fold 10 of run 21"
+[1] 0.5875307
+[1] "fold 1 of run 22"
+[1] "fold 2 of run 22"
+[1] "fold 3 of run 22"
+[1] "fold 4 of run 22"
+[1] "fold 5 of run 22"
+[1] "fold 6 of run 22"
+[1] "fold 7 of run 22"
+[1] "fold 8 of run 22"
+[1] "fold 9 of run 22"
+[1] "fold 10 of run 22"
+[1] 0.6996724
+[1] "fold 1 of run 23"
+[1] "fold 2 of run 23"
+[1] "fold 3 of run 23"
+[1] "fold 4 of run 23"
+[1] "fold 5 of run 23"
+[1] "fold 6 of run 23"
+[1] "fold 7 of run 23"
+[1] "fold 8 of run 23"
+[1] "fold 9 of run 23"
+[1] "fold 10 of run 23"
+[1] 0.5057655
+[1] "fold 1 of run 24"
+[1] "fold 2 of run 24"
+[1] "fold 3 of run 24"
+[1] "fold 4 of run 24"
+[1] "fold 5 of run 24"
+[1] "fold 6 of run 24"
+[1] "fold 7 of run 24"
+[1] "fold 8 of run 24"
+[1] "fold 9 of run 24"
+[1] "fold 10 of run 24"
+[1] 0.8140408
+[1] "fold 1 of run 25"
+[1] "fold 2 of run 25"
+[1] "fold 3 of run 25"
+[1] "fold 4 of run 25"
+[1] "fold 5 of run 25"
+[1] "fold 6 of run 25"
+[1] "fold 7 of run 25"
+[1] "fold 8 of run 25"
+[1] "fold 9 of run 25"
+[1] "fold 10 of run 25"
+[1] 0.7132032
+[1] "fold 1 of run 26"
+[1] "fold 2 of run 26"
+[1] "fold 3 of run 26"
+[1] "fold 4 of run 26"
+[1] "fold 5 of run 26"
+[1] "fold 6 of run 26"
+[1] "fold 7 of run 26"
+[1] "fold 8 of run 26"
+[1] "fold 9 of run 26"
+[1] "fold 10 of run 26"
+[1] 0.5
+[1] "fold 1 of run 27"
+[1] "fold 2 of run 27"
+[1] "fold 3 of run 27"
+[1] "fold 4 of run 27"
+[1] "fold 5 of run 27"
+[1] "fold 6 of run 27"
+[1] "fold 7 of run 27"
+[1] "fold 8 of run 27"
+[1] "fold 9 of run 27"
+[1] "fold 10 of run 27"
+[1] 0.6614076
+[1] "fold 1 of run 28"
+[1] "fold 2 of run 28"
+[1] "fold 3 of run 28"
+[1] "fold 4 of run 28"
+[1] "fold 5 of run 28"
+[1] "fold 6 of run 28"
+[1] "fold 7 of run 28"
+[1] "fold 8 of run 28"
+[1] "fold 9 of run 28"
+[1] "fold 10 of run 28"
+[1] 0.5
+[1] "fold 1 of run 29"
+[1] "fold 2 of run 29"
+[1] "fold 3 of run 29"
+[1] "fold 4 of run 29"
+[1] "fold 5 of run 29"
+[1] "fold 6 of run 29"
+[1] "fold 7 of run 29"
+[1] "fold 8 of run 29"
+[1] "fold 9 of run 29"
+[1] "fold 10 of run 29"
+[1] 0.5
+[1] "fold 1 of run 30"
+[1] "fold 2 of run 30"
+[1] "fold 3 of run 30"
+[1] "fold 4 of run 30"
+[1] "fold 5 of run 30"
+[1] "fold 6 of run 30"
+[1] "fold 7 of run 30"
+[1] "fold 8 of run 30"
+[1] "fold 9 of run 30"
+[1] "fold 10 of run 30"
+[1] 0.5859365
+[1] "fold 1 of run 31"
+[1] "fold 2 of run 31"
+[1] "fold 3 of run 31"
+[1] "fold 4 of run 31"
+[1] "fold 5 of run 31"
+[1] "fold 6 of run 31"
+[1] "fold 7 of run 31"
+[1] "fold 8 of run 31"
+[1] "fold 9 of run 31"
+[1] "fold 10 of run 31"
+[1] 0.5357543
+[1] "fold 1 of run 32"
+[1] "fold 2 of run 32"
+[1] "fold 3 of run 32"
+[1] "fold 4 of run 32"
+[1] "fold 5 of run 32"
+[1] "fold 6 of run 32"
+[1] "fold 7 of run 32"
+[1] "fold 8 of run 32"
+[1] "fold 9 of run 32"
+[1] "fold 10 of run 32"
+[1] 0.5411113
+> Sys.time()
+[1] "2020-04-06 10:39:20 EDT"
+> 
+> design.resp <- add.response(design, results5)
+> print(summary(design.resp))
+Call:
+FrF2((2^(numFactors - n)), numFactors, factor.names = list(ntree = c(-1, 
+    1), mtry = c(-1, 1), replace = c(-1, 1), nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), seed = 6285)
+
+Experimental design of type  FrF2 
+32  runs
+
+Factor settings (scale ends):
+  ntree mtry replace nodesize classwt cutoff maxnodes
+1    -1   -1      -1       -1      -1     -1       -1
+2     1    1       1        1       1      1        1
+
+Responses:
+[1] results5
+
+Design generating information:
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+$generators
+[1] F=ABC  G=ABDE
+
+
+Alias structure:
+$fi2
+[1] AB=CF AC=BF AF=BC
+
+
+The design itself:
+   ntree mtry replace nodesize classwt cutoff maxnodes  results5
+1     -1    1      -1       -1       1      1        1 0.6961748
+2      1   -1      -1        1      -1      1        1 0.5000000
+3      1    1       1        1       1      1        1 0.7416326
+4      1    1      -1        1       1     -1        1 0.5759212
+5     -1    1      -1        1       1      1       -1 0.7298919
+6      1   -1       1       -1       1     -1        1 0.7713593
+7      1   -1       1        1      -1     -1        1 0.5935310
+8     -1   -1       1        1       1      1        1 0.7388033
+9     -1    1       1       -1       1     -1        1 0.8189826
+10    -1    1      -1       -1      -1      1       -1 0.5000000
+11    -1    1       1       -1      -1     -1       -1 0.5885945
+12    -1   -1      -1       -1      -1     -1        1 0.7767813
+13    -1   -1      -1        1       1     -1        1 0.5258697
+14    -1   -1       1       -1      -1      1        1 0.6178277
+15    -1   -1       1        1      -1      1       -1 0.5000000
+16     1    1       1       -1      -1      1        1 0.6560594
+17    -1   -1      -1        1      -1     -1       -1 0.5872118
+18    -1    1       1        1      -1     -1        1 0.5944937
+19     1   -1      -1       -1       1      1        1 0.7774695
+20     1    1       1        1      -1      1       -1 0.5000000
+21     1    1      -1        1      -1     -1       -1 0.5875307
+22     1   -1      -1        1       1      1       -1 0.6996724
+23    -1    1      -1        1      -1      1        1 0.5057655
+24     1    1      -1       -1      -1     -1        1 0.8140408
+25     1    1       1       -1       1      1       -1 0.7132032
+26     1   -1       1        1       1     -1       -1 0.5000000
+27    -1   -1       1       -1       1      1       -1 0.6614076
+28    -1   -1      -1       -1       1     -1       -1 0.5000000
+29     1   -1      -1       -1      -1      1       -1 0.5000000
+30     1   -1       1       -1      -1     -1       -1 0.5859365
+31     1    1      -1       -1       1     -1       -1 0.5357543
+32    -1    1       1        1       1     -1       -1 0.5411113
+class=design, type= FrF2 
+NULL
+> 
+> write.csv(design.resp, "RFDOE.csv")
+> save(design.resp, file = "RFDOE.RData")
+> load('RFDOE.RData')
+> 
+> plot(design.resp, cex = 1.2, cex.lab = 1.2, cex.axis = 1.2,main = "Main effects plot for MI", cex.main = 2)
+> 
+> MEPlot(design.resp, abbrev = 5, cex.xax = 1.6, cex.main = 2)
+> 
+> IAPlot(design.resp, abbrev = 5, show.alias = TRUE, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> 
+> IAPlot(design.resp, abbrev = 5, select = 1:2, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> 
+> print(summary(lm(design.resp)))
+Number of observations used: 32 
+Formula:
+results5 ~ (ntree + mtry + replace + nodesize + classwt + cutoff + 
+    maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.023625 -0.006424  0.000000  0.006424  0.023625 
+
+Coefficients: (3 not defined because of singularities)
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          6.230e-01  4.313e-03 144.441 7.43e-12 ***
+ntree1               5.287e-03  4.313e-03   1.226 0.266157    
+mtry1                8.228e-03  4.313e-03   1.908 0.105047    
+replace1             9.714e-03  4.313e-03   2.252 0.065229 .  
+nodesize1           -3.413e-02  4.313e-03  -7.913 0.000216 ***
+classwt1             3.498e-02  4.313e-03   8.111 0.000188 ***
+cutoff1              4.400e-03  4.313e-03   1.020 0.347035    
+maxnodes1            4.607e-02  4.313e-03  10.683 3.97e-05 ***
+ntree1:mtry1         4.033e-03  4.313e-03   0.935 0.385814    
+ntree1:replace1     -5.256e-03  4.313e-03  -1.219 0.268711    
+ntree1:nodesize1    -6.841e-03  4.313e-03  -1.586 0.163797    
+ntree1:classwt1      1.136e-03  4.313e-03   0.263 0.801086    
+ntree1:cutoff1       3.348e-03  4.313e-03   0.776 0.467075    
+ntree1:maxnodes1     4.420e-03  4.313e-03   1.025 0.344993    
+mtry1:replace1              NA         NA      NA       NA    
+mtry1:nodesize1     -2.404e-05  4.313e-03  -0.006 0.995734    
+mtry1:classwt1       2.903e-03  4.313e-03   0.673 0.525962    
+mtry1:cutoff1               NA         NA      NA       NA    
+mtry1:maxnodes1     -1.888e-03  4.313e-03  -0.438 0.676821    
+replace1:nodesize1  -9.858e-03  4.313e-03  -2.286 0.062322 .  
+replace1:classwt1    1.814e-02  4.313e-03   4.207 0.005642 ** 
+replace1:cutoff1            NA         NA      NA       NA    
+replace1:maxnodes1   1.283e-02  4.313e-03   2.974 0.024824 *  
+nodesize1:classwt1   7.789e-03  4.313e-03   1.806 0.120938    
+nodesize1:cutoff1    2.123e-02  4.313e-03   4.923 0.002650 ** 
+nodesize1:maxnodes1 -3.791e-02  4.313e-03  -8.790 0.000120 ***
+classwt1:cutoff1     5.743e-02  4.313e-03  13.315 1.11e-05 ***
+classwt1:maxnodes1   1.748e-03  4.313e-03   0.405 0.699267    
+cutoff1:maxnodes1   -1.923e-02  4.313e-03  -4.458 0.004292 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.0244 on 6 degrees of freedom
+Multiple R-squared:   0.99,	Adjusted R-squared:  0.9484 
+F-statistic:  23.8 on 25 and 6 DF,  p-value: 0.0003724
+
+> model <- lm(design.resp)
+> pr <- resid(model)/(1 - lm.influence(model)$hat)
+> PRESS <- sum(pr^2)
+> PRESS
+[1] 0.1015895
+> 
+###########################################################################
+numFactors <- 7
+> # n here represents 2^(7-n) type design
+> n <- 1
+> 
+> design <- FrF2( (2^(numFactors-n)), numFactors, factor.names = list(ntree = c(-1,1),
++                                                                     mtry = c(-1,1),
++                                                                     replace = c(-1,1),
++                                                                     nodesize = c(-1,1),
++                                                                     classwt = c(-1,1),
++                                                                     cutoff = c(-1,1),
++                                                                     maxnodes = c(-1,1) ) ,  seed = 6285)
+> 
+> print(design)
+   ntree mtry replace nodesize classwt cutoff maxnodes
+1     -1    1      -1       -1       1     -1        1
+2      1   -1      -1        1      -1     -1        1
+3      1    1       1        1       1      1        1
+4      1    1      -1        1       1      1       -1
+5     -1    1      -1        1       1     -1       -1
+6      1   -1       1       -1       1     -1       -1
+7      1   -1       1        1      -1     -1       -1
+8      1   -1       1       -1       1      1        1
+9     -1    1       1       -1       1     -1       -1
+10    -1    1      -1       -1      -1     -1       -1
+11    -1    1       1       -1      -1     -1        1
+12    -1   -1      -1       -1      -1     -1        1
+13    -1    1       1       -1      -1      1       -1
+14    -1   -1       1       -1      -1     -1       -1
+15     1    1       1        1       1     -1       -1
+16     1    1       1       -1       1     -1        1
+17    -1   -1       1        1      -1     -1        1
+18     1    1       1       -1      -1     -1       -1
+19    -1   -1      -1        1      -1      1        1
+20    -1    1       1        1       1     -1        1
+21    -1   -1       1        1       1     -1       -1
+22     1   -1       1        1      -1      1        1
+23    -1   -1       1        1      -1      1       -1
+24    -1    1       1        1      -1     -1       -1
+25     1    1      -1       -1       1     -1       -1
+26    -1    1       1       -1       1      1        1
+27     1    1       1        1      -1      1       -1
+28    -1   -1      -1       -1      -1      1       -1
+29     1    1      -1       -1      -1      1       -1
+30     1    1       1        1      -1     -1        1
+31    -1   -1      -1        1       1      1       -1
+32     1    1      -1       -1      -1     -1        1
+33    -1   -1      -1       -1       1     -1       -1
+34    -1   -1      -1        1       1     -1        1
+35     1    1       1       -1      -1      1        1
+36     1    1       1       -1       1      1       -1
+37    -1    1      -1        1       1      1        1
+38    -1   -1       1       -1      -1      1        1
+39     1   -1      -1       -1      -1     -1       -1
+40     1   -1      -1        1      -1      1       -1
+41     1   -1      -1       -1       1      1       -1
+42    -1    1      -1       -1      -1      1        1
+43    -1    1      -1        1      -1      1       -1
+44    -1    1       1        1      -1      1        1
+45    -1   -1       1        1       1      1        1
+46    -1    1      -1       -1       1      1       -1
+47     1    1      -1        1      -1      1        1
+48    -1   -1       1       -1       1      1       -1
+49    -1   -1      -1        1      -1     -1       -1
+50     1   -1      -1       -1       1     -1        1
+51     1   -1       1       -1      -1     -1        1
+52     1    1      -1        1      -1     -1       -1
+53    -1   -1       1       -1       1     -1        1
+54     1   -1      -1        1       1     -1       -1
+55     1   -1      -1        1       1      1        1
+56     1   -1      -1       -1      -1      1        1
+57     1    1      -1       -1       1      1        1
+58    -1    1      -1        1      -1     -1        1
+59    -1   -1      -1       -1       1      1        1
+60     1    1      -1        1       1     -1        1
+61     1   -1       1        1       1      1       -1
+62    -1    1       1        1       1      1       -1
+63     1   -1       1        1       1     -1        1
+64     1   -1       1       -1      -1      1       -1
+class=design, type= FrF2 
+> print(summary(design))
+Call:
+FrF2((2^(numFactors - n)), numFactors, factor.names = list(ntree = c(-1, 
+    1), mtry = c(-1, 1), replace = c(-1, 1), nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), seed = 6285)
+
+Experimental design of type  FrF2 
+64  runs
+
+Factor settings (scale ends):
+  ntree mtry replace nodesize classwt cutoff maxnodes
+1    -1   -1      -1       -1      -1     -1       -1
+2     1    1       1        1       1      1        1
+
+Design generating information:
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+$generators
+[1] G=ABCDEF
+
+
+Alias structure:
+[[1]]
+[1] no aliasing among main effects and 2fis
+
+NULL
+> aliasprint(design)
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+[[2]]
+[1] no aliasing among main effects and 2fis
+
+> 
+> results5 <- c()
+> Sys.time()
+[1] "2020-04-06 11:10:12 EDT"
+> 
+> for (i in 1:nrow(design)){
++   if (design$ntree[i] == -1)     {ntree <- 100} else {ntree <- 500}
++   if (design$mtry[i] == -1)      {mtry <- floor(log(ncol(df)-1))} else {mtry <- ceiling(sqrt(ncol(df)-1))}
++   if (design$replace[i] == -1)   {replace <- FALSE} else {replace <- TRUE}
++   if (design$nodesize[i] == -1)  {nodesize <- 1} else {nodesize <- floor(0.1*nrow(df))}
++   if (design$classwt[i] == -1)   {classwt <- c(1,10)} else {classwt <- c(10,1)}
++   if (design$cutoff[i] == -1)    {cutoff <- c(0.2, 1 -0.2)} else {cutoff <- c(0.8,1-0.8)}
++   if (design$maxnodes[i] == -1)  {maxnodes <- 5} else {maxnodes <- NULL}
++   
++   #cross-validation
++   createIndex <- rep(1:10, length.out = nrow(df))
++   randomIndex <- sample(createIndex)
++   
++   innerResults <- c()
++   
++   TP   <-  0
++   FN   <-  0
++   FP   <-  0
++   TN   <-  0
++   
++   for (j in 1:10){
++     
++     print(paste("fold",j,"of run", i))
++     train <- df[-which(randomIndex == j),]
++     test <-  df[ which(randomIndex == j),]
++     
++     
++     
++     RFmodel <- randomForest(x = train[,retained.predictors], y = train[,"my_res"],
++                             xtest = test[,retained.predictors], ytest = test[,"my_res"],
++                             ntree = ntree,
++                             mtry = mtry,
++                             replace = replace,
++                             nodesize = nodesize,
++                             classwt = classwt,
++                             cutoff = cutoff,
++                             maxnodes = maxnodes)
++     
++     confu <- as.data.frame(RFmodel$test$confusion)
++     
++     TP   <-  TP + confu[labels[2], labels[2]]
++     FN   <-  FN + confu[labels[2], labels[1]]
++     FP   <-  FP + confu[labels[1], labels[2]]
++     TN   <-  TN + confu[labels[1], labels[1]]
++     
++   }
++   
++   TPR <- TP/(TP+FN)
++   TNR <- TN/(TN+FP)
++   BACC <- (TPR + TNR)/2
++   print(BACC)
++   results5 <- c(results5, BACC)
++   
++ }
+[1] "fold 1 of run 1"
+[1] "fold 2 of run 1"
+[1] "fold 3 of run 1"
+[1] "fold 4 of run 1"
+[1] "fold 5 of run 1"
+[1] "fold 6 of run 1"
+[1] "fold 7 of run 1"
+[1] "fold 8 of run 1"
+[1] "fold 9 of run 1"
+[1] "fold 10 of run 1"
+[1] 0.8189157
+[1] "fold 1 of run 2"
+[1] "fold 2 of run 2"
+[1] "fold 3 of run 2"
+[1] "fold 4 of run 2"
+[1] "fold 5 of run 2"
+[1] "fold 6 of run 2"
+[1] "fold 7 of run 2"
+[1] "fold 8 of run 2"
+[1] "fold 9 of run 2"
+[1] "fold 10 of run 2"
+[1] 0.5929975
+[1] "fold 1 of run 3"
+[1] "fold 2 of run 3"
+[1] "fold 3 of run 3"
+[1] "fold 4 of run 3"
+[1] "fold 5 of run 3"
+[1] "fold 6 of run 3"
+[1] "fold 7 of run 3"
+[1] "fold 8 of run 3"
+[1] "fold 9 of run 3"
+[1] "fold 10 of run 3"
+[1] 0.7399459
+[1] "fold 1 of run 4"
+[1] "fold 2 of run 4"
+[1] "fold 3 of run 4"
+[1] "fold 4 of run 4"
+[1] "fold 5 of run 4"
+[1] "fold 6 of run 4"
+[1] "fold 7 of run 4"
+[1] "fold 8 of run 4"
+[1] "fold 9 of run 4"
+[1] "fold 10 of run 4"
+[1] 0.7263362
+[1] "fold 1 of run 5"
+[1] "fold 2 of run 5"
+[1] "fold 3 of run 5"
+[1] "fold 4 of run 5"
+[1] "fold 5 of run 5"
+[1] "fold 6 of run 5"
+[1] "fold 7 of run 5"
+[1] "fold 8 of run 5"
+[1] "fold 9 of run 5"
+[1] "fold 10 of run 5"
+[1] 0.5394153
+[1] "fold 1 of run 6"
+[1] "fold 2 of run 6"
+[1] "fold 3 of run 6"
+[1] "fold 4 of run 6"
+[1] "fold 5 of run 6"
+[1] "fold 6 of run 6"
+[1] "fold 7 of run 6"
+[1] "fold 8 of run 6"
+[1] "fold 9 of run 6"
+[1] "fold 10 of run 6"
+[1] 0.5
+[1] "fold 1 of run 7"
+[1] "fold 2 of run 7"
+[1] "fold 3 of run 7"
+[1] "fold 4 of run 7"
+[1] "fold 5 of run 7"
+[1] "fold 6 of run 7"
+[1] "fold 7 of run 7"
+[1] "fold 8 of run 7"
+[1] "fold 9 of run 7"
+[1] "fold 10 of run 7"
+[1] 0.5875307
+[1] "fold 1 of run 8"
+[1] "fold 2 of run 8"
+[1] "fold 3 of run 8"
+[1] "fold 4 of run 8"
+[1] "fold 5 of run 8"
+[1] "fold 6 of run 8"
+[1] "fold 7 of run 8"
+[1] "fold 8 of run 8"
+[1] "fold 9 of run 8"
+[1] "fold 10 of run 8"
+[1] 0.7793489
+[1] "fold 1 of run 9"
+[1] "fold 2 of run 9"
+[1] "fold 3 of run 9"
+[1] "fold 4 of run 9"
+[1] "fold 5 of run 9"
+[1] "fold 6 of run 9"
+[1] "fold 7 of run 9"
+[1] "fold 8 of run 9"
+[1] "fold 9 of run 9"
+[1] "fold 10 of run 9"
+[1] 0.536887
+[1] "fold 1 of run 10"
+[1] "fold 2 of run 10"
+[1] "fold 3 of run 10"
+[1] "fold 4 of run 10"
+[1] "fold 5 of run 10"
+[1] "fold 6 of run 10"
+[1] "fold 7 of run 10"
+[1] "fold 8 of run 10"
+[1] "fold 9 of run 10"
+[1] "fold 10 of run 10"
+[1] 0.5879771
+[1] "fold 1 of run 11"
+[1] "fold 2 of run 11"
+[1] "fold 3 of run 11"
+[1] "fold 4 of run 11"
+[1] "fold 5 of run 11"
+[1] "fold 6 of run 11"
+[1] "fold 7 of run 11"
+[1] "fold 8 of run 11"
+[1] "fold 9 of run 11"
+[1] "fold 10 of run 11"
+[1] 0.8143101
+[1] "fold 1 of run 12"
+[1] "fold 2 of run 12"
+[1] "fold 3 of run 12"
+[1] "fold 4 of run 12"
+[1] "fold 5 of run 12"
+[1] "fold 6 of run 12"
+[1] "fold 7 of run 12"
+[1] "fold 8 of run 12"
+[1] "fold 9 of run 12"
+[1] "fold 10 of run 12"
+[1] 0.7758605
+[1] "fold 1 of run 13"
+[1] "fold 2 of run 13"
+[1] "fold 3 of run 13"
+[1] "fold 4 of run 13"
+[1] "fold 5 of run 13"
+[1] "fold 6 of run 13"
+[1] "fold 7 of run 13"
+[1] "fold 8 of run 13"
+[1] "fold 9 of run 13"
+[1] "fold 10 of run 13"
+[1] 0.5
+[1] "fold 1 of run 14"
+[1] "fold 2 of run 14"
+[1] "fold 3 of run 14"
+[1] "fold 4 of run 14"
+[1] "fold 5 of run 14"
+[1] "fold 6 of run 14"
+[1] "fold 7 of run 14"
+[1] "fold 8 of run 14"
+[1] "fold 9 of run 14"
+[1] "fold 10 of run 14"
+[1] 0.5796204
+[1] "fold 1 of run 15"
+[1] "fold 2 of run 15"
+[1] "fold 3 of run 15"
+[1] "fold 4 of run 15"
+[1] "fold 5 of run 15"
+[1] "fold 6 of run 15"
+[1] "fold 7 of run 15"
+[1] "fold 8 of run 15"
+[1] "fold 9 of run 15"
+[1] "fold 10 of run 15"
+[1] 0.5404064
+[1] "fold 1 of run 16"
+[1] "fold 2 of run 16"
+[1] "fold 3 of run 16"
+[1] "fold 4 of run 16"
+[1] "fold 5 of run 16"
+[1] "fold 6 of run 16"
+[1] "fold 7 of run 16"
+[1] "fold 8 of run 16"
+[1] "fold 9 of run 16"
+[1] "fold 10 of run 16"
+[1] 0.8202181
+[1] "fold 1 of run 17"
+[1] "fold 2 of run 17"
+[1] "fold 3 of run 17"
+[1] "fold 4 of run 17"
+[1] "fold 5 of run 17"
+[1] "fold 6 of run 17"
+[1] "fold 7 of run 17"
+[1] "fold 8 of run 17"
+[1] "fold 9 of run 17"
+[1] "fold 10 of run 17"
+[1] 0.5980009
+[1] "fold 1 of run 18"
+[1] "fold 2 of run 18"
+[1] "fold 3 of run 18"
+[1] "fold 4 of run 18"
+[1] "fold 5 of run 18"
+[1] "fold 6 of run 18"
+[1] "fold 7 of run 18"
+[1] "fold 8 of run 18"
+[1] "fold 9 of run 18"
+[1] "fold 10 of run 18"
+[1] 0.5875307
+[1] "fold 1 of run 19"
+[1] "fold 2 of run 19"
+[1] "fold 3 of run 19"
+[1] "fold 4 of run 19"
+[1] "fold 5 of run 19"
+[1] "fold 6 of run 19"
+[1] "fold 7 of run 19"
+[1] "fold 8 of run 19"
+[1] "fold 9 of run 19"
+[1] "fold 10 of run 19"
+[1] 0.5
+[1] "fold 1 of run 20"
+[1] "fold 2 of run 20"
+[1] "fold 3 of run 20"
+[1] "fold 4 of run 20"
+[1] "fold 5 of run 20"
+[1] "fold 6 of run 20"
+[1] "fold 7 of run 20"
+[1] "fold 8 of run 20"
+[1] "fold 9 of run 20"
+[1] "fold 10 of run 20"
+[1] 0.5753315
+[1] "fold 1 of run 21"
+[1] "fold 2 of run 21"
+[1] "fold 3 of run 21"
+[1] "fold 4 of run 21"
+[1] "fold 5 of run 21"
+[1] "fold 6 of run 21"
+[1] "fold 7 of run 21"
+[1] "fold 8 of run 21"
+[1] "fold 9 of run 21"
+[1] "fold 10 of run 21"
+[1] 0.5
+[1] "fold 1 of run 22"
+[1] "fold 2 of run 22"
+[1] "fold 3 of run 22"
+[1] "fold 4 of run 22"
+[1] "fold 5 of run 22"
+[1] "fold 6 of run 22"
+[1] "fold 7 of run 22"
+[1] "fold 8 of run 22"
+[1] "fold 9 of run 22"
+[1] "fold 10 of run 22"
+[1] 0.5
+[1] "fold 1 of run 23"
+[1] "fold 2 of run 23"
+[1] "fold 3 of run 23"
+[1] "fold 4 of run 23"
+[1] "fold 5 of run 23"
+[1] "fold 6 of run 23"
+[1] "fold 7 of run 23"
+[1] "fold 8 of run 23"
+[1] "fold 9 of run 23"
+[1] "fold 10 of run 23"
+[1] 0.5
+[1] "fold 1 of run 24"
+[1] "fold 2 of run 24"
+[1] "fold 3 of run 24"
+[1] "fold 4 of run 24"
+[1] "fold 5 of run 24"
+[1] "fold 6 of run 24"
+[1] "fold 7 of run 24"
+[1] "fold 8 of run 24"
+[1] "fold 9 of run 24"
+[1] "fold 10 of run 24"
+[1] 0.5883597
+[1] "fold 1 of run 25"
+[1] "fold 2 of run 25"
+[1] "fold 3 of run 25"
+[1] "fold 4 of run 25"
+[1] "fold 5 of run 25"
+[1] "fold 6 of run 25"
+[1] "fold 7 of run 25"
+[1] "fold 8 of run 25"
+[1] "fold 9 of run 25"
+[1] "fold 10 of run 25"
+[1] 0.5386063
+[1] "fold 1 of run 26"
+[1] "fold 2 of run 26"
+[1] "fold 3 of run 26"
+[1] "fold 4 of run 26"
+[1] "fold 5 of run 26"
+[1] "fold 6 of run 26"
+[1] "fold 7 of run 26"
+[1] "fold 8 of run 26"
+[1] "fold 9 of run 26"
+[1] "fold 10 of run 26"
+[1] 0.6916726
+[1] "fold 1 of run 27"
+[1] "fold 2 of run 27"
+[1] "fold 3 of run 27"
+[1] "fold 4 of run 27"
+[1] "fold 5 of run 27"
+[1] "fold 6 of run 27"
+[1] "fold 7 of run 27"
+[1] "fold 8 of run 27"
+[1] "fold 9 of run 27"
+[1] "fold 10 of run 27"
+[1] 0.5
+[1] "fold 1 of run 28"
+[1] "fold 2 of run 28"
+[1] "fold 3 of run 28"
+[1] "fold 4 of run 28"
+[1] "fold 5 of run 28"
+[1] "fold 6 of run 28"
+[1] "fold 7 of run 28"
+[1] "fold 8 of run 28"
+[1] "fold 9 of run 28"
+[1] "fold 10 of run 28"
+[1] 0.5
+[1] "fold 1 of run 29"
+[1] "fold 2 of run 29"
+[1] "fold 3 of run 29"
+[1] "fold 4 of run 29"
+[1] "fold 5 of run 29"
+[1] "fold 6 of run 29"
+[1] "fold 7 of run 29"
+[1] "fold 8 of run 29"
+[1] "fold 9 of run 29"
+[1] "fold 10 of run 29"
+[1] 0.5
+[1] "fold 1 of run 30"
+[1] "fold 2 of run 30"
+[1] "fold 3 of run 30"
+[1] "fold 4 of run 30"
+[1] "fold 5 of run 30"
+[1] "fold 6 of run 30"
+[1] "fold 7 of run 30"
+[1] "fold 8 of run 30"
+[1] "fold 9 of run 30"
+[1] "fold 10 of run 30"
+[1] 0.5929369
+[1] "fold 1 of run 31"
+[1] "fold 2 of run 31"
+[1] "fold 3 of run 31"
+[1] "fold 4 of run 31"
+[1] "fold 5 of run 31"
+[1] "fold 6 of run 31"
+[1] "fold 7 of run 31"
+[1] "fold 8 of run 31"
+[1] "fold 9 of run 31"
+[1] "fold 10 of run 31"
+[1] 0.6976253
+[1] "fold 1 of run 32"
+[1] "fold 2 of run 32"
+[1] "fold 3 of run 32"
+[1] "fold 4 of run 32"
+[1] "fold 5 of run 32"
+[1] "fold 6 of run 32"
+[1] "fold 7 of run 32"
+[1] "fold 8 of run 32"
+[1] "fold 9 of run 32"
+[1] "fold 10 of run 32"
+[1] 0.8136013
+[1] "fold 1 of run 33"
+[1] "fold 2 of run 33"
+[1] "fold 3 of run 33"
+[1] "fold 4 of run 33"
+[1] "fold 5 of run 33"
+[1] "fold 6 of run 33"
+[1] "fold 7 of run 33"
+[1] "fold 8 of run 33"
+[1] "fold 9 of run 33"
+[1] "fold 10 of run 33"
+[1] 0.5
+[1] "fold 1 of run 34"
+[1] "fold 2 of run 34"
+[1] "fold 3 of run 34"
+[1] "fold 4 of run 34"
+[1] "fold 5 of run 34"
+[1] "fold 6 of run 34"
+[1] "fold 7 of run 34"
+[1] "fold 8 of run 34"
+[1] "fold 9 of run 34"
+[1] "fold 10 of run 34"
+[1] 0.5226942
+[1] "fold 1 of run 35"
+[1] "fold 2 of run 35"
+[1] "fold 3 of run 35"
+[1] "fold 4 of run 35"
+[1] "fold 5 of run 35"
+[1] "fold 6 of run 35"
+[1] "fold 7 of run 35"
+[1] "fold 8 of run 35"
+[1] "fold 9 of run 35"
+[1] "fold 10 of run 35"
+[1] 0.6555462
+[1] "fold 1 of run 36"
+[1] "fold 2 of run 36"
+[1] "fold 3 of run 36"
+[1] "fold 4 of run 36"
+[1] "fold 5 of run 36"
+[1] "fold 6 of run 36"
+[1] "fold 7 of run 36"
+[1] "fold 8 of run 36"
+[1] "fold 9 of run 36"
+[1] "fold 10 of run 36"
+[1] 0.714703
+[1] "fold 1 of run 37"
+[1] "fold 2 of run 37"
+[1] "fold 3 of run 37"
+[1] "fold 4 of run 37"
+[1] "fold 5 of run 37"
+[1] "fold 6 of run 37"
+[1] "fold 7 of run 37"
+[1] "fold 8 of run 37"
+[1] "fold 9 of run 37"
+[1] "fold 10 of run 37"
+[1] 0.7396644
+[1] "fold 1 of run 38"
+[1] "fold 2 of run 38"
+[1] "fold 3 of run 38"
+[1] "fold 4 of run 38"
+[1] "fold 5 of run 38"
+[1] "fold 6 of run 38"
+[1] "fold 7 of run 38"
+[1] "fold 8 of run 38"
+[1] "fold 9 of run 38"
+[1] "fold 10 of run 38"
+[1] 0.6172772
+[1] "fold 1 of run 39"
+[1] "fold 2 of run 39"
+[1] "fold 3 of run 39"
+[1] "fold 4 of run 39"
+[1] "fold 5 of run 39"
+[1] "fold 6 of run 39"
+[1] "fold 7 of run 39"
+[1] "fold 8 of run 39"
+[1] "fold 9 of run 39"
+[1] "fold 10 of run 39"
+[1] 0.5875307
+[1] "fold 1 of run 40"
+[1] "fold 2 of run 40"
+[1] "fold 3 of run 40"
+[1] "fold 4 of run 40"
+[1] "fold 5 of run 40"
+[1] "fold 6 of run 40"
+[1] "fold 7 of run 40"
+[1] "fold 8 of run 40"
+[1] "fold 9 of run 40"
+[1] "fold 10 of run 40"
+[1] 0.5
+[1] "fold 1 of run 41"
+[1] "fold 2 of run 41"
+[1] "fold 3 of run 41"
+[1] "fold 4 of run 41"
+[1] "fold 5 of run 41"
+[1] "fold 6 of run 41"
+[1] "fold 7 of run 41"
+[1] "fold 8 of run 41"
+[1] "fold 9 of run 41"
+[1] "fold 10 of run 41"
+[1] 0.6591714
+[1] "fold 1 of run 42"
+[1] "fold 2 of run 42"
+[1] "fold 3 of run 42"
+[1] "fold 4 of run 42"
+[1] "fold 5 of run 42"
+[1] "fold 6 of run 42"
+[1] "fold 7 of run 42"
+[1] "fold 8 of run 42"
+[1] "fold 9 of run 42"
+[1] "fold 10 of run 42"
+[1] 0.6563005
+[1] "fold 1 of run 43"
+[1] "fold 2 of run 43"
+[1] "fold 3 of run 43"
+[1] "fold 4 of run 43"
+[1] "fold 5 of run 43"
+[1] "fold 6 of run 43"
+[1] "fold 7 of run 43"
+[1] "fold 8 of run 43"
+[1] "fold 9 of run 43"
+[1] "fold 10 of run 43"
+[1] 0.5
+[1] "fold 1 of run 44"
+[1] "fold 2 of run 44"
+[1] "fold 3 of run 44"
+[1] "fold 4 of run 44"
+[1] "fold 5 of run 44"
+[1] "fold 6 of run 44"
+[1] "fold 7 of run 44"
+[1] "fold 8 of run 44"
+[1] "fold 9 of run 44"
+[1] "fold 10 of run 44"
+[1] 0.5054
+[1] "fold 1 of run 45"
+[1] "fold 2 of run 45"
+[1] "fold 3 of run 45"
+[1] "fold 4 of run 45"
+[1] "fold 5 of run 45"
+[1] "fold 6 of run 45"
+[1] "fold 7 of run 45"
+[1] "fold 8 of run 45"
+[1] "fold 9 of run 45"
+[1] "fold 10 of run 45"
+[1] 0.7366436
+[1] "fold 1 of run 46"
+[1] "fold 2 of run 46"
+[1] "fold 3 of run 46"
+[1] "fold 4 of run 46"
+[1] "fold 5 of run 46"
+[1] "fold 6 of run 46"
+[1] "fold 7 of run 46"
+[1] "fold 8 of run 46"
+[1] "fold 9 of run 46"
+[1] "fold 10 of run 46"
+[1] 0.7158298
+[1] "fold 1 of run 47"
+[1] "fold 2 of run 47"
+[1] "fold 3 of run 47"
+[1] "fold 4 of run 47"
+[1] "fold 5 of run 47"
+[1] "fold 6 of run 47"
+[1] "fold 7 of run 47"
+[1] "fold 8 of run 47"
+[1] "fold 9 of run 47"
+[1] "fold 10 of run 47"
+[1] 0.5029799
+[1] "fold 1 of run 48"
+[1] "fold 2 of run 48"
+[1] "fold 3 of run 48"
+[1] "fold 4 of run 48"
+[1] "fold 5 of run 48"
+[1] "fold 6 of run 48"
+[1] "fold 7 of run 48"
+[1] "fold 8 of run 48"
+[1] "fold 9 of run 48"
+[1] "fold 10 of run 48"
+[1] 0.6629246
+[1] "fold 1 of run 49"
+[1] "fold 2 of run 49"
+[1] "fold 3 of run 49"
+[1] "fold 4 of run 49"
+[1] "fold 5 of run 49"
+[1] "fold 6 of run 49"
+[1] "fold 7 of run 49"
+[1] "fold 8 of run 49"
+[1] "fold 9 of run 49"
+[1] "fold 10 of run 49"
+[1] 0.5874669
+[1] "fold 1 of run 50"
+[1] "fold 2 of run 50"
+[1] "fold 3 of run 50"
+[1] "fold 4 of run 50"
+[1] "fold 5 of run 50"
+[1] "fold 6 of run 50"
+[1] "fold 7 of run 50"
+[1] "fold 8 of run 50"
+[1] "fold 9 of run 50"
+[1] "fold 10 of run 50"
+[1] 0.7704738
+[1] "fold 1 of run 51"
+[1] "fold 2 of run 51"
+[1] "fold 3 of run 51"
+[1] "fold 4 of run 51"
+[1] "fold 5 of run 51"
+[1] "fold 6 of run 51"
+[1] "fold 7 of run 51"
+[1] "fold 8 of run 51"
+[1] "fold 9 of run 51"
+[1] "fold 10 of run 51"
+[1] 0.7827001
+[1] "fold 1 of run 52"
+[1] "fold 2 of run 52"
+[1] "fold 3 of run 52"
+[1] "fold 4 of run 52"
+[1] "fold 5 of run 52"
+[1] "fold 6 of run 52"
+[1] "fold 7 of run 52"
+[1] "fold 8 of run 52"
+[1] "fold 9 of run 52"
+[1] "fold 10 of run 52"
+[1] 0.5878931
+[1] "fold 1 of run 53"
+[1] "fold 2 of run 53"
+[1] "fold 3 of run 53"
+[1] "fold 4 of run 53"
+[1] "fold 5 of run 53"
+[1] "fold 6 of run 53"
+[1] "fold 7 of run 53"
+[1] "fold 8 of run 53"
+[1] "fold 9 of run 53"
+[1] "fold 10 of run 53"
+[1] 0.7704244
+[1] "fold 1 of run 54"
+[1] "fold 2 of run 54"
+[1] "fold 3 of run 54"
+[1] "fold 4 of run 54"
+[1] "fold 5 of run 54"
+[1] "fold 6 of run 54"
+[1] "fold 7 of run 54"
+[1] "fold 8 of run 54"
+[1] "fold 9 of run 54"
+[1] "fold 10 of run 54"
+[1] 0.5
+[1] "fold 1 of run 55"
+[1] "fold 2 of run 55"
+[1] "fold 3 of run 55"
+[1] "fold 4 of run 55"
+[1] "fold 5 of run 55"
+[1] "fold 6 of run 55"
+[1] "fold 7 of run 55"
+[1] "fold 8 of run 55"
+[1] "fold 9 of run 55"
+[1] "fold 10 of run 55"
+[1] 0.7359868
+[1] "fold 1 of run 56"
+[1] "fold 2 of run 56"
+[1] "fold 3 of run 56"
+[1] "fold 4 of run 56"
+[1] "fold 5 of run 56"
+[1] "fold 6 of run 56"
+[1] "fold 7 of run 56"
+[1] "fold 8 of run 56"
+[1] "fold 9 of run 56"
+[1] "fold 10 of run 56"
+[1] 0.6202338
+[1] "fold 1 of run 57"
+[1] "fold 2 of run 57"
+[1] "fold 3 of run 57"
+[1] "fold 4 of run 57"
+[1] "fold 5 of run 57"
+[1] "fold 6 of run 57"
+[1] "fold 7 of run 57"
+[1] "fold 8 of run 57"
+[1] "fold 9 of run 57"
+[1] "fold 10 of run 57"
+[1] 0.6960627
+[1] "fold 1 of run 58"
+[1] "fold 2 of run 58"
+[1] "fold 3 of run 58"
+[1] "fold 4 of run 58"
+[1] "fold 5 of run 58"
+[1] "fold 6 of run 58"
+[1] "fold 7 of run 58"
+[1] "fold 8 of run 58"
+[1] "fold 9 of run 58"
+[1] "fold 10 of run 58"
+[1] 0.5959898
+[1] "fold 1 of run 59"
+[1] "fold 2 of run 59"
+[1] "fold 3 of run 59"
+[1] "fold 4 of run 59"
+[1] "fold 5 of run 59"
+[1] "fold 6 of run 59"
+[1] "fold 7 of run 59"
+[1] "fold 8 of run 59"
+[1] "fold 9 of run 59"
+[1] "fold 10 of run 59"
+[1] 0.7773838
+[1] "fold 1 of run 60"
+[1] "fold 2 of run 60"
+[1] "fold 3 of run 60"
+[1] "fold 4 of run 60"
+[1] "fold 5 of run 60"
+[1] "fold 6 of run 60"
+[1] "fold 7 of run 60"
+[1] "fold 8 of run 60"
+[1] "fold 9 of run 60"
+[1] "fold 10 of run 60"
+[1] 0.5749907
+[1] "fold 1 of run 61"
+[1] "fold 2 of run 61"
+[1] "fold 3 of run 61"
+[1] "fold 4 of run 61"
+[1] "fold 5 of run 61"
+[1] "fold 6 of run 61"
+[1] "fold 7 of run 61"
+[1] "fold 8 of run 61"
+[1] "fold 9 of run 61"
+[1] "fold 10 of run 61"
+[1] 0.6937957
+[1] "fold 1 of run 62"
+[1] "fold 2 of run 62"
+[1] "fold 3 of run 62"
+[1] "fold 4 of run 62"
+[1] "fold 5 of run 62"
+[1] "fold 6 of run 62"
+[1] "fold 7 of run 62"
+[1] "fold 8 of run 62"
+[1] "fold 9 of run 62"
+[1] "fold 10 of run 62"
+[1] 0.7287325
+[1] "fold 1 of run 63"
+[1] "fold 2 of run 63"
+[1] "fold 3 of run 63"
+[1] "fold 4 of run 63"
+[1] "fold 5 of run 63"
+[1] "fold 6 of run 63"
+[1] "fold 7 of run 63"
+[1] "fold 8 of run 63"
+[1] "fold 9 of run 63"
+[1] "fold 10 of run 63"
+[1] 0.5193366
+[1] "fold 1 of run 64"
+[1] "fold 2 of run 64"
+[1] "fold 3 of run 64"
+[1] "fold 4 of run 64"
+[1] "fold 5 of run 64"
+[1] "fold 6 of run 64"
+[1] "fold 7 of run 64"
+[1] "fold 8 of run 64"
+[1] "fold 9 of run 64"
+[1] "fold 10 of run 64"
+[1] 0.5
+> Sys.time()
+[1] "2020-04-06 15:24:25 EDT"
+> 
+> design.resp <- add.response(design, results5)
+> print(summary(design.resp))
+Call:
+FrF2((2^(numFactors - n)), numFactors, factor.names = list(ntree = c(-1, 
+    1), mtry = c(-1, 1), replace = c(-1, 1), nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), seed = 6285)
+
+Experimental design of type  FrF2 
+64  runs
+
+Factor settings (scale ends):
+  ntree mtry replace nodesize classwt cutoff maxnodes
+1    -1   -1      -1       -1      -1     -1       -1
+2     1    1       1        1       1      1        1
+
+Responses:
+[1] results5
+
+Design generating information:
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+$generators
+[1] G=ABCDEF
+
+
+Alias structure:
+[[1]]
+[1] no aliasing among main effects and 2fis
+
+NULL
+> 
+> write.csv(design.resp, "RFDOE.csv")
+> save(design.resp, file = "RFDOE.RData")
+> load('RFDOE.RData')
+> 
+> plot(design.resp, cex = 1.2, cex.lab = 1.2, cex.axis = 1.2,main = "Main effects plot for MI", cex.main = 2)
+> 
+> MEPlot(design.resp, abbrev = 5, cex.xax = 1.6, cex.main = 2)
+> 
+> IAPlot(design.resp, abbrev = 5, show.alias = TRUE, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> 
+> IAPlot(design.resp, abbrev = 5, select = 1:2, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> 
+> print(summary(lm(design.resp)))
+Number of observations used: 64 
+Formula:
+results5 ~ (ntree + mtry + replace + nodesize + classwt + cutoff + 
+    maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.099749 -0.020102  0.000515  0.018915  0.052830 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          6.225e-01  5.165e-03 120.522  < 2e-16 ***
+ntree1               2.429e-06  5.165e-03   0.000 0.999628    
+mtry1                8.305e-03  5.165e-03   1.608 0.116851    
+replace1            -3.756e-05  5.165e-03  -0.007 0.994239    
+nodesize1           -3.470e-02  5.165e-03  -6.718 8.87e-08 ***
+classwt1             3.446e-02  5.165e-03   6.672 1.02e-07 ***
+cutoff1              4.149e-03  5.165e-03   0.803 0.427208    
+maxnodes1            4.601e-02  5.165e-03   8.908 1.59e-10 ***
+ntree1:mtry1        -9.708e-05  5.165e-03  -0.019 0.985112    
+ntree1:replace1      3.386e-03  5.165e-03   0.655 0.516465    
+ntree1:nodesize1    -6.333e-04  5.165e-03  -0.123 0.903119    
+ntree1:classwt1     -1.513e-04  5.165e-03  -0.029 0.976805    
+ntree1:cutoff1      -1.694e-04  5.165e-03  -0.033 0.974020    
+ntree1:maxnodes1     4.413e-05  5.165e-03   0.009 0.993231    
+mtry1:replace1      -4.313e-05  5.165e-03  -0.008 0.993385    
+mtry1:nodesize1      1.707e-05  5.165e-03   0.003 0.997381    
+mtry1:classwt1       3.317e-03  5.165e-03   0.642 0.524912    
+mtry1:cutoff1       -5.405e-03  5.165e-03  -1.047 0.302498    
+mtry1:maxnodes1     -2.227e-03  5.165e-03  -0.431 0.669047    
+replace1:nodesize1   1.119e-04  5.165e-03   0.022 0.982833    
+replace1:classwt1   -4.949e-05  5.165e-03  -0.010 0.992409    
+replace1:cutoff1    -1.195e-05  5.165e-03  -0.002 0.998167    
+replace1:maxnodes1   1.925e-04  5.165e-03   0.037 0.970485    
+nodesize1:classwt1   7.144e-03  5.165e-03   1.383 0.175395    
+nodesize1:cutoff1    2.097e-02  5.165e-03   4.059 0.000263 ***
+nodesize1:maxnodes1 -3.803e-02  5.165e-03  -7.364 1.30e-08 ***
+classwt1:cutoff1     5.735e-02  5.165e-03  11.104 5.11e-13 ***
+classwt1:maxnodes1   1.319e-03  5.165e-03   0.255 0.799896    
+cutoff1:maxnodes1   -1.928e-02  5.165e-03  -3.734 0.000670 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.04132 on 35 degrees of freedom
+Multiple R-squared:  0.9165,	Adjusted R-squared:  0.8497 
+F-statistic: 13.72 on 28 and 35 DF,  p-value: 7.264e-12
+
+> model <- lm(design.resp)
+> pr <- resid(model)/(1 - lm.influence(model)$hat)
+> PRESS <- sum(pr^2)
+> PRESS
+[1] 0.1998248
+> 
+###################################################################
+des.deo <- fac.design(  factor.names = list(
++   nodesize = c(-1,1),classwt = c(-1,1),cutoff = c(-1,1),
++   maxnodes = c(-1,1) ) ,replications = 2,  seed = 6285)
+creating full factorial with 16 runs ...
+
+> des.deo
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks
+1       1           3.1       -1       1     -1       -1     .1
+2       2          10.1        1      -1     -1        1     .1
+3       3          16.1        1       1      1        1     .1
+4       4          12.1        1       1     -1        1     .1
+5       5          11.1       -1       1     -1        1     .1
+6       6           6.1        1      -1      1       -1     .1
+7       7          13.1       -1      -1      1        1     .1
+8       8           7.1       -1       1      1       -1     .1
+9       9          14.1        1      -1      1        1     .1
+10     10           9.1       -1      -1     -1        1     .1
+11     11           1.1       -1      -1     -1       -1     .1
+12     12           5.1       -1      -1      1       -1     .1
+13     13           4.1        1       1     -1       -1     .1
+14     14          15.1       -1       1      1        1     .1
+15     15           2.1        1      -1     -1       -1     .1
+16     16           8.1        1       1      1       -1     .1
+17     17          15.2       -1       1      1        1     .2
+18     18          13.2       -1      -1      1        1     .2
+19     19           9.2       -1      -1     -1        1     .2
+20     20          12.2        1       1     -1        1     .2
+21     21          14.2        1      -1      1        1     .2
+22     22          16.2        1       1      1        1     .2
+23     23           4.2        1       1     -1       -1     .2
+24     24           3.2       -1       1     -1       -1     .2
+25     25           5.2       -1      -1      1       -1     .2
+26     26           7.2       -1       1      1       -1     .2
+27     27           1.2       -1      -1     -1       -1     .2
+28     28          11.2       -1       1     -1        1     .2
+29     29           2.2        1      -1     -1       -1     .2
+30     30           6.2        1      -1      1       -1     .2
+31     31           8.2        1       1      1       -1     .2
+32     32          10.2        1      -1     -1        1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+> print(des.deo)
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks
+1       1           3.1       -1       1     -1       -1     .1
+2       2          10.1        1      -1     -1        1     .1
+3       3          16.1        1       1      1        1     .1
+4       4          12.1        1       1     -1        1     .1
+5       5          11.1       -1       1     -1        1     .1
+6       6           6.1        1      -1      1       -1     .1
+7       7          13.1       -1      -1      1        1     .1
+8       8           7.1       -1       1      1       -1     .1
+9       9          14.1        1      -1      1        1     .1
+10     10           9.1       -1      -1     -1        1     .1
+11     11           1.1       -1      -1     -1       -1     .1
+12     12           5.1       -1      -1      1       -1     .1
+13     13           4.1        1       1     -1       -1     .1
+14     14          15.1       -1       1      1        1     .1
+15     15           2.1        1      -1     -1       -1     .1
+16     16           8.1        1       1      1       -1     .1
+17     17          15.2       -1       1      1        1     .2
+18     18          13.2       -1      -1      1        1     .2
+19     19           9.2       -1      -1     -1        1     .2
+20     20          12.2        1       1     -1        1     .2
+21     21          14.2        1      -1      1        1     .2
+22     22          16.2        1       1      1        1     .2
+23     23           4.2        1       1     -1       -1     .2
+24     24           3.2       -1       1     -1       -1     .2
+25     25           5.2       -1      -1      1       -1     .2
+26     26           7.2       -1       1      1       -1     .2
+27     27           1.2       -1      -1     -1       -1     .2
+28     28          11.2       -1       1     -1        1     .2
+29     29           2.2        1      -1     -1       -1     .2
+30     30           6.2        1      -1      1       -1     .2
+31     31           8.2        1       1      1       -1     .2
+32     32          10.2        1      -1     -1        1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+> print(summary(des.deo))
+Call:
+fac.design(factor.names = list(nodesize = c(-1, 1), classwt = c(-1, 
+    1), cutoff = c(-1, 1), maxnodes = c(-1, 1)), replications = 2, 
+    seed = 6285)
+
+Experimental design of type  full factorial 
+16  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff maxnodes
+1       -1      -1     -1       -1
+2        1       1      1        1
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks
+1       1           3.1       -1       1     -1       -1     .1
+2       2          10.1        1      -1     -1        1     .1
+3       3          16.1        1       1      1        1     .1
+4       4          12.1        1       1     -1        1     .1
+5       5          11.1       -1       1     -1        1     .1
+6       6           6.1        1      -1      1       -1     .1
+7       7          13.1       -1      -1      1        1     .1
+8       8           7.1       -1       1      1       -1     .1
+9       9          14.1        1      -1      1        1     .1
+10     10           9.1       -1      -1     -1        1     .1
+11     11           1.1       -1      -1     -1       -1     .1
+12     12           5.1       -1      -1      1       -1     .1
+13     13           4.1        1       1     -1       -1     .1
+14     14          15.1       -1       1      1        1     .1
+15     15           2.1        1      -1     -1       -1     .1
+16     16           8.1        1       1      1       -1     .1
+17     17          15.2       -1       1      1        1     .2
+18     18          13.2       -1      -1      1        1     .2
+19     19           9.2       -1      -1     -1        1     .2
+20     20          12.2        1       1     -1        1     .2
+21     21          14.2        1      -1      1        1     .2
+22     22          16.2        1       1      1        1     .2
+23     23           4.2        1       1     -1       -1     .2
+24     24           3.2       -1       1     -1       -1     .2
+25     25           5.2       -1      -1      1       -1     .2
+26     26           7.2       -1       1      1       -1     .2
+27     27           1.2       -1      -1     -1       -1     .2
+28     28          11.2       -1       1     -1        1     .2
+29     29           2.2        1      -1     -1       -1     .2
+30     30           6.2        1      -1      1       -1     .2
+31     31           8.2        1       1      1       -1     .2
+32     32          10.2        1      -1     -1        1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+NULL
+> 
+> results.doe <- c()
+> Sys.time()
+[1] "2020-04-06 15:47:18 EDT"
+> 
+> for (i in 1:nrow(des.deo)){
++   if (des.deo$nodesize[i] == -1)  {nodesize <- 1} else {nodesize <- floor(0.1*nrow(df))}
++   if (des.deo$classwt[i] == -1)   {classwt <- c(1,10)} else {classwt <- c(10,1)}
++   if (des.deo$cutoff[i] == -1)    {cutoff <- c(0.2, 1 -0.2)} else {cutoff <- c(0.8,1-0.8)}
++   if (des.deo$maxnodes[i] == -1)  {maxnodes <- 5} else {maxnodes <- NULL}
++   
++   #cross-validation
++   createIndex <- rep(1:10, length.out = nrow(df))
++   randomIndex <- sample(createIndex)
++   
++   innerResults <- c()
++   
++   TP   <-  0
++   FN   <-  0
++   FP   <-  0
++   TN   <-  0
++   
++   for (j in 1:10){
++     
++     print(paste("fold",j,"of run", i))
++     train <- df[-which(randomIndex == j),]
++     test <-  df[ which(randomIndex == j),]
++     
++     
++     
++     RFmodel <- randomForest(x = train[,retained.predictors], y = train[,"my_res"],
++                             xtest = test[,retained.predictors], ytest = test[,"my_res"],
++                             nodesize = nodesize,
++                             classwt = classwt,
++                             cutoff = cutoff,
++                             maxnodes = maxnodes)
++     
++     confu <- as.data.frame(RFmodel$test$confusion)
++     
++     TP   <-  TP + confu[labels[2], labels[2]] 
++     FN   <-  FN + confu[labels[2], labels[1]]
++     FP   <-  FP + confu[labels[1], labels[2]]
++     TN   <-  TN + confu[labels[1], labels[1]]
++     
++   }
++   
++   TPR <- TP/(TP+FN)
++   TNR <- TN/(TN+FP)
++   BACC <- (TPR + TNR)/2
++   print(BACC)
++   results.doe <- c(results.doe, BACC)
++   
++ }
+[1] "fold 1 of run 1"
+[1] "fold 2 of run 1"
+[1] "fold 3 of run 1"
+[1] "fold 4 of run 1"
+[1] "fold 5 of run 1"
+[1] "fold 6 of run 1"
+[1] "fold 7 of run 1"
+[1] "fold 8 of run 1"
+[1] "fold 9 of run 1"
+[1] "fold 10 of run 1"
+[1] 0.5059264
+[1] "fold 1 of run 2"
+[1] "fold 2 of run 2"
+[1] "fold 3 of run 2"
+[1] "fold 4 of run 2"
+[1] "fold 5 of run 2"
+[1] "fold 6 of run 2"
+[1] "fold 7 of run 2"
+[1] "fold 8 of run 2"
+[1] "fold 9 of run 2"
+[1] "fold 10 of run 2"
+[1] 0.5925947
+[1] "fold 1 of run 3"
+[1] "fold 2 of run 3"
+[1] "fold 3 of run 3"
+[1] "fold 4 of run 3"
+[1] "fold 5 of run 3"
+[1] "fold 6 of run 3"
+[1] "fold 7 of run 3"
+[1] "fold 8 of run 3"
+[1] "fold 9 of run 3"
+[1] "fold 10 of run 3"
+[1] 0.7401605
+[1] "fold 1 of run 4"
+[1] "fold 2 of run 4"
+[1] "fold 3 of run 4"
+[1] "fold 4 of run 4"
+[1] "fold 5 of run 4"
+[1] "fold 6 of run 4"
+[1] "fold 7 of run 4"
+[1] "fold 8 of run 4"
+[1] "fold 9 of run 4"
+[1] "fold 10 of run 4"
+[1] 0.5566888
+[1] "fold 1 of run 5"
+[1] "fold 2 of run 5"
+[1] "fold 3 of run 5"
+[1] "fold 4 of run 5"
+[1] "fold 5 of run 5"
+[1] "fold 6 of run 5"
+[1] "fold 7 of run 5"
+[1] "fold 8 of run 5"
+[1] "fold 9 of run 5"
+[1] "fold 10 of run 5"
+[1] 0.8094657
+[1] "fold 1 of run 6"
+[1] "fold 2 of run 6"
+[1] "fold 3 of run 6"
+[1] "fold 4 of run 6"
+[1] "fold 5 of run 6"
+[1] "fold 6 of run 6"
+[1] "fold 7 of run 6"
+[1] "fold 8 of run 6"
+[1] "fold 9 of run 6"
+[1] "fold 10 of run 6"
+[1] 0.5
+[1] "fold 1 of run 7"
+[1] "fold 2 of run 7"
+[1] "fold 3 of run 7"
+[1] "fold 4 of run 7"
+[1] "fold 5 of run 7"
+[1] "fold 6 of run 7"
+[1] "fold 7 of run 7"
+[1] "fold 8 of run 7"
+[1] "fold 9 of run 7"
+[1] "fold 10 of run 7"
+[1] 0.644294
+[1] "fold 1 of run 8"
+[1] "fold 2 of run 8"
+[1] "fold 3 of run 8"
+[1] "fold 4 of run 8"
+[1] "fold 5 of run 8"
+[1] "fold 6 of run 8"
+[1] "fold 7 of run 8"
+[1] "fold 8 of run 8"
+[1] "fold 9 of run 8"
+[1] "fold 10 of run 8"
+[1] 0.7058466
+[1] "fold 1 of run 9"
+[1] "fold 2 of run 9"
+[1] "fold 3 of run 9"
+[1] "fold 4 of run 9"
+[1] "fold 5 of run 9"
+[1] "fold 6 of run 9"
+[1] "fold 7 of run 9"
+[1] "fold 8 of run 9"
+[1] "fold 9 of run 9"
+[1] "fold 10 of run 9"
+[1] 0.5
+[1] "fold 1 of run 10"
+[1] "fold 2 of run 10"
+[1] "fold 3 of run 10"
+[1] "fold 4 of run 10"
+[1] "fold 5 of run 10"
+[1] "fold 6 of run 10"
+[1] "fold 7 of run 10"
+[1] "fold 8 of run 10"
+[1] "fold 9 of run 10"
+[1] "fold 10 of run 10"
+[1] 0.8117363
+[1] "fold 1 of run 11"
+[1] "fold 2 of run 11"
+[1] "fold 3 of run 11"
+[1] "fold 4 of run 11"
+[1] "fold 5 of run 11"
+[1] "fold 6 of run 11"
+[1] "fold 7 of run 11"
+[1] "fold 8 of run 11"
+[1] "fold 9 of run 11"
+[1] "fold 10 of run 11"
+[1] 0.5875307
+[1] "fold 1 of run 12"
+[1] "fold 2 of run 12"
+[1] "fold 3 of run 12"
+[1] "fold 4 of run 12"
+[1] "fold 5 of run 12"
+[1] "fold 6 of run 12"
+[1] "fold 7 of run 12"
+[1] "fold 8 of run 12"
+[1] "fold 9 of run 12"
+[1] "fold 10 of run 12"
+[1] 0.5
+[1] "fold 1 of run 13"
+[1] "fold 2 of run 13"
+[1] "fold 3 of run 13"
+[1] "fold 4 of run 13"
+[1] "fold 5 of run 13"
+[1] "fold 6 of run 13"
+[1] "fold 7 of run 13"
+[1] "fold 8 of run 13"
+[1] "fold 9 of run 13"
+[1] "fold 10 of run 13"
+[1] 0.5009506
+[1] "fold 1 of run 14"
+[1] "fold 2 of run 14"
+[1] "fold 3 of run 14"
+[1] "fold 4 of run 14"
+[1] "fold 5 of run 14"
+[1] "fold 6 of run 14"
+[1] "fold 7 of run 14"
+[1] "fold 8 of run 14"
+[1] "fold 9 of run 14"
+[1] "fold 10 of run 14"
+[1] 0.7333295
+[1] "fold 1 of run 15"
+[1] "fold 2 of run 15"
+[1] "fold 3 of run 15"
+[1] "fold 4 of run 15"
+[1] "fold 5 of run 15"
+[1] "fold 6 of run 15"
+[1] "fold 7 of run 15"
+[1] "fold 8 of run 15"
+[1] "fold 9 of run 15"
+[1] "fold 10 of run 15"
+[1] 0.5875307
+[1] "fold 1 of run 16"
+[1] "fold 2 of run 16"
+[1] "fold 3 of run 16"
+[1] "fold 4 of run 16"
+[1] "fold 5 of run 16"
+[1] "fold 6 of run 16"
+[1] "fold 7 of run 16"
+[1] "fold 8 of run 16"
+[1] "fold 9 of run 16"
+[1] "fold 10 of run 16"
+[1] 0.717207
+[1] "fold 1 of run 17"
+[1] "fold 2 of run 17"
+[1] "fold 3 of run 17"
+[1] "fold 4 of run 17"
+[1] "fold 5 of run 17"
+[1] "fold 6 of run 17"
+[1] "fold 7 of run 17"
+[1] "fold 8 of run 17"
+[1] "fold 9 of run 17"
+[1] "fold 10 of run 17"
+[1] 0.7333247
+[1] "fold 1 of run 18"
+[1] "fold 2 of run 18"
+[1] "fold 3 of run 18"
+[1] "fold 4 of run 18"
+[1] "fold 5 of run 18"
+[1] "fold 6 of run 18"
+[1] "fold 7 of run 18"
+[1] "fold 8 of run 18"
+[1] "fold 9 of run 18"
+[1] "fold 10 of run 18"
+[1] 0.6442707
+[1] "fold 1 of run 19"
+[1] "fold 2 of run 19"
+[1] "fold 3 of run 19"
+[1] "fold 4 of run 19"
+[1] "fold 5 of run 19"
+[1] "fold 6 of run 19"
+[1] "fold 7 of run 19"
+[1] "fold 8 of run 19"
+[1] "fold 9 of run 19"
+[1] "fold 10 of run 19"
+[1] 0.8106071
+[1] "fold 1 of run 20"
+[1] "fold 2 of run 20"
+[1] "fold 3 of run 20"
+[1] "fold 4 of run 20"
+[1] "fold 5 of run 20"
+[1] "fold 6 of run 20"
+[1] "fold 7 of run 20"
+[1] "fold 8 of run 20"
+[1] "fold 9 of run 20"
+[1] "fold 10 of run 20"
+[1] 0.5539785
+[1] "fold 1 of run 21"
+[1] "fold 2 of run 21"
+[1] "fold 3 of run 21"
+[1] "fold 4 of run 21"
+[1] "fold 5 of run 21"
+[1] "fold 6 of run 21"
+[1] "fold 7 of run 21"
+[1] "fold 8 of run 21"
+[1] "fold 9 of run 21"
+[1] "fold 10 of run 21"
+[1] 0.5
+[1] "fold 1 of run 22"
+[1] "fold 2 of run 22"
+[1] "fold 3 of run 22"
+[1] "fold 4 of run 22"
+[1] "fold 5 of run 22"
+[1] "fold 6 of run 22"
+[1] "fold 7 of run 22"
+[1] "fold 8 of run 22"
+[1] "fold 9 of run 22"
+[1] "fold 10 of run 22"
+[1] 0.7406443
+[1] "fold 1 of run 23"
+[1] "fold 2 of run 23"
+[1] "fold 3 of run 23"
+[1] "fold 4 of run 23"
+[1] "fold 5 of run 23"
+[1] "fold 6 of run 23"
+[1] "fold 7 of run 23"
+[1] "fold 8 of run 23"
+[1] "fold 9 of run 23"
+[1] "fold 10 of run 23"
+[1] 0.5004854
+[1] "fold 1 of run 24"
+[1] "fold 2 of run 24"
+[1] "fold 3 of run 24"
+[1] "fold 4 of run 24"
+[1] "fold 5 of run 24"
+[1] "fold 6 of run 24"
+[1] "fold 7 of run 24"
+[1] "fold 8 of run 24"
+[1] "fold 9 of run 24"
+[1] "fold 10 of run 24"
+[1] 0.5068972
+[1] "fold 1 of run 25"
+[1] "fold 2 of run 25"
+[1] "fold 3 of run 25"
+[1] "fold 4 of run 25"
+[1] "fold 5 of run 25"
+[1] "fold 6 of run 25"
+[1] "fold 7 of run 25"
+[1] "fold 8 of run 25"
+[1] "fold 9 of run 25"
+[1] "fold 10 of run 25"
+[1] 0.5
+[1] "fold 1 of run 26"
+[1] "fold 2 of run 26"
+[1] "fold 3 of run 26"
+[1] "fold 4 of run 26"
+[1] "fold 5 of run 26"
+[1] "fold 6 of run 26"
+[1] "fold 7 of run 26"
+[1] "fold 8 of run 26"
+[1] "fold 9 of run 26"
+[1] "fold 10 of run 26"
+[1] 0.7062775
+[1] "fold 1 of run 27"
+[1] "fold 2 of run 27"
+[1] "fold 3 of run 27"
+[1] "fold 4 of run 27"
+[1] "fold 5 of run 27"
+[1] "fold 6 of run 27"
+[1] "fold 7 of run 27"
+[1] "fold 8 of run 27"
+[1] "fold 9 of run 27"
+[1] "fold 10 of run 27"
+[1] 0.5875307
+[1] "fold 1 of run 28"
+[1] "fold 2 of run 28"
+[1] "fold 3 of run 28"
+[1] "fold 4 of run 28"
+[1] "fold 5 of run 28"
+[1] "fold 6 of run 28"
+[1] "fold 7 of run 28"
+[1] "fold 8 of run 28"
+[1] "fold 9 of run 28"
+[1] "fold 10 of run 28"
+[1] 0.8092151
+[1] "fold 1 of run 29"
+[1] "fold 2 of run 29"
+[1] "fold 3 of run 29"
+[1] "fold 4 of run 29"
+[1] "fold 5 of run 29"
+[1] "fold 6 of run 29"
+[1] "fold 7 of run 29"
+[1] "fold 8 of run 29"
+[1] "fold 9 of run 29"
+[1] "fold 10 of run 29"
+[1] 0.5875307
+[1] "fold 1 of run 30"
+[1] "fold 2 of run 30"
+[1] "fold 3 of run 30"
+[1] "fold 4 of run 30"
+[1] "fold 5 of run 30"
+[1] "fold 6 of run 30"
+[1] "fold 7 of run 30"
+[1] "fold 8 of run 30"
+[1] "fold 9 of run 30"
+[1] "fold 10 of run 30"
+[1] 0.5
+[1] "fold 1 of run 31"
+[1] "fold 2 of run 31"
+[1] "fold 3 of run 31"
+[1] "fold 4 of run 31"
+[1] "fold 5 of run 31"
+[1] "fold 6 of run 31"
+[1] "fold 7 of run 31"
+[1] "fold 8 of run 31"
+[1] "fold 9 of run 31"
+[1] "fold 10 of run 31"
+[1] 0.7175275
+[1] "fold 1 of run 32"
+[1] "fold 2 of run 32"
+[1] "fold 3 of run 32"
+[1] "fold 4 of run 32"
+[1] "fold 5 of run 32"
+[1] "fold 6 of run 32"
+[1] "fold 7 of run 32"
+[1] "fold 8 of run 32"
+[1] "fold 9 of run 32"
+[1] "fold 10 of run 32"
+[1] 0.5925745
+> Sys.time()
+[1] "2020-04-06 19:14:46 EDT"
+> 
+> design.resp.doe <- add.response(des.deo, results.doe)
+> print(summary(design.resp.doe))
+Call:
+fac.design(factor.names = list(nodesize = c(-1, 1), classwt = c(-1, 
+    1), cutoff = c(-1, 1), maxnodes = c(-1, 1)), replications = 2, 
+    seed = 6285)
+
+Experimental design of type  full factorial 
+16  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff maxnodes
+1       -1      -1     -1       -1
+2        1       1      1        1
+
+Responses:
+[1] results.doe
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks results.doe
+1       1           3.1       -1       1     -1       -1     .1   0.5059264
+2       2          10.1        1      -1     -1        1     .1   0.5925947
+3       3          16.1        1       1      1        1     .1   0.7401605
+4       4          12.1        1       1     -1        1     .1   0.5566888
+5       5          11.1       -1       1     -1        1     .1   0.8094657
+6       6           6.1        1      -1      1       -1     .1   0.5000000
+7       7          13.1       -1      -1      1        1     .1   0.6442940
+8       8           7.1       -1       1      1       -1     .1   0.7058466
+9       9          14.1        1      -1      1        1     .1   0.5000000
+10     10           9.1       -1      -1     -1        1     .1   0.8117363
+11     11           1.1       -1      -1     -1       -1     .1   0.5875307
+12     12           5.1       -1      -1      1       -1     .1   0.5000000
+13     13           4.1        1       1     -1       -1     .1   0.5009506
+14     14          15.1       -1       1      1        1     .1   0.7333295
+15     15           2.1        1      -1     -1       -1     .1   0.5875307
+16     16           8.1        1       1      1       -1     .1   0.7172070
+17     17          15.2       -1       1      1        1     .2   0.7333247
+18     18          13.2       -1      -1      1        1     .2   0.6442707
+19     19           9.2       -1      -1     -1        1     .2   0.8106071
+20     20          12.2        1       1     -1        1     .2   0.5539785
+21     21          14.2        1      -1      1        1     .2   0.5000000
+22     22          16.2        1       1      1        1     .2   0.7406443
+23     23           4.2        1       1     -1       -1     .2   0.5004854
+24     24           3.2       -1       1     -1       -1     .2   0.5068972
+25     25           5.2       -1      -1      1       -1     .2   0.5000000
+26     26           7.2       -1       1      1       -1     .2   0.7062775
+27     27           1.2       -1      -1     -1       -1     .2   0.5875307
+28     28          11.2       -1       1     -1        1     .2   0.8092151
+29     29           2.2        1      -1     -1       -1     .2   0.5875307
+30     30           6.2        1      -1      1       -1     .2   0.5000000
+31     31           8.2        1       1      1       -1     .2   0.7175275
+32     32          10.2        1      -1     -1        1     .2   0.5925745
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+NULL
+> 
+> write.csv(design.resp.doe, "RFfullDOE.csv")
+> save(design.resp.doe, file = "RFfullDOE.RData")
+> load('RFfullDOE.RData')
+> 
+> MEPlot(design.resp.doe, abbrev = 5, cex.xax = 1.6, cex.main = 2)
+>  
+> IAPlot(design.resp.doe, abbrev = 5, show.alias = TRUE, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> 
+> print(summary(lm(design.resp.doe)))
+Number of observations used: 32 
+Formula:
+results.doe ~ (nodesize + classwt + cutoff + maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.064071 -0.018306 -0.006598  0.027205  0.050403 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          0.624504   0.006592  94.741  < 2e-16 ***
+nodesize1           -0.037762   0.006592  -5.729 1.10e-05 ***
+classwt1             0.034116   0.006592   5.176 3.96e-05 ***
+cutoff1              0.005676   0.006592   0.861  0.39890    
+maxnodes1            0.048801   0.006592   7.403 2.79e-07 ***
+nodesize1:classwt1   0.007597   0.006592   1.152  0.26207    
+nodesize1:cutoff1    0.022024   0.006592   3.341  0.00310 ** 
+nodesize1:maxnodes1 -0.038463   0.006592  -5.835 8.60e-06 ***
+classwt1:cutoff1     0.059993   0.006592   9.101 9.81e-09 ***
+classwt1:maxnodes1   0.002179   0.006592   0.331  0.74422    
+cutoff1:maxnodes1   -0.024479   0.006592  -3.714  0.00129 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.03729 on 21 degrees of freedom
+Multiple R-squared:  0.9248,	Adjusted R-squared:  0.8891 
+F-statistic: 25.84 on 10 and 21 DF,  p-value: 1.39e-09
+
+> model <- lm(design.resp.doe)
+> pr <- resid(model)/(1 - lm.influence(model)$hat)
+> PRESS <- sum(pr^2)
+> PRESS
+[1] 0.06779865
+#################################################Fact 3333
+des.fac3 <- fac.design(  factor.names = list(
++   nodesize = c(-1,1),classwt = c(-1,1),cutoff = c(-1,1)) ,  replications =2,seed = 6285)
+creating full factorial with 8 runs ...
+
+> print(des.fac3)
+   run.no run.no.std.rp nodesize classwt cutoff Blocks
+1       1           3.1       -1       1     -1     .1
+2       2           2.1        1      -1     -1     .1
+3       3           8.1        1       1      1     .1
+4       4           4.1        1       1     -1     .1
+5       5           6.1        1      -1      1     .1
+6       6           7.1       -1       1      1     .1
+7       7           5.1       -1      -1      1     .1
+8       8           1.1       -1      -1     -1     .1
+9       9           7.2       -1       1      1     .2
+10     10           3.2       -1       1     -1     .2
+11     11           1.2       -1      -1     -1     .2
+12     12           5.2       -1      -1      1     .2
+13     13           4.2        1       1     -1     .2
+14     14           6.2        1      -1      1     .2
+15     15           2.2        1      -1     -1     .2
+16     16           8.2        1       1      1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+> print(summary(des.fac3))
+Call:
+fac.design(factor.names = list(nodesize = c(-1, 1), classwt = c(-1, 
+    1), cutoff = c(-1, 1)), replications = 2, seed = 6285)
+
+Experimental design of type  full factorial 
+8  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff
+1       -1      -1     -1
+2        1       1      1
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff Blocks
+1       1           3.1       -1       1     -1     .1
+2       2           2.1        1      -1     -1     .1
+3       3           8.1        1       1      1     .1
+4       4           4.1        1       1     -1     .1
+5       5           6.1        1      -1      1     .1
+6       6           7.1       -1       1      1     .1
+7       7           5.1       -1      -1      1     .1
+8       8           1.1       -1      -1     -1     .1
+9       9           7.2       -1       1      1     .2
+10     10           3.2       -1       1     -1     .2
+11     11           1.2       -1      -1     -1     .2
+12     12           5.2       -1      -1      1     .2
+13     13           4.2        1       1     -1     .2
+14     14           6.2        1      -1      1     .2
+15     15           2.2        1      -1     -1     .2
+16     16           8.2        1       1      1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+NULL
+> 
+> results.fac3 <- c()
+> Sys.time()
+[1] "2020-04-06 21:23:03 EDT"
+> 
+> for (i in 1:nrow(des.fac3)){
++   if (des.fac3$nodesize[i] == -1)  {nodesize <- 1} else {nodesize <- floor(0.1*nrow(df))}
++   if (des.fac3$classwt[i] == -1)   {classwt <- c(1,10)} else {classwt <- c(10,1)}
++   if (des.fac3$cutoff[i] == -1)    {cutoff <- c(0.2, 1 -0.2)} else {cutoff <- c(0.8,1-0.8)}
++   
++   
++   #cross-validation
++   createIndex <- rep(1:10, length.out = nrow(df))
++   randomIndex <- sample(createIndex)
++   
++   innerResults <- c()
++   
++   TP   <-  0
++   FN   <-  0
++   FP   <-  0
++   TN   <-  0
++   
++   for (j in 1:10){
++     
++     print(paste("fold",j,"of run", i))
++     train <- df[-which(randomIndex == j),]
++     test <-  df[ which(randomIndex == j),]
++     
++     
++     
++     RFmodel <- randomForest(x = train[,retained.predictors], y = train[,"my_res"],
++                             xtest = test[,retained.predictors], ytest = test[,"my_res"],
++                             nodesize = nodesize,
++                             classwt = classwt,
++                             cutoff = cutoff)
++     
++     confu <- as.data.frame(RFmodel$test$confusion)
++     
++     TP   <-  TP + confu[labels[2], labels[2]] 
++     FN   <-  FN + confu[labels[2], labels[1]]
++     FP   <-  FP + confu[labels[1], labels[2]]
++     TN   <-  TN + confu[labels[1], labels[1]]
++     
++   }
++   
++   TPR <- TP/(TP+FN)
++   TNR <- TN/(TN+FP)
++   BACC <- (TPR + TNR)/2
++   print(BACC)
++   results.fac3 <- c(results.fac3, BACC)
++   
++ }
+[1] "fold 1 of run 1"
+[1] "fold 2 of run 1"
+[1] "fold 3 of run 1"
+[1] "fold 4 of run 1"
+[1] "fold 5 of run 1"
+[1] "fold 6 of run 1"
+[1] "fold 7 of run 1"
+[1] "fold 8 of run 1"
+[1] "fold 9 of run 1"
+[1] "fold 10 of run 1"
+[1] 0.8093025
+[1] "fold 1 of run 2"
+[1] "fold 2 of run 2"
+[1] "fold 3 of run 2"
+[1] "fold 4 of run 2"
+[1] "fold 5 of run 2"
+[1] "fold 6 of run 2"
+[1] "fold 7 of run 2"
+[1] "fold 8 of run 2"
+[1] "fold 9 of run 2"
+[1] "fold 10 of run 2"
+[1] 0.5927425
+[1] "fold 1 of run 3"
+[1] "fold 2 of run 3"
+[1] "fold 3 of run 3"
+[1] "fold 4 of run 3"
+[1] "fold 5 of run 3"
+[1] "fold 6 of run 3"
+[1] "fold 7 of run 3"
+[1] "fold 8 of run 3"
+[1] "fold 9 of run 3"
+[1] "fold 10 of run 3"
+[1] 0.7399518
+[1] "fold 1 of run 4"
+[1] "fold 2 of run 4"
+[1] "fold 3 of run 4"
+[1] "fold 4 of run 4"
+[1] "fold 5 of run 4"
+[1] "fold 6 of run 4"
+[1] "fold 7 of run 4"
+[1] "fold 8 of run 4"
+[1] "fold 9 of run 4"
+[1] "fold 10 of run 4"
+[1] 0.5547673
+[1] "fold 1 of run 5"
+[1] "fold 2 of run 5"
+[1] "fold 3 of run 5"
+[1] "fold 4 of run 5"
+[1] "fold 5 of run 5"
+[1] "fold 6 of run 5"
+[1] "fold 7 of run 5"
+[1] "fold 8 of run 5"
+[1] "fold 9 of run 5"
+[1] "fold 10 of run 5"
+[1] 0.5
+[1] "fold 1 of run 6"
+[1] "fold 2 of run 6"
+[1] "fold 3 of run 6"
+[1] "fold 4 of run 6"
+[1] "fold 5 of run 6"
+[1] "fold 6 of run 6"
+[1] "fold 7 of run 6"
+[1] "fold 8 of run 6"
+[1] "fold 9 of run 6"
+[1] "fold 10 of run 6"
+[1] 0.7332595
+[1] "fold 1 of run 7"
+[1] "fold 2 of run 7"
+[1] "fold 3 of run 7"
+[1] "fold 4 of run 7"
+[1] "fold 5 of run 7"
+[1] "fold 6 of run 7"
+[1] "fold 7 of run 7"
+[1] "fold 8 of run 7"
+[1] "fold 9 of run 7"
+[1] "fold 10 of run 7"
+[1] 0.6436999
+[1] "fold 1 of run 8"
+[1] "fold 2 of run 8"
+[1] "fold 3 of run 8"
+[1] "fold 4 of run 8"
+[1] "fold 5 of run 8"
+[1] "fold 6 of run 8"
+[1] "fold 7 of run 8"
+[1] "fold 8 of run 8"
+[1] "fold 9 of run 8"
+[1] "fold 10 of run 8"
+[1] 0.8125859
+[1] "fold 1 of run 9"
+[1] "fold 2 of run 9"
+[1] "fold 3 of run 9"
+[1] "fold 4 of run 9"
+[1] "fold 5 of run 9"
+[1] "fold 6 of run 9"
+[1] "fold 7 of run 9"
+[1] "fold 8 of run 9"
+[1] "fold 9 of run 9"
+[1] "fold 10 of run 9"
+[1] 0.7301021
+[1] "fold 1 of run 10"
+[1] "fold 2 of run 10"
+[1] "fold 3 of run 10"
+[1] "fold 4 of run 10"
+[1] "fold 5 of run 10"
+[1] "fold 6 of run 10"
+[1] "fold 7 of run 10"
+[1] "fold 8 of run 10"
+[1] "fold 9 of run 10"
+[1] "fold 10 of run 10"
+[1] 0.8101006
+[1] "fold 1 of run 11"
+[1] "fold 2 of run 11"
+[1] "fold 3 of run 11"
+[1] "fold 4 of run 11"
+[1] "fold 5 of run 11"
+[1] "fold 6 of run 11"
+[1] "fold 7 of run 11"
+[1] "fold 8 of run 11"
+[1] "fold 9 of run 11"
+[1] "fold 10 of run 11"
+[1] 0.8109931
+[1] "fold 1 of run 12"
+[1] "fold 2 of run 12"
+[1] "fold 3 of run 12"
+[1] "fold 4 of run 12"
+[1] "fold 5 of run 12"
+[1] "fold 6 of run 12"
+[1] "fold 7 of run 12"
+[1] "fold 8 of run 12"
+[1] "fold 9 of run 12"
+[1] "fold 10 of run 12"
+[1] 0.6441867
+[1] "fold 1 of run 13"
+[1] "fold 2 of run 13"
+[1] "fold 3 of run 13"
+[1] "fold 4 of run 13"
+[1] "fold 5 of run 13"
+[1] "fold 6 of run 13"
+[1] "fold 7 of run 13"
+[1] "fold 8 of run 13"
+[1] "fold 9 of run 13"
+[1] "fold 10 of run 13"
+[1] 0.555553
+[1] "fold 1 of run 14"
+[1] "fold 2 of run 14"
+[1] "fold 3 of run 14"
+[1] "fold 4 of run 14"
+[1] "fold 5 of run 14"
+[1] "fold 6 of run 14"
+[1] "fold 7 of run 14"
+[1] "fold 8 of run 14"
+[1] "fold 9 of run 14"
+[1] "fold 10 of run 14"
+[1] 0.4999798
+[1] "fold 1 of run 15"
+[1] "fold 2 of run 15"
+[1] "fold 3 of run 15"
+[1] "fold 4 of run 15"
+[1] "fold 5 of run 15"
+[1] "fold 6 of run 15"
+[1] "fold 7 of run 15"
+[1] "fold 8 of run 15"
+[1] "fold 9 of run 15"
+[1] "fold 10 of run 15"
+[1] 0.5926585
+[1] "fold 1 of run 16"
+[1] "fold 2 of run 16"
+[1] "fold 3 of run 16"
+[1] "fold 4 of run 16"
+[1] "fold 5 of run 16"
+[1] "fold 6 of run 16"
+[1] "fold 7 of run 16"
+[1] "fold 8 of run 16"
+[1] "fold 9 of run 16"
+[1] "fold 10 of run 16"
+[1] 0.7397759
+> Sys.time()
+[1] "2020-04-07 00:05:53 EDT"
+> 
+> design.resp.fac3 <- add.response(des.fac3, results.fac3)
+> print(summary(design.resp.fac3))
+Call:
+fac.design(factor.names = list(nodesize = c(-1, 1), classwt = c(-1, 
+    1), cutoff = c(-1, 1)), replications = 2, seed = 6285)
+
+Experimental design of type  full factorial 
+8  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff
+1       -1      -1     -1
+2        1       1      1
+
+Responses:
+[1] results.fac3
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff Blocks results.fac3
+1       1           3.1       -1       1     -1     .1    0.8093025
+2       2           2.1        1      -1     -1     .1    0.5927425
+3       3           8.1        1       1      1     .1    0.7399518
+4       4           4.1        1       1     -1     .1    0.5547673
+5       5           6.1        1      -1      1     .1    0.5000000
+6       6           7.1       -1       1      1     .1    0.7332595
+7       7           5.1       -1      -1      1     .1    0.6436999
+8       8           1.1       -1      -1     -1     .1    0.8125859
+9       9           7.2       -1       1      1     .2    0.7301021
+10     10           3.2       -1       1     -1     .2    0.8101006
+11     11           1.2       -1      -1     -1     .2    0.8109931
+12     12           5.2       -1      -1      1     .2    0.6441867
+13     13           4.2        1       1     -1     .2    0.5555530
+14     14           6.2        1      -1      1     .2    0.4999798
+15     15           2.2        1      -1     -1     .2    0.5926585
+16     16           8.2        1       1      1     .2    0.7397759
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation,  not part of the data frame
+NULL
+> 
+> write.csv(design.resp.fac3, "RFfullfac3.csv")
+> save(design.resp.fac3, file = "RFfullfac3.RData")
+> load('RFfullfac3.RData')
+> 
+> MEPlot(design.resp.fac3, abbrev = 5, cex.xax = 1.6, cex.main = 2)
+> 
+> IAPlot(design.resp.fac3, abbrev = 5, show.alias = TRUE, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> 
+> print(summary(lm(design.resp.fac3)))
+Number of observations used: 16 
+Formula:
+results.fac3 ~ (nodesize + classwt + cutoff)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0250274 -0.0234435  0.0005898  0.0234276  0.0238477 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         0.673104   0.007819  86.082 1.95e-14 ***
+nodesize1          -0.076175   0.007819  -9.742 4.45e-06 ***
+classwt1            0.035998   0.007819   4.604 0.001284 ** 
+cutoff1            -0.019234   0.007819  -2.460 0.036168 *  
+nodesize1:classwt1  0.014586   0.007819   1.865 0.095005 .  
+nodesize1:cutoff1   0.042233   0.007819   5.401 0.000432 ***
+classwt1:cutoff1    0.045905   0.007819   5.871 0.000238 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.03128 on 9 degrees of freedom
+Multiple R-squared:  0.9546,	Adjusted R-squared:  0.9243 
+F-statistic: 31.54 on 6 and 9 DF,  p-value: 1.499e-05
+
+> model <- lm(design.resp.fac3)
+> pr <- resid(model)/(1 - lm.influence(model)$hat)
+> PRESS <- sum(pr^2)
+> PRESS
+[1] 0.02782629

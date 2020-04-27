@@ -1,0 +1,164 @@
+[1] "D:\\courses\\Data_Science\\DoE\\My_R_codes\\code"  
+[2] "D:\\courses\\Data_Science\\DoE\\My_R_codes\\output"
+
+dir.data:  D:\courses\Data_Science\DoE\My_R_codes\code
+dir.code:  D:\courses\Data_Science\DoE\My_R_codes\code
+dir.out:   D:\courses\Data_Science\DoE\My_R_codes\output
+
+##### Sys.time():  2020-04-15 04:25:21 EDT 
+
+##################################################
+
+str(LIST.trainTest)
+List of 2
+ $ trainSet:'data.frame':	410 obs. of  14 variables:
+  ..$ crim              : num [1:410] 0.00632 0.02729 0.03237 0.06905 0.02985 ...
+  ..$ zn                : num [1:410] 18 0 0 0 0 12.5 12.5 12.5 12.5 12.5 ...
+  ..$ indus             : num [1:410] 2.31 7.07 2.18 2.18 2.18 7.87 7.87 7.87 7.87 7.87 ...
+  ..$ chas              : int [1:410] 0 0 0 0 0 0 0 0 0 0 ...
+  ..$ nox               : num [1:410] 0.538 0.469 0.458 0.458 0.458 0.524 0.524 0.524 0.524 0.524 ...
+  ..$ rm                : num [1:410] 6.58 7.18 7 7.15 6.43 ...
+  ..$ age               : num [1:410] 65.2 61.1 45.8 54.2 58.7 66.6 96.1 100 85.9 94.3 ...
+  ..$ dis               : num [1:410] 4.09 4.97 6.06 6.06 6.06 ...
+  ..$ rad               : int [1:410] 1 2 3 3 3 5 5 5 5 5 ...
+  ..$ tax               : int [1:410] 296 242 222 222 222 311 311 311 311 311 ...
+  ..$ ptratio           : num [1:410] 15.3 17.8 18.7 18.7 18.7 15.2 15.2 15.2 15.2 15.2 ...
+  ..$ black             : num [1:410] 397 393 395 397 394 ...
+  ..$ lstat             : num [1:410] 4.98 4.03 2.94 5.33 5.21 ...
+  ..$ median_house_value: num [1:410] 24 34.7 33.4 36.2 28.7 22.9 27.1 16.5 18.9 15 ...
+ $ testSet :'data.frame':	96 obs. of  14 variables:
+  ..$ crim              : num [1:96] 0.0273 1.2518 0.7503 0.0642 0.1594 ...
+  ..$ zn                : num [1:96] 0 0 0 0 0 0 25 25 0 0 ...
+  ..$ indus             : num [1:96] 7.07 8.14 8.14 5.96 6.91 ...
+  ..$ chas              : int [1:96] 0 0 0 0 0 0 0 0 0 0 ...
+  ..$ nox               : num [1:96] 0.469 0.538 0.538 0.499 0.448 0.448 0.453 0.453 0.437 0.437 ...
+  ..$ rm                : num [1:96] 6.42 5.57 5.92 5.93 6.21 ...
+  ..$ age               : num [1:96] 78.9 98.1 94.1 68.2 6.5 40 29.2 47.2 45 53.7 ...
+  ..$ dis               : num [1:96] 4.97 3.8 4.4 3.36 5.72 ...
+  ..$ rad               : int [1:96] 2 4 4 5 3 3 8 8 5 5 ...
+  ..$ tax               : int [1:96] 242 307 307 279 233 233 284 284 398 398 ...
+  ..$ ptratio           : num [1:96] 17.8 21 21 19.2 17.9 17.9 19.7 19.7 18.7 18.7 ...
+  ..$ black             : num [1:96] 397 377 394 397 394 ...
+  ..$ lstat             : num [1:96] 9.14 21.02 16.3 9.68 7.44 ...
+  ..$ median_house_value: num [1:96] 21.6 13.6 15.6 18.9 24.7 21.2 23.3 19.6 21.4 21.2 ...
+NULL
+
+##################################################
+starting: test.RF()
+
+str(tuning.results):
+   ntree mtry nodesize replace train.mse
+1    100    3        5       1  14.96124
+2    100    3        5       0  14.18609
+3    100    3      410       1  51.33014
+4    100    3      410       0  50.03394
+5    100    4        5       1  13.57350
+6    100    4        5       0  12.63006
+7    100    4      410       1  44.81045
+8    100    4      410       0  44.42781
+9    500    3        5       1  11.23004
+10   500    3        5       0  11.91450
+11   500    3      410       1  46.23899
+12   500    3      410       0  47.36650
+13   500    4        5       1  11.48025
+14   500    4        5       0  11.59029
+15   500    4      410       1  43.29344
+16   500    4      410       0  43.14128
+
+str(tuning.results.rnd):
+  ntree mtry nodesize replace train.mse
+1   500    4      410       1  43.97511
+
+str(train.default.mse):
+[1] 43.97511
+
+str(test.default.mse):
+[1] 39.66698
+
+str(summary.train.machine):
+                Length Class  Mode     
+call              5    -none- call     
+type              1    -none- character
+predicted       410    -none- numeric  
+mse             500    -none- numeric  
+rsq             500    -none- numeric  
+oob.times       410    -none- numeric  
+importance       13    -none- numeric  
+importanceSD      0    -none- NULL     
+localImportance   0    -none- NULL     
+proximity         0    -none- NULL     
+ntree             1    -none- numeric  
+mtry              1    -none- numeric  
+forest            0    -none- NULL     
+coefs             0    -none- NULL     
+y               410    -none- numeric  
+test              4    -none- list     
+inbag             0    -none- NULL     
+
+exiting: test.RF()
+##################################################
+NULL
+
+##################################################
+
+##### warnings():
+NULL
+
+##### getOption('repos'):
+    CRAN 
+"@CRAN@" 
+
+##### .libPaths():
+[1] "E:/softwares/R/R-3.6.3/library"
+
+##### sessionInfo():
+R version 3.6.3 (2020-02-29)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 8.1 x64 (build 9600)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] stringr_1.4.0       tidyr_1.0.2         randomForest_4.6-14
+ [4] caret_6.0-85        ggplot2_3.3.0       lattice_0.20-38    
+ [7] rsm_2.10            FrF2_2.1-1          DoE.base_1.1-3     
+[10] conf.design_2.0.0   dplyr_0.8.5        
+
+loaded via a namespace (and not attached):
+ [1] zoo_1.8-7            tidyselect_1.0.0     partitions_1.9-22   
+ [4] purrr_0.3.3          reshape2_1.4.3       splines_3.6.3       
+ [7] vctrs_0.2.4          colorspace_1.4-1     generics_0.0.2      
+[10] stats4_3.6.3         gmp_0.5-13.6         survival_3.1-8      
+[13] prodlim_2019.11.13   rlang_0.4.5          ModelMetrics_1.2.2.1
+[16] pillar_1.4.3         glue_1.3.1           withr_2.1.2         
+[19] foreach_1.4.8        lifecycle_0.2.0      plyr_1.8.6          
+[22] lava_1.6.7           timeDate_3043.102    munsell_0.5.0       
+[25] combinat_0.0-8       gtable_0.3.0         recipes_0.1.10      
+[28] codetools_0.2-16     lmtest_0.9-37        numbers_0.7-5       
+[31] class_7.3-15         vcd_1.4-6            Rcpp_1.0.3          
+[34] polynom_1.4-0        scales_1.1.0         ipred_0.9-9         
+[37] scatterplot3d_0.3-41 stringi_1.4.6        tools_3.6.3         
+[40] magrittr_1.5         tibble_2.1.3         crayon_1.3.4        
+[43] pkgconfig_2.0.3      MASS_7.3-51.5        Matrix_1.2-18       
+[46] data.table_1.12.8    pROC_1.16.1          lubridate_1.7.4     
+[49] gower_0.2.1          assertthat_0.2.1     iterators_1.0.12    
+[52] R6_2.4.1             rpart_4.1-15         sfsmisc_1.1-5       
+[55] nnet_7.3-12          igraph_1.2.4.2       nlme_3.1-144        
+[58] compiler_3.6.3      
+
+##### Sys.time():  2020-04-15 04:26:19 EDT 
+
+##### stop.proc.time - start.proc.time:
+   user  system elapsed 
+  17.39    1.40   57.39 

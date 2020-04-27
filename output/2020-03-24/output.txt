@@ -1,0 +1,997 @@
++                             mtry = mtry,
++                             replace = replace,
++                             nodesize = nodesize,
++                             classwt = classwt,
++                             cutoff = cutoff,
++                             maxnodes = maxnodes)
++     
++     confu <- as.data.frame(RFmodel$test$confusion)
++     
++     TP   <-  TP + confu[labels[2], labels[2]] 
++     FN   <-  FN + confu[labels[2], labels[1]]
++     FP   <-  FP + confu[labels[1], labels[2]]
++     TN   <-  TN + confu[labels[1], labels[1]]
++     
++   }
++   
++   TPR <- TP/(TP+FN)
++   TNR <- TN/(TN+FP)
++   BACC <- (TPR + TNR)/2
++   print(BACC)
++   results5 <- c(results5, BACC)
++   
++ }
+[1] "fold 1 of run 1"
+Error in 1:retained.predictors : NA/NaN argument
+In addition: Warning messages:
+1: In 1:retained.predictors :
+  numerical expression has 14 elements: only the first used
+2: In `[.data.frame`(test, , 1:retained.predictors) :
+  NAs introduced by coercion
+> for (i in 1:nrow(design)){
++   if (design$ntree[i] == -1)     {ntree <- 100} else {ntree <- 500}
++   if (design$mtry[i] == -1)      {mtry <- floor(log(ncol(df)-1))} else {mtry <- ceiling(sqrt(ncol(df)-1))}
++   if (design$replace[i] == -1)   {replace <- FALSE} else {replace <- TRUE}
++   if (design$nodesize[i] == -1)  {nodesize <- 1} else {nodesize <- floor(0.1*nrow(df))}
++   if (design$classwt[i] == -1)   {classwt <- c(1,10)} else {classwt <- c(10,1)}
++   if (design$cutoff[i] == -1)    {cutoff <- c(0.2, 1 -0.2)} else {cutoff <- c(0.8,1-0.8)}
++   if (design$maxnodes[i] == -1)  {maxnodes <- 5} else {maxnodes <- NULL}
++   
++   #cross-validation
++   createIndex <- rep(1:10, length.out = nrow(df))
++   randomIndex <- sample(createIndex)
++   
++   innerResults <- c()
++   
++   TP   <-  0
++   FN   <-  0
++   FP   <-  0
++   TN   <-  0
++   
++   for (j in 1:10){
++     
++     print(paste("fold",j,"of run", i))
++     train <- df[-which(randomIndex == j),]
++     test <-  df[ which(randomIndex == j),]
++     
++     
++     
++     RFmodel <- randomForest(x = train[,retained.predictors], y = train[,"my_res"],
++                             xtest = test[,retained.predictors], ytest = test[,"my_res"],
++                             ntree = ntree,
++                             mtry = mtry,
++                             replace = replace,
++                             nodesize = nodesize,
++                             classwt = classwt,
++                             cutoff = cutoff,
++                             maxnodes = maxnodes)
++     
++     confu <- as.data.frame(RFmodel$test$confusion)
++     
++     TP   <-  TP + confu[labels[2], labels[2]] 
++     FN   <-  FN + confu[labels[2], labels[1]]
++     FP   <-  FP + confu[labels[1], labels[2]]
++     TN   <-  TN + confu[labels[1], labels[1]]
++     
++   }
++   
++   TPR <- TP/(TP+FN)
++   TNR <- TN/(TN+FP)
++   BACC <- (TPR + TNR)/2
++   print(BACC)
++   results5 <- c(results5, BACC)
++   
++ }
+[1] "fold 1 of run 1"
+[1] "fold 2 of run 1"
+[1] "fold 3 of run 1"
+[1] "fold 4 of run 1"
+[1] "fold 5 of run 1"
+[1] "fold 6 of run 1"
+[1] "fold 7 of run 1"
+[1] "fold 8 of run 1"
+[1] "fold 9 of run 1"
+[1] "fold 10 of run 1"
+[1] 0.8198661
+[1] "fold 1 of run 2"
+[1] "fold 2 of run 2"
+[1] "fold 3 of run 2"
+[1] "fold 4 of run 2"
+[1] "fold 5 of run 2"
+[1] "fold 6 of run 2"
+[1] "fold 7 of run 2"
+[1] "fold 8 of run 2"
+[1] "fold 9 of run 2"
+[1] "fold 10 of run 2"
+[1] 0.5922323
+[1] "fold 1 of run 3"
+[1] "fold 2 of run 3"
+[1] "fold 3 of run 3"
+[1] "fold 4 of run 3"
+[1] "fold 5 of run 3"
+[1] "fold 6 of run 3"
+[1] "fold 7 of run 3"
+[1] "fold 8 of run 3"
+[1] "fold 9 of run 3"
+[1] "fold 10 of run 3"
+[1] 0.7408314
+[1] "fold 1 of run 4"
+[1] "fold 2 of run 4"
+[1] "fold 3 of run 4"
+[1] "fold 4 of run 4"
+[1] "fold 5 of run 4"
+[1] "fold 6 of run 4"
+[1] "fold 7 of run 4"
+[1] "fold 8 of run 4"
+[1] "fold 9 of run 4"
+[1] "fold 10 of run 4"
+[1] 0.7252783
+[1] "fold 1 of run 5"
+[1] "fold 2 of run 5"
+[1] "fold 3 of run 5"
+[1] "fold 4 of run 5"
+[1] "fold 5 of run 5"
+[1] "fold 6 of run 5"
+[1] "fold 7 of run 5"
+[1] "fold 8 of run 5"
+[1] "fold 9 of run 5"
+[1] "fold 10 of run 5"
+[1] 0.5420246
+[1] "fold 1 of run 6"
+[1] "fold 2 of run 6"
+[1] "fold 3 of run 6"
+[1] "fold 4 of run 6"
+[1] "fold 5 of run 6"
+[1] "fold 6 of run 6"
+[1] "fold 7 of run 6"
+[1] "fold 8 of run 6"
+[1] "fold 9 of run 6"
+[1] "fold 10 of run 6"
+[1] 0.5
+[1] "fold 1 of run 7"
+[1] "fold 2 of run 7"
+[1] "fold 3 of run 7"
+[1] "fold 4 of run 7"
+[1] "fold 5 of run 7"
+[1] "fold 6 of run 7"
+[1] "fold 7 of run 7"
+[1] "fold 8 of run 7"
+[1] "fold 9 of run 7"
+[1] "fold 10 of run 7"
+[1] 0.5875307
+[1] "fold 1 of run 8"
+[1] "fold 2 of run 8"
+[1] "fold 3 of run 8"
+[1] "fold 4 of run 8"
+[1] "fold 5 of run 8"
+[1] "fold 6 of run 8"
+[1] "fold 7 of run 8"
+[1] "fold 8 of run 8"
+[1] "fold 9 of run 8"
+[1] "fold 10 of run 8"
+[1] 0.7781589
+[1] "fold 1 of run 9"
+[1] "fold 2 of run 9"
+[1] "fold 3 of run 9"
+[1] "fold 4 of run 9"
+[1] "fold 5 of run 9"
+[1] "fold 6 of run 9"
+[1] "fold 7 of run 9"
+[1] "fold 8 of run 9"
+[1] "fold 9 of run 9"
+[1] "fold 10 of run 9"
+[1] 0.5331249
+[1] "fold 1 of run 10"
+[1] "fold 2 of run 10"
+[1] "fold 3 of run 10"
+[1] "fold 4 of run 10"
+[1] "fold 5 of run 10"
+[1] "fold 6 of run 10"
+[1] "fold 7 of run 10"
+[1] "fold 8 of run 10"
+[1] "fold 9 of run 10"
+[1] "fold 10 of run 10"
+[1] 0.5896583
+[1] "fold 1 of run 11"
+[1] "fold 2 of run 11"
+[1] "fold 3 of run 11"
+[1] "fold 4 of run 11"
+[1] "fold 5 of run 11"
+[1] "fold 6 of run 11"
+[1] "fold 7 of run 11"
+[1] "fold 8 of run 11"
+[1] "fold 9 of run 11"
+[1] "fold 10 of run 11"
+[1] 0.8151408
+[1] "fold 1 of run 12"
+[1] "fold 2 of run 12"
+[1] "fold 3 of run 12"
+[1] "fold 4 of run 12"
+[1] "fold 5 of run 12"
+[1] "fold 6 of run 12"
+[1] "fold 7 of run 12"
+[1] "fold 8 of run 12"
+[1] "fold 9 of run 12"
+[1] "fold 10 of run 12"
+[1] 0.7775589
+[1] "fold 1 of run 13"
+[1] "fold 2 of run 13"
+[1] "fold 3 of run 13"
+[1] "fold 4 of run 13"
+[1] "fold 5 of run 13"
+[1] "fold 6 of run 13"
+[1] "fold 7 of run 13"
+[1] "fold 8 of run 13"
+[1] "fold 9 of run 13"
+[1] "fold 10 of run 13"
+[1] 0.5
+[1] "fold 1 of run 14"
+[1] "fold 2 of run 14"
+[1] "fold 3 of run 14"
+[1] "fold 4 of run 14"
+[1] "fold 5 of run 14"
+[1] "fold 6 of run 14"
+[1] "fold 7 of run 14"
+[1] "fold 8 of run 14"
+[1] "fold 9 of run 14"
+[1] "fold 10 of run 14"
+[1] 0.5808989
+[1] "fold 1 of run 15"
+[1] "fold 2 of run 15"
+[1] "fold 3 of run 15"
+[1] "fold 4 of run 15"
+[1] "fold 5 of run 15"
+[1] "fold 6 of run 15"
+[1] "fold 7 of run 15"
+[1] "fold 8 of run 15"
+[1] "fold 9 of run 15"
+[1] "fold 10 of run 15"
+[1] 0.5426314
+[1] "fold 1 of run 16"
+[1] "fold 2 of run 16"
+[1] "fold 3 of run 16"
+[1] "fold 4 of run 16"
+[1] "fold 5 of run 16"
+[1] "fold 6 of run 16"
+[1] "fold 7 of run 16"
+[1] "fold 8 of run 16"
+[1] "fold 9 of run 16"
+[1] "fold 10 of run 16"
+[1] 0.8205695
+[1] "fold 1 of run 17"
+[1] "fold 2 of run 17"
+[1] "fold 3 of run 17"
+[1] "fold 4 of run 17"
+[1] "fold 5 of run 17"
+[1] "fold 6 of run 17"
+[1] "fold 7 of run 17"
+[1] "fold 8 of run 17"
+[1] "fold 9 of run 17"
+[1] "fold 10 of run 17"
+[1] 0.5966182
+[1] "fold 1 of run 18"
+[1] "fold 2 of run 18"
+[1] "fold 3 of run 18"
+[1] "fold 4 of run 18"
+[1] "fold 5 of run 18"
+[1] "fold 6 of run 18"
+[1] "fold 7 of run 18"
+[1] "fold 8 of run 18"
+[1] "fold 9 of run 18"
+[1] "fold 10 of run 18"
+[1] 0.5878931
+[1] "fold 1 of run 19"
+[1] "fold 2 of run 19"
+[1] "fold 3 of run 19"
+[1] "fold 4 of run 19"
+[1] "fold 5 of run 19"
+[1] "fold 6 of run 19"
+[1] "fold 7 of run 19"
+[1] "fold 8 of run 19"
+[1] "fold 9 of run 19"
+[1] "fold 10 of run 19"
+[1] 0.5
+[1] "fold 1 of run 20"
+[1] "fold 2 of run 20"
+[1] "fold 3 of run 20"
+[1] "fold 4 of run 20"
+[1] "fold 5 of run 20"
+[1] "fold 6 of run 20"
+[1] "fold 7 of run 20"
+[1] "fold 8 of run 20"
+[1] "fold 9 of run 20"
+[1] "fold 10 of run 20"
+[1] 0.570292
+[1] "fold 1 of run 21"
+[1] "fold 2 of run 21"
+[1] "fold 3 of run 21"
+[1] "fold 4 of run 21"
+[1] "fold 5 of run 21"
+[1] "fold 6 of run 21"
+[1] "fold 7 of run 21"
+[1] "fold 8 of run 21"
+[1] "fold 9 of run 21"
+[1] "fold 10 of run 21"
+[1] 0.5
+[1] "fold 1 of run 22"
+[1] "fold 2 of run 22"
+[1] "fold 3 of run 22"
+[1] "fold 4 of run 22"
+[1] "fold 5 of run 22"
+[1] "fold 6 of run 22"
+[1] "fold 7 of run 22"
+[1] "fold 8 of run 22"
+[1] "fold 9 of run 22"
+[1] "fold 10 of run 22"
+[1] 0.5
+[1] "fold 1 of run 23"
+[1] "fold 2 of run 23"
+[1] "fold 3 of run 23"
+[1] "fold 4 of run 23"
+[1] "fold 5 of run 23"
+[1] "fold 6 of run 23"
+[1] "fold 7 of run 23"
+[1] "fold 8 of run 23"
+[1] "fold 9 of run 23"
+[1] "fold 10 of run 23"
+[1] 0.5
+[1] "fold 1 of run 24"
+[1] "fold 2 of run 24"
+[1] "fold 3 of run 24"
+[1] "fold 4 of run 24"
+[1] "fold 5 of run 24"
+[1] "fold 6 of run 24"
+[1] "fold 7 of run 24"
+[1] "fold 8 of run 24"
+[1] "fold 9 of run 24"
+[1] "fold 10 of run 24"
+[1] 0.5896785
+[1] "fold 1 of run 25"
+[1] "fold 2 of run 25"
+[1] "fold 3 of run 25"
+[1] "fold 4 of run 25"
+[1] "fold 5 of run 25"
+[1] "fold 6 of run 25"
+[1] "fold 7 of run 25"
+[1] "fold 8 of run 25"
+[1] "fold 9 of run 25"
+[1] "fold 10 of run 25"
+[1] 0.5374129
+[1] "fold 1 of run 26"
+[1] "fold 2 of run 26"
+[1] "fold 3 of run 26"
+[1] "fold 4 of run 26"
+[1] "fold 5 of run 26"
+[1] "fold 6 of run 26"
+[1] "fold 7 of run 26"
+[1] "fold 8 of run 26"
+[1] "fold 9 of run 26"
+[1] "fold 10 of run 26"
+[1] 0.6889495
+[1] "fold 1 of run 27"
+[1] "fold 2 of run 27"
+[1] "fold 3 of run 27"
+[1] "fold 4 of run 27"
+[1] "fold 5 of run 27"
+[1] "fold 6 of run 27"
+[1] "fold 7 of run 27"
+[1] "fold 8 of run 27"
+[1] "fold 9 of run 27"
+[1] "fold 10 of run 27"
+[1] 0.5
+[1] "fold 1 of run 28"
+[1] "fold 2 of run 28"
+[1] "fold 3 of run 28"
+[1] "fold 4 of run 28"
+[1] "fold 5 of run 28"
+[1] "fold 6 of run 28"
+[1] "fold 7 of run 28"
+[1] "fold 8 of run 28"
+[1] "fold 9 of run 28"
+[1] "fold 10 of run 28"
+[1] 0.5
+[1] "fold 1 of run 29"
+[1] "fold 2 of run 29"
+[1] "fold 3 of run 29"
+[1] "fold 4 of run 29"
+[1] "fold 5 of run 29"
+[1] "fold 6 of run 29"
+[1] "fold 7 of run 29"
+[1] "fold 8 of run 29"
+[1] "fold 9 of run 29"
+[1] "fold 10 of run 29"
+[1] 0.5
+[1] "fold 1 of run 30"
+[1] "fold 2 of run 30"
+[1] "fold 3 of run 30"
+[1] "fold 4 of run 30"
+[1] "fold 5 of run 30"
+[1] "fold 6 of run 30"
+[1] "fold 7 of run 30"
+[1] "fold 8 of run 30"
+[1] "fold 9 of run 30"
+[1] "fold 10 of run 30"
+[1] 0.5929602
+[1] "fold 1 of run 31"
+[1] "fold 2 of run 31"
+[1] "fold 3 of run 31"
+[1] "fold 4 of run 31"
+[1] "fold 5 of run 31"
+[1] "fold 6 of run 31"
+[1] "fold 7 of run 31"
+[1] "fold 8 of run 31"
+[1] "fold 9 of run 31"
+[1] "fold 10 of run 31"
+[1] 0.6952571
+[1] "fold 1 of run 32"
+[1] "fold 2 of run 32"
+[1] "fold 3 of run 32"
+[1] "fold 4 of run 32"
+[1] "fold 5 of run 32"
+[1] "fold 6 of run 32"
+[1] "fold 7 of run 32"
+[1] "fold 8 of run 32"
+[1] "fold 9 of run 32"
+[1] "fold 10 of run 32"
+[1] 0.815394
+[1] "fold 1 of run 33"
+[1] "fold 2 of run 33"
+[1] "fold 3 of run 33"
+[1] "fold 4 of run 33"
+[1] "fold 5 of run 33"
+[1] "fold 6 of run 33"
+[1] "fold 7 of run 33"
+[1] "fold 8 of run 33"
+[1] "fold 9 of run 33"
+[1] "fold 10 of run 33"
+[1] 0.5000202
+[1] "fold 1 of run 34"
+[1] "fold 2 of run 34"
+[1] "fold 3 of run 34"
+[1] "fold 4 of run 34"
+[1] "fold 5 of run 34"
+[1] "fold 6 of run 34"
+[1] "fold 7 of run 34"
+[1] "fold 8 of run 34"
+[1] "fold 9 of run 34"
+[1] "fold 10 of run 34"
+[1] 0.5217
+[1] "fold 1 of run 35"
+[1] "fold 2 of run 35"
+[1] "fold 3 of run 35"
+[1] "fold 4 of run 35"
+[1] "fold 5 of run 35"
+[1] "fold 6 of run 35"
+[1] "fold 7 of run 35"
+[1] "fold 8 of run 35"
+[1] "fold 9 of run 35"
+[1] "fold 10 of run 35"
+[1] 0.65703
+[1] "fold 1 of run 36"
+[1] "fold 2 of run 36"
+[1] "fold 3 of run 36"
+[1] "fold 4 of run 36"
+[1] "fold 5 of run 36"
+[1] "fold 6 of run 36"
+[1] "fold 7 of run 36"
+[1] "fold 8 of run 36"
+[1] "fold 9 of run 36"
+[1] "fold 10 of run 36"
+[1] 0.7147078
+[1] "fold 1 of run 37"
+[1] "fold 2 of run 37"
+[1] "fold 3 of run 37"
+[1] "fold 4 of run 37"
+[1] "fold 5 of run 37"
+[1] "fold 6 of run 37"
+[1] "fold 7 of run 37"
+[1] "fold 8 of run 37"
+[1] "fold 9 of run 37"
+[1] "fold 10 of run 37"
+[1] 0.7412017
+[1] "fold 1 of run 38"
+[1] "fold 2 of run 38"
+[1] "fold 3 of run 38"
+[1] "fold 4 of run 38"
+[1] "fold 5 of run 38"
+[1] "fold 6 of run 38"
+[1] "fold 7 of run 38"
+[1] "fold 8 of run 38"
+[1] "fold 9 of run 38"
+[1] "fold 10 of run 38"
+[1] 0.618187
+[1] "fold 1 of run 39"
+[1] "fold 2 of run 39"
+[1] "fold 3 of run 39"
+[1] "fold 4 of run 39"
+[1] "fold 5 of run 39"
+[1] "fold 6 of run 39"
+[1] "fold 7 of run 39"
+[1] "fold 8 of run 39"
+[1] "fold 9 of run 39"
+[1] "fold 10 of run 39"
+[1] 0.5875307
+[1] "fold 1 of run 40"
+[1] "fold 2 of run 40"
+[1] "fold 3 of run 40"
+[1] "fold 4 of run 40"
+[1] "fold 5 of run 40"
+[1] "fold 6 of run 40"
+[1] "fold 7 of run 40"
+[1] "fold 8 of run 40"
+[1] "fold 9 of run 40"
+[1] "fold 10 of run 40"
+[1] 0.5
+[1] "fold 1 of run 41"
+[1] "fold 2 of run 41"
+[1] "fold 3 of run 41"
+[1] "fold 4 of run 41"
+[1] "fold 5 of run 41"
+[1] "fold 6 of run 41"
+[1] "fold 7 of run 41"
+[1] "fold 8 of run 41"
+[1] "fold 9 of run 41"
+[1] "fold 10 of run 41"
+[1] 0.6568889
+[1] "fold 1 of run 42"
+[1] "fold 2 of run 42"
+[1] "fold 3 of run 42"
+[1] "fold 4 of run 42"
+[1] "fold 5 of run 42"
+[1] "fold 6 of run 42"
+[1] "fold 7 of run 42"
+[1] "fold 8 of run 42"
+[1] "fold 9 of run 42"
+[1] "fold 10 of run 42"
+[1] 0.6550656
+[1] "fold 1 of run 43"
+[1] "fold 2 of run 43"
+[1] "fold 3 of run 43"
+[1] "fold 4 of run 43"
+[1] "fold 5 of run 43"
+[1] "fold 6 of run 43"
+[1] "fold 7 of run 43"
+[1] "fold 8 of run 43"
+[1] "fold 9 of run 43"
+[1] "fold 10 of run 43"
+[1] 0.5
+[1] "fold 1 of run 44"
+[1] "fold 2 of run 44"
+[1] "fold 3 of run 44"
+[1] "fold 4 of run 44"
+[1] "fold 5 of run 44"
+[1] "fold 6 of run 44"
+[1] "fold 7 of run 44"
+[1] "fold 8 of run 44"
+[1] "fold 9 of run 44"
+[1] "fold 10 of run 44"
+[1] 0.5035741
+[1] "fold 1 of run 45"
+[1] "fold 2 of run 45"
+[1] "fold 3 of run 45"
+[1] "fold 4 of run 45"
+[1] "fold 5 of run 45"
+[1] "fold 6 of run 45"
+[1] "fold 7 of run 45"
+[1] "fold 8 of run 45"
+[1] "fold 9 of run 45"
+[1] "fold 10 of run 45"
+[1] 0.7417938
+[1] "fold 1 of run 46"
+[1] "fold 2 of run 46"
+[1] "fold 3 of run 46"
+[1] "fold 4 of run 46"
+[1] "fold 5 of run 46"
+[1] "fold 6 of run 46"
+[1] "fold 7 of run 46"
+[1] "fold 8 of run 46"
+[1] "fold 9 of run 46"
+[1] "fold 10 of run 46"
+[1] 0.7177017
+[1] "fold 1 of run 47"
+[1] "fold 2 of run 47"
+[1] "fold 3 of run 47"
+[1] "fold 4 of run 47"
+[1] "fold 5 of run 47"
+[1] "fold 6 of run 47"
+[1] "fold 7 of run 47"
+[1] "fold 8 of run 47"
+[1] "fold 9 of run 47"
+[1] "fold 10 of run 47"
+[1] 0.5029799
+[1] "fold 1 of run 48"
+[1] "fold 2 of run 48"
+[1] "fold 3 of run 48"
+[1] "fold 4 of run 48"
+[1] "fold 5 of run 48"
+[1] "fold 6 of run 48"
+[1] "fold 7 of run 48"
+[1] "fold 8 of run 48"
+[1] "fold 9 of run 48"
+[1] "fold 10 of run 48"
+[1] 0.6576685
+[1] "fold 1 of run 49"
+[1] "fold 2 of run 49"
+[1] "fold 3 of run 49"
+[1] "fold 4 of run 49"
+[1] "fold 5 of run 49"
+[1] "fold 6 of run 49"
+[1] "fold 7 of run 49"
+[1] "fold 8 of run 49"
+[1] "fold 9 of run 49"
+[1] "fold 10 of run 49"
+[1] 0.5863191
+[1] "fold 1 of run 50"
+[1] "fold 2 of run 50"
+[1] "fold 3 of run 50"
+[1] "fold 4 of run 50"
+[1] "fold 5 of run 50"
+[1] "fold 6 of run 50"
+[1] "fold 7 of run 50"
+[1] "fold 8 of run 50"
+[1] "fold 9 of run 50"
+[1] "fold 10 of run 50"
+[1] 0.7696322
+[1] "fold 1 of run 51"
+[1] "fold 2 of run 51"
+[1] "fold 3 of run 51"
+[1] "fold 4 of run 51"
+[1] "fold 5 of run 51"
+[1] "fold 6 of run 51"
+[1] "fold 7 of run 51"
+[1] "fold 8 of run 51"
+[1] "fold 9 of run 51"
+[1] "fold 10 of run 51"
+[1] 0.7831091
+[1] "fold 1 of run 52"
+[1] "fold 2 of run 52"
+[1] "fold 3 of run 52"
+[1] "fold 4 of run 52"
+[1] "fold 5 of run 52"
+[1] "fold 6 of run 52"
+[1] "fold 7 of run 52"
+[1] "fold 8 of run 52"
+[1] "fold 9 of run 52"
+[1] "fold 10 of run 52"
+[1] 0.5875307
+[1] "fold 1 of run 53"
+[1] "fold 2 of run 53"
+[1] "fold 3 of run 53"
+[1] "fold 4 of run 53"
+[1] "fold 5 of run 53"
+[1] "fold 6 of run 53"
+[1] "fold 7 of run 53"
+[1] "fold 8 of run 53"
+[1] "fold 9 of run 53"
+[1] "fold 10 of run 53"
+[1] 0.7712301
+[1] "fold 1 of run 54"
+[1] "fold 2 of run 54"
+[1] "fold 3 of run 54"
+[1] "fold 4 of run 54"
+[1] "fold 5 of run 54"
+[1] "fold 6 of run 54"
+[1] "fold 7 of run 54"
+[1] "fold 8 of run 54"
+[1] "fold 9 of run 54"
+[1] "fold 10 of run 54"
+[1] 0.5
+[1] "fold 1 of run 55"
+[1] "fold 2 of run 55"
+[1] "fold 3 of run 55"
+[1] "fold 4 of run 55"
+[1] "fold 5 of run 55"
+[1] "fold 6 of run 55"
+[1] "fold 7 of run 55"
+[1] "fold 8 of run 55"
+[1] "fold 9 of run 55"
+[1] "fold 10 of run 55"
+[1] 0.7341478
+[1] "fold 1 of run 56"
+[1] "fold 2 of run 56"
+[1] "fold 3 of run 56"
+[1] "fold 4 of run 56"
+[1] "fold 5 of run 56"
+[1] "fold 6 of run 56"
+[1] "fold 7 of run 56"
+[1] "fold 8 of run 56"
+[1] "fold 9 of run 56"
+[1] "fold 10 of run 56"
+[1] 0.6211467
+[1] "fold 1 of run 57"
+[1] "fold 2 of run 57"
+[1] "fold 3 of run 57"
+[1] "fold 4 of run 57"
+[1] "fold 5 of run 57"
+[1] "fold 6 of run 57"
+[1] "fold 7 of run 57"
+[1] "fold 8 of run 57"
+[1] "fold 9 of run 57"
+[1] "fold 10 of run 57"
+[1] 0.6951141
+[1] "fold 1 of run 58"
+[1] "fold 2 of run 58"
+[1] "fold 3 of run 58"
+[1] "fold 4 of run 58"
+[1] "fold 5 of run 58"
+[1] "fold 6 of run 58"
+[1] "fold 7 of run 58"
+[1] "fold 8 of run 58"
+[1] "fold 9 of run 58"
+[1] "fold 10 of run 58"
+[1] 0.593279
+[1] "fold 1 of run 59"
+[1] "fold 2 of run 59"
+[1] "fold 3 of run 59"
+[1] "fold 4 of run 59"
+[1] "fold 5 of run 59"
+[1] "fold 6 of run 59"
+[1] "fold 7 of run 59"
+[1] "fold 8 of run 59"
+[1] "fold 9 of run 59"
+[1] "fold 10 of run 59"
+[1] 0.7769844
+[1] "fold 1 of run 60"
+[1] "fold 2 of run 60"
+[1] "fold 3 of run 60"
+[1] "fold 4 of run 60"
+[1] "fold 5 of run 60"
+[1] "fold 6 of run 60"
+[1] "fold 7 of run 60"
+[1] "fold 8 of run 60"
+[1] "fold 9 of run 60"
+[1] "fold 10 of run 60"
+[1] 0.5756178
+[1] "fold 1 of run 61"
+[1] "fold 2 of run 61"
+[1] "fold 3 of run 61"
+[1] "fold 4 of run 61"
+[1] "fold 5 of run 61"
+[1] "fold 6 of run 61"
+[1] "fold 7 of run 61"
+[1] "fold 8 of run 61"
+[1] "fold 9 of run 61"
+[1] "fold 10 of run 61"
+[1] 0.6911725
+[1] "fold 1 of run 62"
+[1] "fold 2 of run 62"
+[1] "fold 3 of run 62"
+[1] "fold 4 of run 62"
+[1] "fold 5 of run 62"
+[1] "fold 6 of run 62"
+[1] "fold 7 of run 62"
+[1] "fold 8 of run 62"
+[1] "fold 9 of run 62"
+[1] "fold 10 of run 62"
+[1] 0.7231323
+[1] "fold 1 of run 63"
+[1] "fold 2 of run 63"
+[1] "fold 3 of run 63"
+[1] "fold 4 of run 63"
+[1] "fold 5 of run 63"
+[1] "fold 6 of run 63"
+[1] "fold 7 of run 63"
+[1] "fold 8 of run 63"
+[1] "fold 9 of run 63"
+[1] "fold 10 of run 63"
+[1] 0.5205097
+[1] "fold 1 of run 64"
+[1] "fold 2 of run 64"
+[1] "fold 3 of run 64"
+[1] "fold 4 of run 64"
+[1] "fold 5 of run 64"
+[1] "fold 6 of run 64"
+[1] "fold 7 of run 64"
+[1] "fold 8 of run 64"
+[1] "fold 9 of run 64"
+[1] "fold 10 of run 64"
+[1] 0.5
+> createInd <- rep(1:10, length.out = 10)
+> design.resp <- add.response(design, results5)
+> design.resp
+   ntree mtry replace nodesize classwt cutoff maxnodes  results5
+1     -1    1      -1       -1       1     -1        1 0.8198661
+2      1   -1      -1        1      -1     -1        1 0.5922323
+3      1    1       1        1       1      1        1 0.7408314
+4      1    1      -1        1       1      1       -1 0.7252783
+5     -1    1      -1        1       1     -1       -1 0.5420246
+6      1   -1       1       -1       1     -1       -1 0.5000000
+7      1   -1       1        1      -1     -1       -1 0.5875307
+8      1   -1       1       -1       1      1        1 0.7781589
+9     -1    1       1       -1       1     -1       -1 0.5331249
+10    -1    1      -1       -1      -1     -1       -1 0.5896583
+11    -1    1       1       -1      -1     -1        1 0.8151408
+12    -1   -1      -1       -1      -1     -1        1 0.7775589
+13    -1    1       1       -1      -1      1       -1 0.5000000
+14    -1   -1       1       -1      -1     -1       -1 0.5808989
+15     1    1       1        1       1     -1       -1 0.5426314
+16     1    1       1       -1       1     -1        1 0.8205695
+17    -1   -1       1        1      -1     -1        1 0.5966182
+18     1    1       1       -1      -1     -1       -1 0.5878931
+19    -1   -1      -1        1      -1      1        1 0.5000000
+20    -1    1       1        1       1     -1        1 0.5702920
+21    -1   -1       1        1       1     -1       -1 0.5000000
+22     1   -1       1        1      -1      1        1 0.5000000
+23    -1   -1       1        1      -1      1       -1 0.5000000
+24    -1    1       1        1      -1     -1       -1 0.5896785
+25     1    1      -1       -1       1     -1       -1 0.5374129
+26    -1    1       1       -1       1      1        1 0.6889495
+27     1    1       1        1      -1      1       -1 0.5000000
+28    -1   -1      -1       -1      -1      1       -1 0.5000000
+29     1    1      -1       -1      -1      1       -1 0.5000000
+30     1    1       1        1      -1     -1        1 0.5929602
+31    -1   -1      -1        1       1      1       -1 0.6952571
+32     1    1      -1       -1      -1     -1        1 0.8153940
+33    -1   -1      -1       -1       1     -1       -1 0.5000202
+34    -1   -1      -1        1       1     -1        1 0.5217000
+35     1    1       1       -1      -1      1        1 0.6570300
+36     1    1       1       -1       1      1       -1 0.7147078
+37    -1    1      -1        1       1      1        1 0.7412017
+38    -1   -1       1       -1      -1      1        1 0.6181870
+39     1   -1      -1       -1      -1     -1       -1 0.5875307
+40     1   -1      -1        1      -1      1       -1 0.5000000
+41     1   -1      -1       -1       1      1       -1 0.6568889
+42    -1    1      -1       -1      -1      1        1 0.6550656
+43    -1    1      -1        1      -1      1       -1 0.5000000
+44    -1    1       1        1      -1      1        1 0.5035741
+45    -1   -1       1        1       1      1        1 0.7417938
+46    -1    1      -1       -1       1      1       -1 0.7177017
+47     1    1      -1        1      -1      1        1 0.5029799
+48    -1   -1       1       -1       1      1       -1 0.6576685
+49    -1   -1      -1        1      -1     -1       -1 0.5863191
+50     1   -1      -1       -1       1     -1        1 0.7696322
+51     1   -1       1       -1      -1     -1        1 0.7831091
+52     1    1      -1        1      -1     -1       -1 0.5875307
+53    -1   -1       1       -1       1     -1        1 0.7712301
+54     1   -1      -1        1       1     -1       -1 0.5000000
+55     1   -1      -1        1       1      1        1 0.7341478
+56     1   -1      -1       -1      -1      1        1 0.6211467
+57     1    1      -1       -1       1      1        1 0.6951141
+58    -1    1      -1        1      -1     -1        1 0.5932790
+59    -1   -1      -1       -1       1      1        1 0.7769844
+60     1    1      -1        1       1     -1        1 0.5756178
+61     1   -1       1        1       1      1       -1 0.6911725
+62    -1    1       1        1       1      1       -1 0.7231323
+63     1   -1       1        1       1     -1        1 0.5205097
+64     1   -1       1       -1      -1      1       -1 0.5000000
+class=design, type= FrF2 
+> print(summary(design.resp))
+Call:
+FrF2((2^(numFactors - n)), numFactors, factor.names = list(ntree = c(-1, 
+    1), mtry = c(-1, 1), replace = c(-1, 1), nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), seed = 6285)
+
+Experimental design of type  FrF2 
+64  runs
+
+Factor settings (scale ends):
+  ntree mtry replace nodesize classwt cutoff maxnodes
+1    -1   -1      -1       -1      -1     -1       -1
+2     1    1       1        1       1      1        1
+
+Responses:
+[1] results5
+
+Design generating information:
+$legend
+[1] A=ntree    B=mtry     C=replace  D=nodesize E=classwt  F=cutoff   G=maxnodes
+
+$generators
+[1] G=ABCDEF
+
+
+Alias structure:
+[[1]]
+[1] no aliasing among main effects and 2fis
+
+NULL
+> write.csv(design.resp, "RFDOE.csv")
+> save(design.resp, file = "RFDOE.RData")
+> plot(design.resp, cex = 1.2, cex.lab = 1.2, cex.axis = 1.2,main = "Main effects plot for MI", cex.main = 2)
+> MEPlot(design.resp, abbrev = 5, cex.xax = 1.6, cex.main = 2)
+> IAPlot(design.resp, abbrev = 5, show.alias = TRUE, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> IAPlot(design.resp, abbrev = 5, select = 1:2, lwd = 2, cex = 2, cex.xax = 1.2, cex.lab = 1.5)
+> print(summary(lm(design.resp)))
+Number of observations used: 64 
+Formula:
+results5 ~ (ntree + mtry + replace + nodesize + classwt + cutoff + 
+    maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.100296 -0.020864  0.000994  0.017298  0.053430 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          6.223e-01  5.235e-03 118.859  < 2e-16 ***
+ntree1               1.732e-04  5.235e-03   0.033 0.973795    
+mtry1                8.318e-03  5.235e-03   1.589 0.121099    
+replace1            -1.586e-04  5.235e-03  -0.030 0.976005    
+nodesize1           -3.482e-02  5.235e-03  -6.651 1.08e-07 ***
+classwt1             3.410e-02  5.235e-03   6.513 1.64e-07 ***
+cutoff1              3.891e-03  5.235e-03   0.743 0.462335    
+maxnodes1            4.620e-02  5.235e-03   8.825 2.01e-10 ***
+ntree1:mtry1         2.412e-04  5.235e-03   0.046 0.963510    
+ntree1:replace1      3.790e-03  5.235e-03   0.724 0.473946    
+ntree1:nodesize1    -5.309e-04  5.235e-03  -0.101 0.919798    
+ntree1:classwt1     -1.193e-04  5.235e-03  -0.023 0.981955    
+ntree1:cutoff1      -2.376e-04  5.235e-03  -0.045 0.964065    
+ntree1:maxnodes1     7.656e-05  5.235e-03   0.015 0.988415    
+mtry1:replace1      -3.917e-04  5.235e-03  -0.075 0.940787    
+mtry1:nodesize1     -7.630e-05  5.235e-03  -0.015 0.988455    
+mtry1:classwt1       3.347e-03  5.235e-03   0.639 0.526723    
+mtry1:cutoff1       -5.375e-03  5.235e-03  -1.027 0.311582    
+mtry1:maxnodes1     -2.541e-03  5.235e-03  -0.485 0.630432    
+replace1:nodesize1   2.572e-04  5.235e-03   0.049 0.961092    
+replace1:classwt1   -2.813e-04  5.235e-03  -0.054 0.957460    
+replace1:cutoff1    -4.642e-05  5.235e-03  -0.009 0.992976    
+replace1:maxnodes1   3.784e-04  5.235e-03   0.072 0.942791    
+nodesize1:classwt1   7.554e-03  5.235e-03   1.443 0.157929    
+nodesize1:cutoff1    2.112e-02  5.235e-03   4.035 0.000282 ***
+nodesize1:maxnodes1 -3.816e-02  5.235e-03  -7.290 1.62e-08 ***
+classwt1:cutoff1     5.718e-02  5.235e-03  10.923 8.02e-13 ***
+classwt1:maxnodes1   1.599e-03  5.235e-03   0.305 0.761838    
+cutoff1:maxnodes1   -1.891e-02  5.235e-03  -3.612 0.000944 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.04188 on 35 degrees of freedom
+Multiple R-squared:  0.9144,	Adjusted R-squared:  0.8459 
+F-statistic: 13.35 on 28 and 35 DF,  p-value: 1.1e-11
+
+> model <- lm(design.resp)
+> model
+Number of observations used: 64 
+Formula:
+results5 ~ (ntree + mtry + replace + nodesize + classwt + cutoff + 
+    maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Coefficients:
+        (Intercept)               ntree1                mtry1             replace1  
+          6.223e-01            1.732e-04            8.318e-03           -1.586e-04  
+          nodesize1             classwt1              cutoff1            maxnodes1  
+         -3.482e-02            3.410e-02            3.891e-03            4.620e-02  
+       ntree1:mtry1      ntree1:replace1     ntree1:nodesize1      ntree1:classwt1  
+          2.412e-04            3.790e-03           -5.310e-04           -1.193e-04  
+     ntree1:cutoff1     ntree1:maxnodes1       mtry1:replace1      mtry1:nodesize1  
+         -2.376e-04            7.656e-05           -3.917e-04           -7.630e-05  
+     mtry1:classwt1        mtry1:cutoff1      mtry1:maxnodes1   replace1:nodesize1  
+          3.347e-03           -5.375e-03           -2.541e-03            2.572e-04  
+  replace1:classwt1     replace1:cutoff1   replace1:maxnodes1   nodesize1:classwt1  
+         -2.813e-04           -4.642e-05            3.784e-04            7.554e-03  
+  nodesize1:cutoff1  nodesize1:maxnodes1     classwt1:cutoff1   classwt1:maxnodes1  
+          2.112e-02           -3.816e-02            5.718e-02            1.599e-03  
+  cutoff1:maxnodes1  
+         -1.891e-02  
+
+> pr <- resid(model)/(1 - lm.influence(model)$hat)
+> pr
+            1             2             3             4             5             6 
+ 0.0977005866  0.0032984937  0.0584844241 -0.0012871825 -0.0011164670 -0.0417003945 
+            7             8             9            10            11            12 
+ 0.0801157505 -0.0231261193 -0.0350017021 -0.0548730300  0.0107959912 -0.0427839924 
+           13            14            15            16            17            18 
+ 0.0201371831 -0.0087983268  0.0035810224  0.0972450139  0.0063373698 -0.0594445907 
+           19            20            21            22            23            24 
+-0.0137221488 -0.0284527571  0.0082327143 -0.0154149017 -0.0391054462  0.0522020474 
+           25            26            27            28            29            30 
+-0.0359667793 -0.1833986675 -0.0570449421  0.0114406591  0.0139141458 -0.0413191953 
+           31            32            33            34            35            36 
+-0.0394859142  0.0058457236 -0.0421487821 -0.0784148552  0.0647698786  0.0850095791 
+           37            38            39            40            41            42 
+ 0.0568242005 -0.0019026017  0.0003366668 -0.0349341146  0.0224982818  0.0637720822 
+           43            44            45            46            47            48 
+-0.0597804305  0.0160050896  0.0837694183  0.0868210756  0.0166684289  0.0267024128 
+           49            50            51            52            53            54 
+ 0.0783423812  0.0711548733 -0.0384069071  0.0464184454  0.0760456495  0.0098210444 
+           55            56            57            58            59            60 
+ 0.0749824277  0.0041235168 -0.1773264902 -0.0380668274 -0.0245085376 -0.0195474817 
+           61            62            63            64 
+-0.0423905338 -0.0035683748 -0.0814316854  0.0110736013 
