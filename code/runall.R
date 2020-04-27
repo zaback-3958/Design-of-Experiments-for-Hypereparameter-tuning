@@ -2,8 +2,8 @@
 command.arguments <- commandArgs(trailingOnly = TRUE);
 print(command.arguments)
 dir.data <- normalizePath( command.arguments[1] );
-dir.code <- normalizePath( command.arguments[1] );
-dir.out  <- normalizePath( command.arguments[2] );
+dir.code <- normalizePath( command.arguments[2] );
+dir.out  <- normalizePath( command.arguments[3] );
 
 # add custom library using .libPaths()
 cat("\ndir.data: ", dir.data );
