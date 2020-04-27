@@ -48,6 +48,19 @@ replace1:nodesize1, replace:classwt, nodesize:cutoff, nodesize:maxnodes, classwt
 * R v3.6.2
 * packages: FrF2, DoE.base, RandomForest, RSM
 # How to execute the pipeline
+Clone this repository by running the following at the command line:
+
+git clone https://github.com/zaback-3958/ML-DoE.git
+Change directory to the folder of this pipeline in the local cloned repository:
+
+cd <LOCAL CLONED REPOSITORY>/ML-DoE/
+If you are using a Windows computer, execute the following batch script at the Command Prompt instead (NOT tested):
+
+.\run-main.bat
+If you are using a Linux or macOS computer, execute the following shell script in order to run the full pipeline((NOT tested)):
+
+.\run-main.sh
+This will trigger the creation of the output folder <LOCAL CLONED REPOSITORY>/ML-DoE/output/ if it does not already exist, followed by execution of the pipeline. All output and log files will be saved to the output folder. See below for information about the contents of the output folder.
 # Input file
 # Main output files
 
