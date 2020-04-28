@@ -12,14 +12,12 @@ An experiment is a series of tests to identify the factors that have the signifi
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
 
-<img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/>
-
-
-
-for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/>
-, <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,b" border="0"/>
- and <img src="http://latex.codecogs.com/gif.latex?k=1,2,\cdots,n" border="0"/>
-, where ![eq5](https://latex.codecogs.com/gif.latex?%5Cmu) is the overal mean effec, and ![eq6](https://latex.codecogs.com/gif.latex?%5Ctau_%7Bi%7D) is the effect of ``i-th``  level of factor ``A``, ![eq7](https://latex.codecogs.com/gif.latex?%5Cbeta_%7Bj%7D) is the effect of ``j-th``  level of factor ``B``, ![eq8](https://latex.codecogs.com/gif.latex?%28%5Ctau%5Cbeta%29_%7Bij%7D) is the interaction effect of factors ``A`` and ``B`` and ![eq9](https://latex.codecogs.com/gif.latex?%5Cepsilon_%7Bijk%7D) is the random error. 
+for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,b" border="0"/> , and <img src="http://latex.codecogs.com/gif.latex?k=1,2,\cdots,n" border="0"/>
+, where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
+ is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
+is the effect of ``i-th``  level of factor ``A``, <img src="http://latex.codecogs.com/gif.latex?\beta_{j}" border="0"/>
+ is the effect of ``j-th``  level of factor ``B``, <img src="http://latex.codecogs.com/gif.latex?(\tau\beta)_{ij}" border="0"/>
+ is the interaction effect of factors ``A`` and ``B`` and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ijk}" border="0"/> is the random error. 
 ## Two-level Factorial Designs
 This method is represented by ![eq10](https://latex.codecogs.com/gif.latex?2%5EK) for ``K``  factors with two different levels as low and high for each factor. The simplest case of this type of method is the experiments with only two factors which will result is ![eq11](https://latex.codecogs.com/gif.latex?2%5E2%3D4) runs of experiment. This method of DoE will enable the experimenter to identify which main effects are significant. It also shows if there is any interaction among them and if it has effect on the response. The number of runs in this type of experiment increases when number of factor increases which will result in a more time consuming design. According to some experiments the effect of the higher order interactions of three and more factors tend to be small and can often be ignored. In this case to make the experiment more efficient another method of DoE, Fractional Factorial Design is recommended.
 ## Two-level Fractional Factorial Designs
