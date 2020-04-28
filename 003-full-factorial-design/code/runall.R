@@ -1,6 +1,6 @@
 
 command.arguments <- commandArgs(trailingOnly = TRUE);
-print(command.arguments)
+#print(command.arguments)
 dir.data <- normalizePath( command.arguments[1] );
 dir.code <- normalizePath( command.arguments[2] );
 dir.out  <- normalizePath( command.arguments[3] );
@@ -93,9 +93,8 @@ retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 #print( str(LIST.trainTest)   );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-get.DoEDesign <- DoE.design(
-kFactors = 7,
-pFactors = 1)
+get.DoEDesign <- full.fac.design(
+kFactors = 4)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # get.crossvalidation <- cross.validation(

@@ -12,7 +12,7 @@ full.fac.design <- function(
     require(DoE.base);
 
 	##################################################
-	cat(paste0(" \n Fractional Design:","n=",nFactors ,"\n"))
+	cat(paste0(" \n Factorial Design:","n=",nFactors ,"\n"))
 
 	design <- fac.design(
 		nfactors         = nFactors,

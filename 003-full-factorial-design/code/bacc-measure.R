@@ -21,9 +21,9 @@ bacc.measure.func <- function(
 
 	##################################################
 
-	confusion.train = as.table(confusionMatrix(DF.pred.train,DF.train[,"income_year"]));
-	confusion.valid = as.table(confusionMatrix(DF.pred.validation, DF.validation[,"income_year"]));
-	confusion.test  = as.table(confusionMatrix(DF.pred.test, DF.test[,"income_year"]));
+	# confusion.train = as.table(confusionMatrix(DF.pred.train,DF.train[,"income_year"]));
+	# confusion.valid = as.table(confusionMatrix(DF.pred.validation, DF.validation[,"income_year"]));
+	# confusion.test  = as.table(confusionMatrix(DF.pred.test, DF.test[,"income_year"]));
 
 
 	confusion.train = table(DF.train[,"income_year"],DF.pred.train);
