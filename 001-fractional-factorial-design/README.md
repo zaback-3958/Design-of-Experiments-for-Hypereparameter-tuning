@@ -40,6 +40,9 @@ The interaction effect,``ABC``, is the generator or word for this type of design
 
 <img src="http://latex.codecogs.com/svg.latex?I\times B=B\times ABC\Rightarrow B=AC" border="0"/>
 
+<img src="http://latex.codecogs.com/svg.latex?I\times B=B\times ABC\Rightarrow B=AC" border="0"/>
+
+
  and as a result <img src="http://latex.codecogs.com/svg.latex?C=AB" border="0"/> and <img src="http://latex.codecogs.com/svg.latex?A=BC" border="0"/> . These equations show that the main effects ``A``, ``B`` and ``C`` are aliased with ``BC``, ``AC``, and ``AB`` respectively. 
 
 Sometimes even half fraction design is very large because of the numebr of factors, and it needs a large number of runs. in this case the fraction of the design can be increased from a half fraction to a quarter fraction as
