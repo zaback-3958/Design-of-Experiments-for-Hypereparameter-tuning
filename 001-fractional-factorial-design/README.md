@@ -12,6 +12,9 @@ An experiment is a series of tests to identify the factors that have the signifi
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\mu+\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
 
+<img src="http://latex.codecogs.com/gif.latex?I\times B= B\times ABC\Rightarrow B= AC" border="0"/>
+
+
 for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,b" border="0"/> , and <img src="http://latex.codecogs.com/gif.latex?k=1,2,\cdots,n" border="0"/>
 , where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
