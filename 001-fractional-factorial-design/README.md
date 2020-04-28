@@ -10,7 +10,7 @@ This work has been done according to the article to reproduce the results for Ra
 # General description of the Design of Experiments and some of its method
 An experiment is a series of tests to identify the factors that have the significant effect on the response. Design of Experiment is a method in which the number of factors, their ranges of values and number of times to run the experiments are determined to identify the relationship between the factors and the response variable. Sometimes the effect of several factors on a response variable can be measured by testing one factor at a time at their different levels which is useful only when there is not an interaction among those factors. However, since sometimes factors have interactions with each other, it is more efficient to do the experiments by including all the factors in the design. The method of Factorial Design from DoE is one of the methods that is very useful to evaluate the effect of several factors on the response variable at the same time. The general form of Factorial design can be represented as:
 
-<img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
+<img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\mu+\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
 
 for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,b" border="0"/> , and <img src="http://latex.codecogs.com/gif.latex?k=1,2,\cdots,n" border="0"/>
 , where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
