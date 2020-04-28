@@ -38,7 +38,8 @@ Figure (a) shows the Full Factorial design of three factors and figures (b) and 
 
 The interaction effect,``ABC``, is the generator or word for this type of design and since the intercept and this interaction effect are identical, it is written as ``I = ABC``. This equation is the defining relation for this design. From defining relation can conclude which effect are aliased or confounded. It can be seen that 
 
-<img src="http://latex.codecogs.com/svg.latex?I\times B=B\times ABC\Rightarrow B=AC" border="0"/>
+img src="http://latex.codecogs.com/svg.latex?I\times\,B=B\times&space;ABC\Rightarrow\;B=AC" border="0">
+
 
  and as a result <img src="http://latex.codecogs.com/svg.latex?C=AB" border="0"/> and <img src="http://latex.codecogs.com/svg.latex?A=BC" border="0"/> . These equations show that the main effects ``A``, ``B`` and ``C`` are aliased with ``BC``, ``AC``, and ``AB`` respectively. 
 
