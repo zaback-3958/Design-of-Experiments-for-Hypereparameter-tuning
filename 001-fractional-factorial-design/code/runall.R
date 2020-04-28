@@ -1,6 +1,6 @@
 
 command.arguments <- commandArgs(trailingOnly = TRUE);
-print(command.arguments)
+#print(command.arguments)
 dir.data <- normalizePath( command.arguments[1] );
 dir.code <- normalizePath( command.arguments[2] );
 dir.out  <- normalizePath( command.arguments[3] );
@@ -93,7 +93,7 @@ retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 #print( str(LIST.trainTest)   );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-get.DoEDesign <- DoE.design(
+get.frfcDesign <- frfc.design(
 kFactors = 7,
 pFactors = 2)
 
