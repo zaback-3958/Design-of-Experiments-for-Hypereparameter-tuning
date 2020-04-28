@@ -1,6 +1,6 @@
 
 command.arguments <- commandArgs(trailingOnly = TRUE);
-print(command.arguments)
+#print(command.arguments)
 dir.data <- normalizePath( command.arguments[1] );
 dir.code <- normalizePath( command.arguments[2] );
 dir.out  <- normalizePath( command.arguments[3] );
@@ -21,16 +21,17 @@ require(rsm);
 require(DoE.base);
 
 code.files <- c(
-	"getData-sample.R",
+	#"getData-sample.R",
 	#"get-DoEfactors.R",
-	"splitTrainTest.R",
+	#"splitTrainTest.R",
 	"get-DoEdesign.R",
 	"cross-validation.R",
 	"bacc-measure.R",
-	"RF-frcfac-results.R",
+	"foldover-design.R",
+	#"RF-frcfac-results.R",
 	#"RF-results.R",
-	"lm-fractional-design.R",
-	"test-RF.R"
+	"lm-fractional-design.R"
+	#"test-RF.R"
 	#"visualize-effects.R"
 	# "initializePlot.R",
 	# "visualize-data.R"
@@ -84,7 +85,7 @@ DF.adult[,ncol(DF.adult)] <- as.factor(DF.adult[,ncol(DF.adult)])
 classes <- unique(DF.adult[,ncol(DF.adult)])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-retained.predictors <- setdiff(colnames(DF.adult),"my_res");
+retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 #LIST.trainTest <- splitTrainTest(DF.input = DF.housing);
@@ -102,7 +103,7 @@ pFactors = 2)
 # DF.input = DF.adult)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-getRF.results <- RF.frfc.results(
+getfoldover.design <- foldover.design(
 DF.input             = DF.adult,
 Design               = get.DoEDesign,
 #randomIndex          = get.crossvalidation,
