@@ -12,8 +12,6 @@ An experiment is a series of tests to identify the factors that have the signifi
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\mu+\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
 
-<img src="http://latex.codecogs.com/gif.latex?I \times B=B \times ABC \Rightarrow B=AC" border="0"/>
-
 
 for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,b" border="0"/> , and <img src="http://latex.codecogs.com/gif.latex?k=1,2,\cdots,n" border="0"/>
 , where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
@@ -38,7 +36,7 @@ http://reliawiki.org/index.php/File:Doe7.34.png
 
 Figure (a) shows the Full Factorial design of three factors and figures (b) and (c) show the half fraction of it where interaction ``ABC`` is at its high and low level respectively. 
 
-The interaction effect,``ABC``, is the generator or word for this type of design and since the intercept and this interaction effect are identical, it is written as ``I = ABC``. This equation is the defining relation for this design. From defining relation can conclude which effect are aliased or confounded. It can be seen that <img src="http://latex.codecogs.com/gif.latex?I \times B = B \times ABC \Rightarrow B=AC" border="0"/> and as a result ![eq16](https://latex.codecogs.com/gif.latex?C%20%3D%20AB) and ![eq17](https://latex.codecogs.com/gif.latex?A%20%3D%20BC). These equations show that the main effects ``A``, ``B`` and ``C`` are aliased with ``BC``, ``AC``, and ``AB`` respectively. 
+The interaction effect,``ABC``, is the generator or word for this type of design and since the intercept and this interaction effect are identical, it is written as ``I = ABC``. This equation is the defining relation for this design. From defining relation can conclude which effect are aliased or confounded. It can be seen that ![eq15](https://latex.codecogs.com/gif.latex?I%20%5Ctimes%20B%3DB%20%5Ctimes%20ABC%20%5CRightarrow%20B%3DAC) and as a result ![eq16](https://latex.codecogs.com/gif.latex?C%20%3D%20AB) and ![eq17](https://latex.codecogs.com/gif.latex?A%20%3D%20BC). These equations show that the main effects ``A``, ``B`` and ``C`` are aliased with ``BC``, ``AC``, and ``AB`` respectively. 
 
 Sometimes even half fraction design is very large because of the numebr of factors, and it needs a large number of runs. in this case the fraction of the design can be increased from a half fraction to a quarter fraction as ![eq18](https://latex.codecogs.com/gif.latex?%5Cfrac%7B1%7D%7B2%7D%282%5E%7Bk-1%7D%29) which is the half fraction of the previous half fraction design. In fact this design is the ![eq19](\frac{1}{2}\times (2^{K-2})) which means that first half of the design with its generator is selected and then from this half the second half with its generator will be selected. 
 
