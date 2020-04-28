@@ -27,8 +27,8 @@ RF.frfc.results <- function(
     # DF.input[,"my_res"] <- as.factor(DF.input[,"my_res"]);
     # labels              <- unique(DF.input[,"my_res"]);
 
-    DF.input[,ncol(DF.input)] <- as.factor(DF.input[,ncol(DF.input)])
-    classes <- unique(DF.input[,ncol(DF.input)])
+    # DF.input[,ncol(DF.input)] <- as.factor(DF.input[,ncol(DF.input)])
+    # classes <- unique(DF.input[,ncol(DF.input)])
 
 
     #print(table(DF.input[,ncol(DF.input)]))

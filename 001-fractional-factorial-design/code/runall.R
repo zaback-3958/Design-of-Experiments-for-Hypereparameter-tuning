@@ -74,7 +74,7 @@ DF.adult <- read.csv(
     file   = file.path(dir.data,"adult.csv"),
     header = TRUE
     );
-DF.adult <- na.omit(DF.adult)
+#DF.adult <- na.omit(DF.adult)
 
 list_na <- colnames(DF.adult)[ apply(DF.adult, 2, anyNA) ]
 median_missing <- apply(DF.adult[,colnames(DF.adult) %in% list_na],2,median,na.rm =  TRUE)
