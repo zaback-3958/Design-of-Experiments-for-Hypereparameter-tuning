@@ -84,7 +84,7 @@ DF.adult[,ncol(DF.adult)] <- as.factor(DF.adult[,ncol(DF.adult)])
 classes <- unique(DF.adult[,ncol(DF.adult)])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-retained.predictors <- setdiff(colnames(DF.adult),"my_res");
+retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 #LIST.trainTest <- splitTrainTest(DF.input = DF.housing);
@@ -102,19 +102,17 @@ pFactors = 1)
 # DF.input = DF.adult)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-getRF.results <- RF.frfc.results(
+getRF.results <- RF.fullfac.results(
 DF.input             = DF.adult,
 Design               = get.DoEDesign,
-#randomIndex          = get.crossvalidation,
 retained.predictors  = retained.predictors,
-classes              = classes,
-resolution           = "VII"
+classes              = classes
 )
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-get.lmfrfc <- lm.fractional.design(
-DF.RFfrfc.train = getRF.results[["DF.frfc.train"]],
-DF.RFfrfc.valid = getRF.results[["DF.frfc.valid"]],
-DF.RFfrfc.test  = getRF.results[["DF.frfc.test"]])
+get.lmfullfc <- lm.fractional.design(
+DF.RFfullfc.train = getRF.results[["DF.fullfc.train"]],
+DF.RFfullfc.valid = getRF.results[["DF.fullfc.valid"]],
+DF.RFfullfc.test  = getRF.results[["DF.fullfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(

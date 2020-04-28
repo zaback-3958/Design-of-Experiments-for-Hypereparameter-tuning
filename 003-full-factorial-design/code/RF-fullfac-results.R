@@ -2,9 +2,8 @@
 RF.fullfac.results <- function(
     DF.input            = NULL,
     Design              = NULL,
-    randomIndex         = NULL,
     retained.predictors = NULL,
-    nFactors            = NULL
+    classes             = NULL
     ) {
 
     this.function.name <- "RF.fullfac.results";
@@ -21,13 +20,11 @@ RF.fullfac.results <- function(
     print(n.cols)
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     cat(paste0(" \n full factorial Design:","n=",nFactors ,"\n"));
-    # DF.input[,"my_res"] <- as.factor(DF.input[,"my_res"]);
-    # labels              <- unique(DF.input[,"my_res"]);
+    
 
-    # DF.input[,ncol(DF.input)] <- as.factor(DF.input[,ncol(DF.input)])
-    # labels <- unique(DF.input[,ncol(DF.input)])
-
-    fullfact.results <- c()
+    fullfc.RF.train <- c();
+    fullfc.RF.valid <- c();
+    fullfc.RF.test  <- c();
 
     for (i in 1:nrow(des.deo)){
         if (des.deo$nodesize[i] == -1)  {nodesize <- 1} else {nodesize <- floor(0.1*n.rows)}
@@ -36,65 +33,98 @@ RF.fullfac.results <- function(
         if (des.deo$maxnodes[i] == -1)  {maxnodes <- 5} else {maxnodes <- NULL}
   
  
-    internalResults <- c()
-  
-    TP   <-  0
-    FN   <-  0
-    FP   <-  0
-    TN   <-  0
-  
+    RF.results.train <- c()
+    RF.results.valid <- c()
+    RF.results.test  <- c()
+
     for (j in 1:10){
         print(paste("fold",j,"of run", i))
-        train <- DF.input[-which(randomIndex == j),]
-        test <-  DF.input[ which(randomIndex == j),]
-    
-    RFmodel <- randomForest(
-        x = train[,retained.predictors],
-        y = train[,"my_res"],
-        xtest = test[,retained.predictors],
-        ytest = test[,"my_res"],
+        
+        crossvalidate.res <- cross.validation(
+            DF.input = DF.input,
+            k        = j);
+
+        train      = crossvalidate.res[["DF.train"]];
+        validation = crossvalidate.res[["DF.valid"]];
+        test       = crossvalidate.res[["DF.test"]];
+
+
+    RF.machine   <-  randomForest::randomForest(
+        x        = train[,retained.predictors],
+        y        = train[,"income_year"],
+        ntree    = ntree,
+        mtry     = mtry,
+        replace  = replace,
         nodesize = nodesize,
-        classwt = classwt,
-        cutoff = cutoff,
-        maxnodes = maxnodes)
-    
-    confu <- as.data.frame(RFmodel$test$confusion)
-    
-    TP   <-  TP + confu[labels[2], labels[2]] 
-    FN   <-  FN + confu[labels[2], labels[1]]
-    FP   <-  FP + confu[labels[1], labels[2]]
-    TN   <-  TN + confu[labels[1], labels[1]]
-    
+        classwt  = classwt,
+        cutoff   = cutoff,
+        maxnodes = maxnodes);
+ 
+
+    predictions.train <- predict(
+        object  = RF.machine,
+        newdata = train[,retained.predictors]);
+
+    predictions.validation <- predict(
+        object  = RF.machine,
+        newdata = validation[,retained.predictors]);
+
+    predictions.test <- predict(
+        object  = RF.machine,
+        newdata = test[,retained.predictors]);
+
+
+    DF.bacc <- bacc.measure.func(
+        DF.train           = train,
+        DF.validation      = validation,
+        DF.test            = test,
+        DF.pred.train      = predictions.train,
+        DF.pred.validation = predictions.validation,
+        DF.pred.test       = predictions.test,
+        classes            = classes)
+
+        bacc.train <- DF.bacc[["bacc.train"]]
+        bacc.valid <- DF.bacc[["bacc.valid"]]
+        bacc.test  <- DF.bacc[["DF.bacc.test"]]
+
+    RF.results.train <- c(RF.results.train, bacc.test)
+    RF.results.valid <- c(RF.results.valid, bacc.test)
+    RF.results.test  <- c(RF.results.test, bacc.test)
   }
-  
-    TPR <- TP/(TP+FN)
-    TNR <- TN/(TN+FP)
-    BACC <- (TPR + TNR)/2
-    print(BACC)
-    fullfact.results <- c(fullfact.results, BACC)
-  
-}
-Sys.time()
 
-fullfac.design <- add.response(Design, fullfact.results)
-print(summary(fullfac.design))
+    cat("\n print(RF.results.test)\n");
+    print( RF.results.test );
+    
+     mean.bacc.train     <- mean(RF.results.train);
+     mean.bacc.valid     <- mean(RF.results.valid);
+     mean.bacc.test      <- mean(RF.results.test);
+
+     cat("\n print(mean.bacc.test )\n");
+     print( mean.bacc.test  );
+
+     fullfc.RF.train  <- c(fullfc.RF.train, mean.bacc.train)
+     fullfc.RF.valid  <- c(fullfc.RF.valid, mean.bacc.valid)
+     fullfc.RF.test   <- c(fullfc.RF.test, mean.bacc.test)
+ }
+
+    fullfc.results.train <- add.response(Design, fullfc.RF.train);
+    fullfc.results.valid <- add.response(Design, fullfc.RF.valid);
+    fullfc.results.test <- add.response(Design, fullfc.RF.test)
+
+    cat("\n print(summary(fullfc.results.test))\n");
+    print( summary(fullfc.results.test) );
 
 
-
-cat("\n print(summary(fullfac.design))\n");
-print( summary(fullfac.design) );
-
-
-write.csv(
-x         = fullfac.design,
-file      = "fullfac-design.csv",
-row.names = FALSE)
+# write.csv(
+# x         = fullfc.results,
+# file      = "RFDOE.csv",
+# row.names = FALSE)
 
 #save(design.resp, file = "RFDOE.RData")
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ s###
     png(paste0("plot-","main-effects-full-factorial",".png"),height = 12, width = 12, units = "in", res = 3);
-    MEPlot(obj   = frfc.results,
+    MEPlot(obj   = fullfc.results,
         # abbrev   = 5,
         # cex.xax  = 1.6,
         # cex.main = 2,
@@ -103,7 +133,7 @@ row.names = FALSE)
      dev.off();
 
      png(paste0("plot-","interactions-full-factorial",".png"),height = 12, width = 12, units = "in", res = 3);
-     IAPlot(obj = frfc.results,
+     IAPlot(obj = fullfc.results,
          #abbrev = 5,
          show.alias = TRUE,
          # lwd = 2,
@@ -117,6 +147,9 @@ row.names = FALSE)
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     cat(paste0("\nexiting: ",this.function.name,"()"));
     cat(paste0("\n",paste(rep("#",50),collapse=""),"\n"));
-    return( frfc.results );
+    return( list(
+        DF.fullfc.train = fullfc.results.train,
+        DF.fullfc.valid = fullfc.results.valid,
+        DF.fullfc.test = fullfc.results.test));
 
     }
