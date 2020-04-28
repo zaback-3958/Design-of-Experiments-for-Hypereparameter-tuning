@@ -24,8 +24,8 @@ RF.frfc.results <- function(
     print(n.cols)
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     cat(paste0("\n### Fractional Design: ",resolution,"\n"));
-    # DF.input[,"my_res"] <- as.factor(DF.input[,"my_res"]);
-    # labels              <- unique(DF.input[,"my_res"]);
+    # DF.input[,"income_year"] <- as.factor(DF.input[,"income_year"]);
+    # labels              <- unique(DF.input[,"income_year"]);
 
     # DF.input[,ncol(DF.input)] <- as.factor(DF.input[,ncol(DF.input)])
     # classes <- unique(DF.input[,ncol(DF.input)])
@@ -33,8 +33,8 @@ RF.frfc.results <- function(
 
     #print(table(DF.input[,ncol(DF.input)]))
 
-    cat("\n print(levels(my_res) )\n");
-    print( levels(DF.input[,"my_res"])  );
+    cat("\n print(levels(income_year) )\n");
+    print( levels(DF.input[,"income_year"])  );
 
     
     #DoE.RF.results  <- data.frame()
@@ -71,8 +71,8 @@ RF.frfc.results <- function(
         # train <- DF.input[-which(randomIndex == j),]
         # test <-  DF.input[ which(randomIndex == j),]
 
-        # cat("\n print(train.levels(my_res) )\n");
-        # print( levels(train[,"my_res"])  );
+        # cat("\n print(train.levels(income_year) )\n");
+        # print( levels(train[,"income_year"])  );
 
         # print(table(train[,ncol(train)]))
         # print(table(test[,ncol(test)]))
@@ -86,8 +86,8 @@ RF.frfc.results <- function(
         validation = crossvalidate.res[["DF.valid"]];
         test       = crossvalidate.res[["DF.test"]];
 
-    # RFmodel <- randomForest::randomForest(x = train[,retained.predictors], y = train[,"my_res"],
-    #                         xtest = test[,retained.predictors], ytest = test[,"my_res"],
+    # RFmodel <- randomForest::randomForest(x = train[,retained.predictors], y = train[,"income_year"],
+    #                         xtest = test[,retained.predictors], ytest = test[,"income_year"],
     #                         ntree = ntree,
     #                         mtry = mtry,
     #                         replace = replace,
@@ -99,7 +99,7 @@ RF.frfc.results <- function(
 
     RF.machine   <-  randomForest::randomForest(
         x        = train[,retained.predictors],
-        y        = train[,"my_res"],
+        y        = train[,"income_year"],
         ntree    = ntree,
         mtry     = mtry,
         replace  = replace,
@@ -135,9 +135,9 @@ RF.frfc.results <- function(
         bacc.valid <- DF.bacc[["bacc.valid"]]
         bacc.test  <- DF.bacc[["DF.bacc.test"]]
 
-    # #confusion.train = as.table(confusionMatrix(predictions.train,train[,"my_res"]));
-    # #confusion.valid = as.table(confusionMatrix(predictions.validation, validation[,"my_res"]));
-    # confusion.test  = as.table(confusionMatrix(predictions.test, test[,"my_res"]));
+    # #confusion.train = as.table(confusionMatrix(predictions.train,train[,"income_year"]));
+    # #confusion.valid = as.table(confusionMatrix(predictions.validation, validation[,"income_year"]));
+    # confusion.test  = as.table(confusionMatrix(predictions.test, test[,"income_year"]));
 
 
 

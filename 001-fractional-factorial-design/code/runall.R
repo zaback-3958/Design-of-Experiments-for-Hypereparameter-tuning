@@ -84,7 +84,7 @@ DF.adult[,ncol(DF.adult)] <- as.factor(DF.adult[,ncol(DF.adult)])
 classes <- unique(DF.adult[,ncol(DF.adult)])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-retained.predictors <- setdiff(colnames(DF.adult),"my_res");
+retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 #LIST.trainTest <- splitTrainTest(DF.input = DF.housing);
