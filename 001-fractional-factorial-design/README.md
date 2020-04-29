@@ -8,7 +8,7 @@ The authors used DoE to do the hyperparameter tunning for Random Forest. They us
 This work has been done according to the article to reproduce the results for Random Forest and then try to apply to some other machine learning models.
 
 # General description of the Design of Experiments and some of its method
-An experiment is a test or series of tests in which some changes are made to the input to identify the effect of those changes on the reponse. Design of Experiment is a method in which the number of factors, their ranges of values and number of times to run the experiments are determined to identify the relationship between the factors and the response variable. One of the strategies of DoE to evaluate the effect of factors on the response is the method of * one factor at a time ** 
+An experiment is a test or series of tests in which some changes are made to the input to identify the effect of those changes on the reponse. Design of Experiment is a method in which the number of factors, their ranges of values and number of times to run the experiments are determined to identify the relationship between the factors and the response variable. One of the strategies of DoE to evaluate the effect of factors on the response is the method of **one factor at a time** 
 
 Three principles of Design of Experiments include:
 * Randomization : The assignment of the treatment to the experimental unites and their order must be randomized. This process of randomization eliminates potential biases from the results.
