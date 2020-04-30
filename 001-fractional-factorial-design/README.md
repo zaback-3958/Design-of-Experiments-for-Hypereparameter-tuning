@@ -58,7 +58,7 @@ These hypothesis are evaluating if the main effect of factors ``A`` and ``B`` an
 
 <img src="http://latex.codecogs.com/gif.latex?SS_{T}=SS_{A}+SS_{B}+SS_{AB}+SS_{E}" border="0"/>
 
-Where <img src="http://latex.codecogs.com/gif.latex?SS_{T}" border="0"/> has <img src="http://latex.codecogs.com/gif.latex?abn-1" border="0"/> degrees of freedom and <img src="http://latex.codecogs.com/gif.latex?SS_{A}" border="0"/> , <img src="http://latex.codecogs.com/gif.latex?SS_{B}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?SS_{AB}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?SS_{E}" border="0"/> has (a-1), (b-1),(a-1)(b-1), and ab(n-1) degrees of freedom respectively. 
+Where <img src="http://latex.codecogs.com/gif.latex?SS_{T}" border="0"/> has <img src="http://latex.codecogs.com/gif.latex?abn-1" border="0"/> degrees of freedom and <img src="http://latex.codecogs.com/gif.latex?SS_{A}" border="0"/> , <img src="http://latex.codecogs.com/gif.latex?SS_{B}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?SS_{AB}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?SS_{E}" border="0"/> has <img src="http://latex.codecogs.com/gif.latex?a-1" border="0"/>, <img src="http://latex.codecogs.com/gif.latex?b-1" border="0"/>,<img src="http://latex.codecogs.com/gif.latex?(a-1)(b-1)" border="0"/>, and <img src="http://latex.codecogs.com/gif.latex?ab(n-1)" border="0"/> degrees of freedom respectively. 
  
  
  
