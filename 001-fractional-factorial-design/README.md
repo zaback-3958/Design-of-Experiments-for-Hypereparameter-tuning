@@ -41,11 +41,9 @@ The formal hypothesis testing can be done using the Cochrane's Theorem which imp
 has F distribution with (a-1) and (N-A) degrees of freedom. This is the test statistics for the hypothesis testing of no difference in the treatment means. By considering the expected mean squares, it can be seen that when the null hypothesis is false, then the expected value of  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> is greater than expected avlue of <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> and the null hypothesis must be rejected. 
 
 ## Factorial Design 
-
-Sometimes the effect of several factors on a response variable can be measured by testing one factor at a time at their different levels which is useful only when there is not an interaction among those factors. However, since sometimes factors have interactions with each other, it is more efficient to do the experiments by including all the factors in the design. The method of Factorial Design from DoE is one of the methods that is very useful to evaluate the effect of several factors on the response variable at the same time. The general form of Factorial design can be represented as:
+There are some experiments in which the effect of more than one factor needs to be evaluated. The most efficient design is Factorial design for this type of experiments. In this method all the combination of the factor levels are evaluated. for instance for a factorial design with two factors ``A`` with ``a`` levels and ``B`` with ``b`` levels, there are ``ab`` treatment for each replication. The main effect of a factors is the change in the response by change in the levels of that factor. The interaction between factors happens when the change in the response at the levels of one factor depends on the levels of other factor. The general form of Factorial design can be represented as:
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\mu+\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
-
 
 for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,b" border="0"/> , and <img src="http://latex.codecogs.com/gif.latex?k=1,2,\cdots,n" border="0"/>
 , where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
