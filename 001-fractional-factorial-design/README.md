@@ -175,6 +175,7 @@ This graph shows that the interactions between the following factors are signifi
 replace:classwt, replace:maxnodes, nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
 
 ![Test Image 7](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-04-30/plot-interactions-fractional-factorial-test-IV.png)
+
 As it can be observed on this graph the following interactions have effect on the response: 
 replace:nodesize, replace:classwt, replace:maxnodes, nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
 
