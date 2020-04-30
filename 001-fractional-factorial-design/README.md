@@ -24,16 +24,11 @@ This a method of DoE that the effect of one factor with **a** levels (**a** trea
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
 is the effect of ``i-th``  level of factor ``A`` or the ``i-th`` treatment effect, and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ij}" border="0"/> is the random error. 
 
-The objective is to test the hypothesis if the treatmments have effect on the response and to measure their effects. In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed with the mean and variance as displayed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>. In this design the hypothesis to test is:
+The objective is to test the hypothesis if the treatmments have effect on the response and to measure their effects. In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed with the mean and variance as displayed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>. In this design the hypothesis to test is either the mean effects are the same on the response or the treatments effects are the same as it is dispalyed below respectively::
 
-<img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)\end{matrix}\right" border="0"/>
-
-
-here it is:
 <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)\end{matrix}\right&space;\Rightarrow\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\tau_{3}\cdots=\tau_{a}\\H_{1}:&space;\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
 
-
-or equivalently can be written as 
+The treatment effect <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> is the deviation from the overal mean <img src="http://latex.codecogs.com/gif.latex?\mu_{i}" border="0"/> as <img src="http://latex.codecogs.com/gif.latex?\tau_{i}=\mu-\mu_{i}" border="0"/> and as aresult <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=&space;0" border="0"/>
 
 ## Factorial Design 
 
