@@ -50,14 +50,15 @@ for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
 is the effect of ``i-th``  level of factor ``A``, <img src="http://latex.codecogs.com/gif.latex?\beta_{j}" border="0"/>
  is the effect of ``j-th``  level of factor ``B``, <img src="http://latex.codecogs.com/gif.latex?(\tau\beta)_{ij}" border="0"/>
- is the interaction effect of factors ``A`` and ``B`` and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ijk}" border="0"/> is the random error. Also, 
- 
- The hypothesis test for this factorial expermients is :
- 
+ is the interaction effect of factors ``A`` and ``B`` and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ijk}" border="0"/> is the random error. Also, <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=0,\;\;\;\sum_{j=1}^{b}\beta_{j}=0,\;\;\;\sum_{i=1}^{a}(\tau\beta)_{ij}=\sum_{j=1}^{b}(\tau\beta)_{ij}=0" border="0"/>. The hypothesis test for this factorial expermient is :
  
  <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\cdots=\tau_{a}\\H_{1}:\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right&space;\;\;\;\;\left\{\begin{matrix}H_{0}:&space;\beta_{1}=\beta_{2}=\cdots=\beta_{b}\\H_{1}:&space;\beta_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right\;\;\;\;\left\{\begin{matrix}H_{0}:&space;(\tau\beta)_{ij}=&space;0\\H_{1}:&space;(\tau\beta)_{ij}\neq0\;\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
 
-  
+These hypothesis are evaluating if the main effect of factors ``A`` and ``B`` and their interaction has effect on the response. These hypothesis can be tested using two-factor analysis of variance. The total variablility is partitioned as below:
+
+<img src="http://latex.codecogs.com/gif.latex?SS_{T}=SS_{A}+SS_{B}+SS_{AB}+SS_{E}" border="0"/>
+
+Where <img src="http://latex.codecogs.com/gif.latex?SS_{T}" border="0"/> has abn-a degrees of freedom and <img src="http://latex.codecogs.com/gif.latex?SS_{A}" border="0"/> , <img src="http://latex.codecogs.com/gif.latex?SS_{B}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?SS_{AB}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?SS_{E}" border="0"/> has (a-1), (b-1),(a-1)(b-1), and ab(n-1) degrees of freedom respectively. 
  
  
  
