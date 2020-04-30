@@ -37,7 +37,11 @@ Since there are **a** treatments and **n** replicates, there are total of **N** 
 The formal hypothesis testing can be done using the Cochrane's Theorem which implys that <img src="http://latex.codecogs.com/gif.latex?\frac{SS_{E}}{\sigma^{2}}" border="0"/>  and <img src="http://latex.codecogs.com/gif.latex?\frac{SS_{treatment}}{\sigma^{2}}" border="0"/> are indepndent chi-square random variables and as a result under the null hypothesis the ratio:
 
  <img src="http://latex.codecogs.com/gif.latex?F_{0}=\frac{MS_{Treatment}}{MS_{E}}=\frac{SS_{Treatment}/a-1}{SS_{E}/N-a}" border="0"/>
-has F distribution with (a-1) and (N-A) degrees of freedom. 
+has F distribution with (a-1) and (N-A) degrees of freedom. This is the test statistics for the hypothesis testing of no difference in the treatment means. By considering the expected mean squares, it can be seen that when the null hypothesis is false then the expected value of  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> is greater than expected avlue of <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> and the null hypothesis must be rejected. 
+
+
+
+
 ## Factorial Design 
 
 Sometimes the effect of several factors on a response variable can be measured by testing one factor at a time at their different levels which is useful only when there is not an interaction among those factors. However, since sometimes factors have interactions with each other, it is more efficient to do the experiments by including all the factors in the design. The method of Factorial Design from DoE is one of the methods that is very useful to evaluate the effect of several factors on the response variable at the same time. The general form of Factorial design can be represented as:
