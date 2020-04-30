@@ -36,9 +36,9 @@ Since there are **a** treatments and **n** replicates, there are total of **N** 
 
 These sum of squares and degrees of freedom will be used to obtain the quantities 
 
-<img src="http://latex.codecogs.com/gif.latex?MS_{E}=\frac{SSE}{N-a}" border="0"/>  and  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}=\frac{SS_{Treatment}}{a-1}" border="0"/> 
+<img src="http://latex.codecogs.com/gif.latex?MS_{E}=\frac{SSE}{N-a}" border="0"/>   and   <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}=\frac{SS_{Treatment}}{a-1}" border="0"/> 
 
-to evaluate the treatment effects on the response. It can be seen that the <img src="http://latex.codecogs.com/gif.latex?E(MS_{E})=\sigma_{2}" border="0"/>  and <img src="http://latex.codecogs.com/gif.latex?E(MS_{Treatment})=\sigma_{2}+\frac{n\sum_{i=1}^{a}\tau_{i}}{a-1}" border="0"/>. As it can be observed if the treatment effects are zero then both <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> and  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> are the unbiased estiimate of  <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. 
+to evaluate the treatment effects on the response. By doing some math It can be obtained that the <img src="http://latex.codecogs.com/gif.latex?E(MS_{E})=\sigma_{2}" border="0"/>  and <img src="http://latex.codecogs.com/gif.latex?E(MS_{Treatment})=\sigma^{2}+\frac{n\sum_{i=1}^{a}\tau_{i}}{a-1}" border="0"/>. As it can be observed if the treatment effects are zero then both <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> and  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> are the unbiased estiimate of  <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. Therefore, it can be conclude that the comparison between the <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> and <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> can be made to do the hypothesis testing of this design.
  
 
 ## Factorial Design 
