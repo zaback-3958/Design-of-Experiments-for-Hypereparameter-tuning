@@ -29,6 +29,10 @@ The objective is to test the hypothesis if the treatmments have effect on the re
 <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)\end{matrix}\right" border="0"/>
 
 
+here it is:
+<img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)\end{matrix}\right&space;\Rightarrow\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\tau_{3}\cdots=\tau_{a}\\H_{1}:&space;\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
+
+
 or equivalently can be written as 
 
 ## Factorial Design 
