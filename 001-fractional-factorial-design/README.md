@@ -55,7 +55,7 @@ is the effect of ``i-th``  level of factor ``A``, <img src="http://latex.codecog
  The hypothesis test for this factorial expermients is :
  
  
- <img src="http://latex.codecogs.com/gif.latex \left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\cdots=\tau_{a}\\H_{1}:\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right&space;\;\;\;\;\left\{\begin{matrix}H_{0}:&space;\beta_{1}=\beta_{2}=\cdots=\beta_{b}\\H_{1}:&space;\beta_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right\;\;\;\;\left\{\begin{matrix}H_{0}:&space;(\tau\beta)_{ij}=&space;0\\H_{1}:&space;(\tau\beta)_{ij}\neq0\;\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
+ <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\cdots=\tau_{a}\\H_{1}:\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right&space;\;\;\;\;\left\{\begin{matrix}H_{0}:&space;\beta_{1}=\beta_{2}=\cdots=\beta_{b}\\H_{1}:&space;\beta_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right\;\;\;\;\left\{\begin{matrix}H_{0}:&space;(\tau\beta)_{ij}=&space;0\\H_{1}:&space;(\tau\beta)_{ij}\neq0\;\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
 
   
  
