@@ -24,7 +24,7 @@ code.files <- c(
 	"getData-sample.R",
 	#"get-DoEfactors.R",
 	"splitTrainTest.R",
-	"get-DoEdesign.R",
+	"get-frfcdesign.R",
 	"cross-validation.R",
 	"bacc-measure.R",
 	"RF-frcfac-results.R",
@@ -104,7 +104,7 @@ pFactors = 2)
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 getRF.results <- RF.frfc.results(
 DF.input             = DF.adult,
-Design               = get.DoEDesign,
+Design               = get.frfcDesign,
 #randomIndex          = get.crossvalidation,
 retained.predictors  = retained.predictors,
 classes              = classes,

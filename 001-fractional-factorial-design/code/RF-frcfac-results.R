@@ -131,8 +131,8 @@ RF.frfc.results <- function(
         DF.pred.test       = predictions.test,
         classes            = classes)
 
-        bacc.train <- DF.bacc[["bacc.train"]]
-        bacc.valid <- DF.bacc[["bacc.valid"]]
+        bacc.train <- DF.bacc[["DF.bacc.train"]]
+        bacc.valid <- DF.bacc[["DF.bacc.valid"]]
         bacc.test  <- DF.bacc[["DF.bacc.test"]]
 
     # #confusion.train = as.table(confusionMatrix(predictions.train,train[,"income_year"]));
@@ -159,8 +159,8 @@ RF.frfc.results <- function(
     # BACC <- (TPR + TNR)/2
     # print(BACC)
     # test.RF.results <- c(test.RF.results, BACC)
-    RF.results.train <- c(RF.results.train, bacc.test)
-    RF.results.valid <- c(RF.results.valid, bacc.test)
+    RF.results.train <- c(RF.results.train, bacc.train)
+    RF.results.valid <- c(RF.results.valid, bacc.valid)
     RF.results.test  <- c(RF.results.test, bacc.test)
   }
 

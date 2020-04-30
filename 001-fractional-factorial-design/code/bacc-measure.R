@@ -76,8 +76,7 @@ bacc.measure.func <- function(
 	  	n.fn = FN,
 	  	n.fp = FP,
 	  	n.tn = TN));
-
-}
+	  }
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 	bacc.fnc <- function(
