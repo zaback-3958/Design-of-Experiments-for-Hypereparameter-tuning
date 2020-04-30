@@ -41,7 +41,7 @@ The formal hypothesis testing can be done using the Cochrane's Theorem which imp
 has F distribution with (a-1) and (N-A) degrees of freedom. This is the test statistics for the hypothesis testing of no difference in the treatment means. By considering the expected mean squares, it can be seen that when the null hypothesis is false, then the expected value of  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> is greater than expected avlue of <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> and the null hypothesis must be rejected. 
 
 ## Factorial Design 
-There are some experiments in which the effect of more than one factor needs to be evaluated. The most efficient design is Factorial design for this type of experiments. In this method all the combination of the factor levels are evaluated. for instance for a factorial design with two factors ``A`` with ``a`` levels and ``B`` with ``b`` levels, there are ``ab`` treatment for each replication. The main effect of a factors is the change in the response by change in the levels of that factor. The interaction between factors happens when the change in the response at the levels of one factor depends on the levels of other factor. The general form of Factorial design can be represented as:
+There are some experiments in which the effect of more than one factor needs to be evaluated. The most efficient design is Factorial design for this type of experiments. In this method all the combination of the factor levels are evaluated. for instance for a factorial design with two factors ``A`` with ``a`` levels and ``B`` with ``b`` levels, there are ``ab`` treatment for each replication. The main effect of a factors is the change in the response by change in the levels of that factor. The interaction between factors happens when the change in the response at the levels of one factor depends on the levels of other factor. The model Factorial experiment for two factros can be represented as:
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ijk}=\mu+\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}" border="0"/>
 
@@ -50,7 +50,18 @@ for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
 is the effect of ``i-th``  level of factor ``A``, <img src="http://latex.codecogs.com/gif.latex?\beta_{j}" border="0"/>
  is the effect of ``j-th``  level of factor ``B``, <img src="http://latex.codecogs.com/gif.latex?(\tau\beta)_{ij}" border="0"/>
- is the interaction effect of factors ``A`` and ``B`` and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ijk}" border="0"/> is the random error. 
+ is the interaction effect of factors ``A`` and ``B`` and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ijk}" border="0"/> is the random error. Also, 
+ 
+ The hypothesis test for this factorial expermients is :
+ 
+ 
+ <img src="http://latex.codecogs.com/gif.latex \left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\cdots=\tau_{a}\\H_{1}:\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right&space;\;\;\;\;\left\{\begin{matrix}H_{0}:&space;\beta_{1}=\beta_{2}=\cdots=\beta_{b}\\H_{1}:&space;\beta_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right\;\;\;\;\left\{\begin{matrix}H_{0}:&space;(\tau\beta)_{ij}=&space;0\\H_{1}:&space;(\tau\beta)_{ij}\neq0\;\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
+
+  
+ 
+ 
+ 
+ 
 ## Two-level Factorial Designs
 This method is represented by <img src="http://latex.codecogs.com/gif.latex?2^{k}"/>
  for ``K``  factors with two different levels as low and high for each factor. The simplest case of this type of method is the experiments with only two factors which will result is <img src="http://latex.codecogs.com/gif.latex?2^{2}=4" border="0"/>
