@@ -30,7 +30,7 @@ In this design it is assumed that the errors are identically independently distr
 
 The treatment effect <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> is the deviation of mean effect  <img src="http://latex.codecogs.com/gif.latex?\mu_{i}" border="0"/> from the overal mean <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/> as <img src="http://latex.codecogs.com/gif.latex?\tau_{i}=\mu-\mu_{i}" border="0"/> and as aresult <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=&space;0" border="0"/>. The method of Analysis of Varaice is used to test the mean treatment effects. This name has derived from the fact that the toatl variability of the toatl mean can be partitioned in two parts as variability between treatments and variablity within treatments.
 
-<img src="http://latex.codecogs.com/gif.latex?SS_{Total}=SS_{treatment}+SS_{error}\Rightarrow\\\sum_{i=1}^{a}\sum_{j=1}^{n}(y_{ij}-\bar{y_{..}})^{2}=\sum_{i=1}^{a}\sum_{j=1}^{n}(\bar{y_{i.}}-\bar{y_{..}})^{2}+\sum_{i=1}^{a}\sum_{j=1}^{n}(y_{ij}-\bar{y_{i.}})^{2}" border="0"/>
+<img src="http://latex.codecogs.com/gif.latex?SS_{Total}=SS_{treatment}+SS_{error}\Rightarrow&space;\sum_{i=1}^{a}\sum_{j=1}^{n}(y_{ij}-\bar{y_{..}})^{2}=\sum_{i=1}^{a}\sum_{j=1}^{n}(\bar{y_{i.}}-\bar{y_{..}})^{2}+\sum_{i=1}^{a}\sum_{j=1}^{n}(y_{ij}-\bar{y_{i.}})^{2}" border="0"/>
 
 ## Factorial Design 
 
