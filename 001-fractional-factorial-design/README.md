@@ -7,14 +7,24 @@ The authors used DoE to do the hyperparameter tunning for Random Forest. They us
 
 This work has been done according to the article to reproduce the results for Random Forest and then try to apply to some other machine learning models.
 
-# General description of the Design of Experiments and some of its method
-An experiment is a test or series of tests in which some changes are made to the input to identify the effect of those changes on the reponse. Design of Experiment is a method in which the number of factors, their ranges of values and number of times to run the experiments are determined to identify the relationship between the factors and the response variable. One of the strategies of DoE to evaluate the effect of factors on the response is the method of **one factor at a time** 
+# Design of Experiments
+An experiment is a test or series of tests in which some changes are made to the input to identify the effect of those changes on the reponse. Design of Experiment is a method in which the number of factors, their ranges of values and number of times to run the experiments are determined to identify the relationship between the factors and the response variable. One of the strategies of DoE to evaluate the effect of factors on the response is the method of **one factor at a time**. In this method the effect of each factor is evaluated on the response by holding the other factors constant. The disadvantage of this method is that it cannot recognize the interaction between factors. There is another strategy that considers several factors at the same time and they are varied together and that is called **Factorial Design**. This type of design is very efficient and will be discussed later. There are three principles for DoE which include:
+* Randomization : The allocation of the experimental unit and the order in which the trials are run needs to be randomized. By randomization the effect of the extraneous effect can be averaged out.
+* Replication : It is the repetition of the basic experiment and helps to have a estimate of the experimental error. 
+* Blocking : It is a technique to improve the precision when comparing the effect of factors and to reduce the effect of nuisance factors. 
+There are several methods of DoE that can be used to do the experiments, and they are selected according to the problem and experimenter experience. In this project Factorial Design, Fractiional Factorial Design and Response Surface Method will be dicussed. 
 
-Three principles of Design of Experiments include:
-* Randomization : The assignment of the treatment to the experimental unites and their order must be randomized. This process of randomization eliminates potential biases from the results.
-* Replication
-* Blocking
+## Single Factor Analysis (Analysis of Varaince) 
+This a method of DoE that the effect of one factor with **a** levels (**a** treatments) on the response is evaluated. If an experimenter is interested in evaluating the effect of one factor <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> on the response, the model is: 
 
+<img src="http://latex.codecogs.com/gif.latex?Y_{ij}=\mu+\tau_{i}+\epsilon_{ij}" border="0"/>
+
+ where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
+ is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
+is the effect of ``i-th``  level of factor ``A`` or the ``i-th`` treatment effect, and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ij}" border="0"/> is the random error. 
+
+
+## Factorial Design 
 
 Sometimes the effect of several factors on a response variable can be measured by testing one factor at a time at their different levels which is useful only when there is not an interaction among those factors. However, since sometimes factors have interactions with each other, it is more efficient to do the experiments by including all the factors in the design. The method of Factorial Design from DoE is one of the methods that is very useful to evaluate the effect of several factors on the response variable at the same time. The general form of Factorial design can be represented as:
 
