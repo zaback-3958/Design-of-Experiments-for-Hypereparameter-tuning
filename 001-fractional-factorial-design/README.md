@@ -30,6 +30,8 @@ The objective is to test the hypothesis if the treatmments have effect on the re
 H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\ 
 H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)
 \end{matrix}\right" border="0"/>
+
+
 or equivalently can be written as 
 
 ## Factorial Design 
