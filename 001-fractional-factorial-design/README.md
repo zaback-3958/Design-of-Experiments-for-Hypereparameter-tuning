@@ -16,7 +16,7 @@ An experiment is a test or series of tests in which some changes are made to the
 There are several methods of DoE that can be used to do the experiments, and they are selected according to the problem and experimenter experience. In this project Factorial Design, Fractiional Factorial Design and Response Surface Method will be dicussed. 
 
 ## Single Factor Analysis (Analysis of Varaince) 
-This a method of DoE that the effect of one factor with **a** levels (**a** treatments) on the response is evaluated. If an experimenter is interested in evaluating the effect of one factor <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> on the response, the model is: 
+This a method of DoE that the effect of one factor with **a** levels (**a** treatments) on the response is evaluated. If an experimenter is interested in evaluating the effect of one factor <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> on the response, the model can be depicted as : 
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ij}=\mu+\tau_{i}+\epsilon_{ij}" border="0"/>
 
@@ -24,11 +24,11 @@ This a method of DoE that the effect of one factor with **a** levels (**a** trea
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
 is the effect of ``i-th``  level of factor ``A`` or the ``i-th`` treatment effect, and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ij}" border="0"/> is the random error. 
 
-The objective is to test the hypothesis if the treatmments have effect on the response and to measure their effects. In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed with the mean and variance as displayed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>. In this design the hypothesis to test is either the mean effects are the same on the response or the treatments effects are the same as it is dispalyed below respectively::
+In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed with the mean and variance as displayed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>. The hypothesis test for this design can be written in two forms either to evaluate the mean effects or the treatments effects on the response respectively as it is displayed below:
 
 <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)\end{matrix}\right&space;\Rightarrow\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\tau_{3}\cdots=\tau_{a}\\H_{1}:&space;\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
 
-The treatment effect <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> is the deviation from the overal mean <img src="http://latex.codecogs.com/gif.latex?\mu_{i}" border="0"/> as <img src="http://latex.codecogs.com/gif.latex?\tau_{i}=\mu-\mu_{i}" border="0"/> and as aresult <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=&space;0" border="0"/>
+The treatment effect <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> is the deviation of mean effect  <img src="http://latex.codecogs.com/gif.latex?\mu_{i}" border="0"/> from the overal mean <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/> as <img src="http://latex.codecogs.com/gif.latex?\tau_{i}=\mu-\mu_{i}" border="0"/> and as aresult <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=&space;0" border="0"/>
 
 ## Factorial Design 
 
