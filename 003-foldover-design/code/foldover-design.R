@@ -33,6 +33,9 @@ foldover.design <- function(
 
     foldDesign <- fold.design(Design)
 
+    cat("\n print(foldDesign )\n");
+    print( foldDesign  );
+
     cat("\n print(summary(foldDesign) )\n");
     print( summary(foldDesign)  );
 
@@ -103,13 +106,13 @@ foldover.design <- function(
         DF.pred.test       = predictions.test,
         classes            = classes)
 
-        bacc.train <- DF.bacc[["bacc.train"]]
-        bacc.valid <- DF.bacc[["bacc.valid"]]
+        bacc.train <- DF.bacc[["DF.bacc.train"]]
+        bacc.valid <- DF.bacc[["DF.bacc.valid"]]
         bacc.test  <- DF.bacc[["DF.bacc.test"]]
 
    
-    RF.results.train <- c(RF.results.train, bacc.test)
-    RF.results.valid <- c(RF.results.valid, bacc.test)
+    RF.results.train <- c(RF.results.train, bacc.train)
+    RF.results.valid <- c(RF.results.valid, bacc.valid)
     RF.results.test  <- c(RF.results.test, bacc.test)
   }
 
