@@ -24,7 +24,14 @@ This a method of DoE that the effect of one factor with **a** levels (**a** trea
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
 is the effect of ``i-th``  level of factor ``A`` or the ``i-th`` treatment effect, and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ij}" border="0"/> is the random error. 
 
-The objective is to test the hypothesis if the treatmments have effect on the response and to measure their effects. In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>
+The objective is to test the hypothesis if the treatmments have effect on the response and to measure their effects. In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed with the mean and variance as displayed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>. In this design the hypothesis to test is:
+
+<img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}
+H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3},\cdots ,\mu_{a}=0
+\\ 
+H_{1}:&space;\mu_{i}\neq \mu_{j}\;\;\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\;\;\;     \exists i,j
+\end{matrix}\right." border="0"/>
+or equivalently can be written as 
 
 ## Factorial Design 
 
