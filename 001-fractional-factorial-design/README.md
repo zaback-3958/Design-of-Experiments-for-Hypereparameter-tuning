@@ -20,15 +20,17 @@ This a method of DoE that the effect of one factor with **a** levels (**a** trea
 
 <img src="http://latex.codecogs.com/gif.latex?Y_{ij}=\mu+\tau_{i}+\epsilon_{ij}" border="0"/>
 
- where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
+ for <img src="http://latex.codecogs.com/gif.latex?i=1,2,\cdots,a" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?j=1,2,\cdots,n" border="0"/> where <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/>
  is the overal mean effec, and <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/>
-is the effect of ``i-th``  level of factor ``A`` or the ``i-th`` treatment effect, and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ij}" border="0"/> is the random error. 
+is the effect of ``i-th``  level of factor ``A`` or the ``i-th`` treatment effect, and <img src="http://latex.codecogs.com/gif.latex?\epsilon_{ij}" border="0"/> is the random error. Aslo this is an experiment with ``n`` replicates.
 
 In this design it is assumed that the errors are identically independently distributed with with mean zero and variance <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. As a result the observations are identically and independently distributed with the mean and variance as displayed <img src="http://latex.codecogs.com/gif.latex?y_{ij}\sim&space;N(\mu+\tau_{i},\sigma^{2})" border="0"/>. The hypothesis test for this design can be written in two forms to evaluate either the ean effects of the treatments on the response are equall or the effect of treatments are zero respectively as it is displayed below:
 
 <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\mu_{1}=\mu_{2}=\mu_{3}\cdots=\mu_{a}\\H_{1}:&space;\mu_{i}\neq\mu_{j}\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\exists&space;(i,j)\end{matrix}\right&space;\Rightarrow\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\tau_{3}\cdots=\tau_{a}\\H_{1}:&space;\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
 
-The treatment effect <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> is the deviation of mean effect  <img src="http://latex.codecogs.com/gif.latex?\mu_{i}" border="0"/> from the overal mean <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/> as <img src="http://latex.codecogs.com/gif.latex?\tau_{i}=\mu-\mu_{i}" border="0"/> and as aresult <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=&space;0" border="0"/>. The method of Analysis of Varaice is used to test the mean treatment effects. This name has derived from the fact that the toatl variability of the toatl mean can be partitioned in two parts as variability between treatments and variablity within treatments. 
+The treatment effect <img src="http://latex.codecogs.com/gif.latex?\tau_{i}" border="0"/> is the deviation of mean effect  <img src="http://latex.codecogs.com/gif.latex?\mu_{i}" border="0"/> from the overal mean <img src="http://latex.codecogs.com/gif.latex?\mu" border="0"/> as <img src="http://latex.codecogs.com/gif.latex?\tau_{i}=\mu-\mu_{i}" border="0"/> and as aresult <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{a}\tau_{i}=&space;0" border="0"/>. The method of Analysis of Varaice is used to test the mean treatment effects. This name has derived from the fact that the toatl variability of the toatl mean can be partitioned in two parts as variability between treatments and variablity within treatments.
+
+<img src="http://latex.codecogs.com/gif.latex?SS_{Total}=SS_{treatment}+SS_{error}\Rightarrow\\\sum_{i=1}^{a}\sum_{j=1}^{n}(y_{ij}-\bar{y_{..}})^{2}=\sum_{i=1}^{a}\sum_{j=1}^{n}(\bar{y_{i.}}-\bar{y_{..}})^{2}+\sum_{i=1}^{a}\sum_{j=1}^{n}(y_{ij}-\bar{y_{i.}})^{2}" border="0"/>
 
 ## Factorial Design 
 
