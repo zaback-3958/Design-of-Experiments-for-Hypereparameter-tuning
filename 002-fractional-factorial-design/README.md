@@ -1,6 +1,9 @@
 # Fractional Factorial Design II
 This is another experiment to use Fractional Factorial Design to have fewer main effects and two-factor interaction effect to be aliased. From the first phase it was observed that the main effect cutoff was not significant, but its interaction with some other factors was significant. In this phase another design was used to be able to isolate the effect of this main factor and hopefully its interaction with other factors. The Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was selected . 
 
+<img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/>
+
+
 # Requirements
 * R v3.6.2
 * packages: FrF2, DoE.base, RandomForest, RSM
