@@ -16,8 +16,8 @@ cross.validation <- function(
     randomInd = sample(createInd)
   
     trainset = DF.input[-which(randomInd == k),]
-    train    = DF.input[-which(randomInd == k),]
-    test     = DF.input[ which(randomInd == k),]
+    #train    = DF.input[-which(randomInd == k),]
+    #test     = DF.input[ which(randomInd == k),]
   
   
     validationInd = sample(1:nrow(trainset), size = round(0.75*nrow(trainset)), replace=FALSE)
@@ -39,7 +39,7 @@ cross.validation <- function(
     
     return( list(
     DF.train = train,
-    DF.valid = validation,
-    DF.test  = test ))
+    DF.valid = validation))
+    #DF.test  = test ))
 
     }

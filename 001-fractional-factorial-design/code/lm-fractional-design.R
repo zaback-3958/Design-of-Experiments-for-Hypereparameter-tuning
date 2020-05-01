@@ -1,8 +1,8 @@
 
 lm.fractional.design <- function(
 	DF.RFfrfc.train   = NULL,
-	DF.RFfrfc.valid   = NULL,
-	DF.RFfrfc.test   = NULL
+	DF.RFfrfc.valid   = NULL
+	#DF.RFfrfc.test   = NULL
 	) {
 
 	this.function.name <- "lm.fractional.design";
@@ -37,15 +37,15 @@ lm.fractional.design <- function(
 	print( print(press.result.valid )   );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-	frfc.model.test <- lm(DF.RFfrfc.test)
+	# frfc.model.test <- lm(DF.RFfrfc.test)
 
-	cat("\ print(summary(frfc.model.test) )\n");
-	print( print(summary(frfc.model.test) )   );
+	# cat("\ print(summary(frfc.model.test) )\n");
+	# print( print(summary(frfc.model.test) )   );
 	
-	press.result.test <- press.func(DF.input = frfc.model.test)
+	# press.result.test <- press.func(DF.input = frfc.model.test)
 
-	cat("\ print(press.result.test )\n");
-	print( print(press.result.test )   );
+	# cat("\ print(press.result.test )\n");
+	# print( print(press.result.test )   );
 
 
 	### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###

@@ -43,7 +43,7 @@ RF.frfc.results <- function(
     #DoE.RF.results  <- c();
     frfc.RF.train <- c();
     frfc.RF.valid <- c();
-    frfc.RF.test  <- c();
+    #frfc.RF.test  <- c();
 
     for (i in 1:nrow(Design)){
         if (Design$ntree[i] == -1)     {ntree <- 100} else {ntree <- 500}
@@ -64,7 +64,7 @@ RF.frfc.results <- function(
 
     RF.results.train <- c()
     RF.results.valid <- c()
-    RF.results.test  <- c()
+    #RF.results.test  <- c()
     #results6 <- c()
     for (j in 1:10){
         print(paste("fold",j,"of run", i))
@@ -84,7 +84,7 @@ RF.frfc.results <- function(
 
         train      = crossvalidate.res[["DF.train"]];
         validation = crossvalidate.res[["DF.valid"]];
-        test       = crossvalidate.res[["DF.test"]];
+        #test       = crossvalidate.res[["DF.test"]];
 
     # RFmodel <- randomForest::randomForest(x = train[,retained.predictors], y = train[,"income_year"],
     #                         xtest = test[,retained.predictors], ytest = test[,"income_year"],
@@ -117,23 +117,23 @@ RF.frfc.results <- function(
         object  = RF.machine,
         newdata = validation[,retained.predictors]);
 
-    predictions.test <- predict(
-        object  = RF.machine,
-        newdata = test[,retained.predictors]);
+    # predictions.test <- predict(
+    #     object  = RF.machine,
+    #     newdata = test[,retained.predictors]);
 
 
     DF.bacc <- bacc.measure.func(
         DF.train           = train,
         DF.validation      = validation,
-        DF.test            = test,
+        #DF.test            = test,
         DF.pred.train      = predictions.train,
         DF.pred.validation = predictions.validation,
-        DF.pred.test       = predictions.test,
+        #DF.pred.test       = predictions.test,
         classes            = classes)
 
         bacc.train <- DF.bacc[["DF.bacc.train"]]
         bacc.valid <- DF.bacc[["DF.bacc.valid"]]
-        bacc.test  <- DF.bacc[["DF.bacc.test"]]
+        #bacc.test  <- DF.bacc[["DF.bacc.test"]]
 
     # #confusion.train = as.table(confusionMatrix(predictions.train,train[,"income_year"]));
     # #confusion.valid = as.table(confusionMatrix(predictions.validation, validation[,"income_year"]));
@@ -161,11 +161,11 @@ RF.frfc.results <- function(
     # test.RF.results <- c(test.RF.results, BACC)
     RF.results.train <- c(RF.results.train, bacc.train)
     RF.results.valid <- c(RF.results.valid, bacc.valid)
-    RF.results.test  <- c(RF.results.test, bacc.test)
+    #RF.results.test  <- c(RF.results.test, bacc.test)
   }
 
-    cat("\n print(RF.results.test)\n");
-    print( RF.results.test );
+    cat("\n print(RF.results.valid)\n");
+    print( RF.results.valid );
     # cat("\n print(results6)\n");
     # print( results6);
 
@@ -178,14 +178,14 @@ RF.frfc.results <- function(
      #mean.BACC      <- mean(as.data.frame(test.RF.results));
      mean.bacc.train     <- mean(RF.results.train);
      mean.bacc.valid     <- mean(RF.results.valid);
-     mean.bacc.test      <- mean(RF.results.test);
+     #mean.bacc.test      <- mean(RF.results.test);
 
-     cat("\n print(mean.bacc.test )\n");
-     print( mean.bacc.test  );
+     cat("\n print(mean.bacc.valid )\n");
+     print( mean.bacc.valid  );
 
      frfc.RF.train  <- c(frfc.RF.train, mean.bacc.train)
      frfc.RF.valid  <- c(frfc.RF.valid, mean.bacc.valid)
-     frfc.RF.test   <- c(frfc.RF.test, mean.bacc.test)
+     #frfc.RF.test   <- c(frfc.RF.test, mean.bacc.test)
     # DoE.RF.results <- rbind(DoE.RF.results, mean.BACC)
 
     # TPR <- TP/(TP+FN)
@@ -201,12 +201,15 @@ RF.frfc.results <- function(
 
     frfc.results.train <- add.response(Design, frfc.RF.train);
     frfc.results.valid <- add.response(Design, frfc.RF.valid);
-    frfc.results.test <- add.response(Design, frfc.RF.test)
+    #frfc.results.test <- add.response(Design, frfc.RF.test)
 
 
+    cat("\n print(summary(frfc.results.train))\n");
+    print( summary(frfc.results.train) );
 
-    cat("\n print(summary(frfc.results.test))\n");
-    print( summary(frfc.results.test) );
+
+    cat("\n print(summary(frfc.results.valid))\n");
+    print( summary(frfc.results.valid) );
 
 
 # write.csv(
@@ -265,36 +268,36 @@ RF.frfc.results <- function(
 
      dev.off();
      ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ s###
-    png(paste0("plot-","main-effects-fractional-factorial-test-",resolution,".png"));
-    MEPlot(
-        obj   = frfc.results.test,
-        # abbrev   = 5,
-        cex.xax  = 1.4,
-        cex.main = 1.5,
-        main    = "Main effects plot for fractional factorial design test data");
+    # png(paste0("plot-","main-effects-fractional-factorial-test-",resolution,".png"));
+    # MEPlot(
+    #     obj   = frfc.results.test,
+    #     # abbrev   = 5,
+    #     cex.xax  = 1.4,
+    #     cex.main = 1.5,
+    #     main    = "Main effects plot for fractional factorial design test data");
 
-     dev.off();
+    #  dev.off();
 
-     png(paste0("plot-","interactions-fractional-factorial-test-",resolution,".png"));
-     IAPlot(
-         obj = frfc.results.test,
-         # abbrev = 5,
-         show.alias = TRUE,
-         cex.main = 1.5,
-         # lwd = 2,
-         # cex = 2,
-         # cex.xax = 1.2,
-         # cex.lab = 1.5,
-         main = "Interactionsplot for Fractional Factorial Design test data");
+    #  png(paste0("plot-","interactions-fractional-factorial-test-",resolution,".png"));
+    #  IAPlot(
+    #      obj = frfc.results.test,
+    #      # abbrev = 5,
+    #      show.alias = TRUE,
+    #      cex.main = 1.5,
+    #      # lwd = 2,
+    #      # cex = 2,
+    #      # cex.xax = 1.2,
+    #      # cex.lab = 1.5,
+    #      main = "Interactionsplot for Fractional Factorial Design test data");
 
-     dev.off();
+    #  dev.off();
 
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     cat(paste0("\nexiting: ",this.function.name,"()"));
     cat(paste0("\n",paste(rep("#",50),collapse=""),"\n"));
     return( list(
         DF.frfc.train = frfc.results.train,
-        DF.frfc.valid = frfc.results.valid,
-        DF.frfc.test  = frfc.results.test) );
+        DF.frfc.valid = frfc.results.valid))
+        #DF.frfc.test  = frfc.results.test) );
 
     }
