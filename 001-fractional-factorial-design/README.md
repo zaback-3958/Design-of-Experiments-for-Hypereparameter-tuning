@@ -146,7 +146,7 @@ The adult dataset is used for classification to predict whether income exceeds $
 # Main output files
 This is the first phase of this project for which the results of Fractional Factorial Design were obtained. In this phase the effect of seven hyper-parameters of Random Forest was evaluated on the perfomrmance of the model (i.e. BACC for adult dataset as classification problem). As it was mentioned above the Fractional Factorial Design of <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/>  was selected. In this design the main effects are not alised with two-factor interactions, However the main effects are alised with three-factor interactions and two-factor interactions are alised with each other. It is required to see the results and decide if some of the main effects or interactions need to be de-alised. All the outputs of this experiments can be seen ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/``. 
 
-The experiments was done by dividing the dataset into train,valiadtio, and test and also a 10-fold cross validation was performed. The main effect graphs for train,validation and test data show which main effect are significant or they have effect on the response. 
+The experiments was done by dividing the dataset into train,valiadtio, and test and also a 10-fold cross validation was performed. The test will be used at the final stage to evaluate the performance of the selected model.The main effect graphs for train,validation show which main effect are significant or they have effect on the response. 
 
 ![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-04-30/plot-main-effects-fractional-factorial-train-IV.png)
 
