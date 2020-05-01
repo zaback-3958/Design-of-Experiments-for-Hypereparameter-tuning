@@ -142,11 +142,10 @@ These datasets were obtained from UCI ML repository:
 
 The adult dataset is used for classification to predict whether income exceeds $50K a year according to the census data. The housing dataset is used for regression to predict the median housing price. 
 
-
 # Main output files
 This is the first phase of this project for which the results of Fractional Factorial Design were obtained. In this phase the effect of seven hyper-parameters of Random Forest was evaluated on the perfomrmance of the model (i.e. BACC for adult dataset as classification problem). As it was mentioned above the Fractional Factorial Design of <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/>  was selected. In this design the main effects are not alised with two-factor interactions, However the main effects are alised with three-factor interactions and two-factor interactions are alised with each other. It is required to see the results and decide if some of the main effects or interactions need to be de-alised. All the outputs of this experiments can be seen ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/``. 
 
-The experiments was done by dividing the dataset into train,valiadtio, and test and also a 10-fold cross validation was performed. The test will be used at the final stage to evaluate the performance of the selected model.The main effect graphs for train and validation show which main effect are significant or they have effect on the response. 
+The experiments was done by dividing the dataset into train, valiadtion, and test sets and a 10-fold cross validation was performed. The test set will be used at the final stage to evaluate the performance of the selected model. In this phase it is required to investigate the results and decide if the result that was produced could be used to select the final model or further steps need to be taken. The R output file can be found here ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/2020-05-01/stdout.R.runall`` and the graphs of main effects and interactions are displayed below.  
 
 ![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-main-effects-fractional-factorial-train-IV.png)
 
@@ -155,9 +154,9 @@ This graph shows that the main effects maxnodes, nodesize, and classwt are very 
 
 ![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-main-effects-fractional-factorial-valid-IV.png)
 
-This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, then it can be seen that the effect of replace is less significant than those three. 
+This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, then it can be seen that the effect of replace is less significant than those three. the effect of Mtry is not siginificant for cvalidation data.
 
-The interaction graphs for train and validatio data show which of them have effect on the response. 
+The interaction graphs for train and validation data show which of them have effect on the response. 
 
 ![Test Image 5](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-interactions-fractional-factorial-train-IV.png)
 
@@ -168,5 +167,6 @@ As it can be observed from the graph the interactions between the following fact
 This graph shows that the interactions between the following factors are significant:
 replace:classwt, replace:maxnodes, nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
 
+After comparing the interaction effect of train and validation data it can be seen that the interaction of effect of replace:maxnodes is significant in the validation data, but not in the train data. 
 
-After comparing the results of interaction effects for train and validation datasets it can be observed that they share most of the interactions. One of the issues here is that the main effect cutoff is not significant, but its interaction with other factors is significant. Since in this design the main effects are alised with higher order effects and two-factor interactions are alised with other two-factor interactions, it is required to de-alise the factor effects to find the real main effects and interactions that have significant effect on the response. In the next phase another method of Fractional Factorial Design and in the third phase the method of foldover design will be used to extract the significant main effects and interactions.
+As it was observed in the graphs for both train and validation data the main effect cutoff is not significant, but its interaction with other factors is significant. Since in this design the main effects are alised with higher order effects and two-factor interactions are alised with other two-factor interactions, it is required to de-alise the factor effects to find the real main effects and interactions that have significant effect on the response. In the next phase another method of Fractional Factorial Design and in the third phase the method of foldover design will be used to extract the significant main effects and interactions.
