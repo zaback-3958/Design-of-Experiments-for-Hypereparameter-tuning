@@ -108,13 +108,13 @@ Design               = get.frfcDesign,
 #randomIndex          = get.crossvalidation,
 retained.predictors  = retained.predictors,
 classes              = classes,
-resolution           = "IV"
+resolution           = "VII"
 )
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.lmfrfc <- lm.fractional.design(
 DF.RFfrfc.train = getRF.results[["DF.frfc.train"]],
-DF.RFfrfc.valid = getRF.results[["DF.frfc.valid"]],
-DF.RFfrfc.test  = getRF.results[["DF.frfc.test"]])
+DF.RFfrfc.valid = getRF.results[["DF.frfc.valid"]])
+#DF.RFfrfc.test  = getRF.results[["DF.frfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(
