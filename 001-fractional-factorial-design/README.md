@@ -15,6 +15,9 @@ An experiment is a test or series of tests in which some changes are made to the
 
 There are several methods of DoE that can be used to do the experiments, and they are selected according to the problem and experimenter experience. In this project Factorial Design, Fractiional Factorial Design and Response Surface Method will be dicussed. 
 
+And in the markdown it would look like:
+[Author Montgomery, Douglas C.. "Design and Analysis of Experiments." John Wiley. 2001.]
+
 ## Single Factor Analysis (Analysis of Varaince) 
 This a method of DoE that the effect of one factor with **a** levels (**a** treatments) on the response is evaluated. the model for this method is : 
 
