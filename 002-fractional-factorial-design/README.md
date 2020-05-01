@@ -1,5 +1,5 @@
-# Fractional Factorial Design II
-This is another experiment to use Fractional Factorial Design to have fewer main effects and two-factor interaction effect to be aliased. From the first phase it was observed that the main effect cutoff was not significant, but its interaction with some other factors was significant. In this phase another design was used to be able to isolate the effect of this main factor and hopefully its interaction with other factors. The Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was selected . 
+# Fractional Factorial Design (Resolution VII)
+This is the second experiment to use Fractional Factorial Design to have fewer main effects and two-factor interaction effect to be aliased. From the first phase it was observed that the main effect cutoff was not significant, but its interaction with some other factors was significant. In this phase another design was used to be able to isolate the effect of this main factor and hopefully its interaction with other factors. The Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was selected . 
 
 # Requirements
 * R v3.6.2
@@ -11,7 +11,7 @@ git clone ``https://github.com/zaback-3958/ML-DoE.git``
 
 Change directory to the folder of this pipeline in the local cloned repository:
 
-``cd <LOCAL CLONED REPOSITORY>/ML-DoE/``
+``cd <LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design``
 
 If you are using a Windows computer, execute the following batch script at the Command Prompt instead:
 
@@ -40,4 +40,4 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-This is the second phase of this project for which the results of Fractional Factorial Design were obtained. In this design the main effects are not alised with two-factor interactions, However the main effects are alised with three-factor interactions and two-factor interactions are alised with each other. It is required to see the results and decide if some of the main effects or interactions need to be de-alised.  
+This is the second phase of this project for which the result of Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was obtained. 
