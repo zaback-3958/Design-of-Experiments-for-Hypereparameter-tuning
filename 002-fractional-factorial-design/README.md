@@ -40,7 +40,26 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The result of Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was obtained and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/output/2020-05-01``.
+The result of Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was obtained and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. As it can be seen in this file ``stdout.R.runall``the frfc.design function shows that main factor and two-factor interactions are not aliased with other factors. 
 
-As it can be in the 
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-main-effects-fractional-factorial-train-VII.png)
+
+This graph shows that the main effects maxnodes, nodesize, and classwt are very significant, Also, Mtry shows an effect on the response, but not as strong as those three factors. 
+
+
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-main-effects-fractional-factorial-valid-VII.png)
+
+This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant,  the effect of Mtry is not siginificant for validation data.
+
+
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-interactions-fractional-factorial-train-VII.png)
+
+As it can be observed from the graph the interactions between the following factors are significant: nodesize:cutoff, nodesize:maxnodes, classwt:cutoff,cutoff:maxnodes.
+
+![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-interactions-fractional-factorial-valid-VII.png)
+
+This graph shows that the interactions between the following factors are significant:
+nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
+
+As it was observed in the graphs for both train and validation data the main effect cutoff is not significant, but its interaction with other factors is significant.
 
