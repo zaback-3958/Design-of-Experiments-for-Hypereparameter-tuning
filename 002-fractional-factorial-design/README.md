@@ -1,5 +1,5 @@
 # Fractional Factorial Design (Resolution VII)
-This is the second experiment to use Fractional Factorial Design to have fewer main effects and two-factor interaction effect to be aliased. From the first phase it was observed that the main effect cutoff was not significant, but its interaction with some other factors was significant. In this phase another design was used to be able to isolate the effect of this main factor and hopefully its interaction with other factors. The Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was selected . 
+This is the second experiment to use Fractional Factorial Design to have fewer main effects and two-factor interaction effect to be aliased. From the first phase it was observed that the main effect cutoff was not significant, but its interaction with some other factors was significant. In this phase another design was used to be able to isolate the effect of this main factor and hopefully its interaction with other factors. The Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was selected . 
 
 # Requirements
 * R v3.6.2
@@ -40,4 +40,7 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-This is the second phase of this project for which the result of Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was obtained. 
+The result of Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was obtained and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/output/2020-05-01``.
+
+As it can be in the 
+
