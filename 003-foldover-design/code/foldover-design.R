@@ -45,7 +45,7 @@ foldover.design <- function(
     
     frfc.RF.train <- c();
     frfc.RF.valid <- c();
-    frfc.RF.test  <- c();
+    #frfc.RF.test  <- c();
 
     for (i in 1:nrow(Design)){
         if (Design$ntree[i] == -1)     {ntree <- 100} else {ntree <- 500}
@@ -59,7 +59,7 @@ foldover.design <- function(
 
     RF.results.train <- c()
     RF.results.valid <- c()
-    RF.results.test  <- c()
+    #RF.results.test  <- c()
     #results6 <- c()
     for (j in 1:10){
         print(paste("fold",j,"of run", i))
@@ -70,7 +70,7 @@ foldover.design <- function(
 
         train      = crossvalidate.res[["DF.train"]];
         validation = crossvalidate.res[["DF.valid"]];
-        test       = crossvalidate.res[["DF.test"]];
+        #test       = crossvalidate.res[["DF.test"]];
 
     RF.machine   <-  randomForest::randomForest(
         x        = train[,retained.predictors],
@@ -92,56 +92,58 @@ foldover.design <- function(
         object  = RF.machine,
         newdata = validation[,retained.predictors]);
 
-    predictions.test <- predict(
-        object  = RF.machine,
-        newdata = test[,retained.predictors]);
+    # predictions.test <- predict(
+    #     object  = RF.machine,
+    #     newdata = test[,retained.predictors]);
 
 
     DF.bacc <- bacc.measure.func(
         DF.train           = train,
         DF.validation      = validation,
-        DF.test            = test,
+        #DF.test            = test,
         DF.pred.train      = predictions.train,
         DF.pred.validation = predictions.validation,
-        DF.pred.test       = predictions.test,
+        #DF.pred.test       = predictions.test,
         classes            = classes)
 
         bacc.train <- DF.bacc[["DF.bacc.train"]]
         bacc.valid <- DF.bacc[["DF.bacc.valid"]]
-        bacc.test  <- DF.bacc[["DF.bacc.test"]]
+        #bacc.test  <- DF.bacc[["DF.bacc.test"]]
 
    
     RF.results.train <- c(RF.results.train, bacc.train)
     RF.results.valid <- c(RF.results.valid, bacc.valid)
-    RF.results.test  <- c(RF.results.test, bacc.test)
+    #RF.results.test  <- c(RF.results.test, bacc.test)
   }
 
-    cat("\n print(RF.results.test)\n");
-    print( RF.results.test );
+    cat("\n print(RF.results.valid)\n");
+    print( RF.results.valid );
     
     
      mean.bacc.train     <- mean(RF.results.train);
      mean.bacc.valid     <- mean(RF.results.valid);
-     mean.bacc.test      <- mean(RF.results.test);
+     #mean.bacc.test      <- mean(RF.results.test);
 
-     cat("\n print(mean.bacc.test )\n");
-     print( mean.bacc.test  );
+     cat("\n print(mean.bacc.valid )\n");
+     print( mean.bacc.valid  );
 
      frfc.RF.train  <- c(frfc.RF.train, mean.bacc.train)
      frfc.RF.valid  <- c(frfc.RF.valid, mean.bacc.valid)
-     frfc.RF.test   <- c(frfc.RF.test, mean.bacc.test)
+     #frfc.RF.test   <- c(frfc.RF.test, mean.bacc.test)
     
 }
 
 
     frfc.results.train <- add.response(Design, frfc.RF.train);
     frfc.results.valid <- add.response(Design, frfc.RF.valid);
-    frfc.results.test <- add.response(Design, frfc.RF.test)
+    #frfc.results.test <- add.response(Design, frfc.RF.test)
 
 
+     cat("\n print(summary(frfc.results.train))\n");
+    print( summary(frfc.results.train) );
 
-    cat("\n print(summary(frfc.results.test))\n");
-    print( summary(frfc.results.test) );
+    cat("\n print(summary(frfc.results.valid))\n");
+    print( summary(frfc.results.valid) );
 
 
 # write.csv(
@@ -200,36 +202,36 @@ foldover.design <- function(
 
      dev.off();
      ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ s###
-    png(paste0("plot-","main-effects-fractional-factorial-test-",resolution,".png"));
-    MEPlot(
-        obj   = frfc.results.test,
-        # abbrev   = 5,
-        cex.xax  = 1.6,
-        cex.main = 1.2,
-        main    = "Main effects plot for fractional factorial design test data");
+    # png(paste0("plot-","main-effects-fractional-factorial-test-",resolution,".png"));
+    # MEPlot(
+    #     obj   = frfc.results.test,
+    #     # abbrev   = 5,
+    #     cex.xax  = 1.6,
+    #     cex.main = 1.2,
+    #     main    = "Main effects plot for fractional factorial design test data");
 
-     dev.off();
+    #  dev.off();
 
-     png(paste0("plot-","interactions-fractional-factorial-test-",resolution,".png"));
-     IAPlot(
-         obj = frfc.results.test,
-         # abbrev = 5,
-         show.alias = TRUE,
-         cex.main = 1.2,
-         # lwd = 2,
-         # cex = 2,
-         cex.xax = 1.6,
-         # cex.lab = 1.5,
-         main = "Interactionsplot for Fractional Factorial Design test data");
+    #  png(paste0("plot-","interactions-fractional-factorial-test-",resolution,".png"));
+    #  IAPlot(
+    #      obj = frfc.results.test,
+    #      # abbrev = 5,
+    #      show.alias = TRUE,
+    #      cex.main = 1.2,
+    #      # lwd = 2,
+    #      # cex = 2,
+    #      cex.xax = 1.6,
+    #      # cex.lab = 1.5,
+    #      main = "Interactionsplot for Fractional Factorial Design test data");
 
-     dev.off();
+    #  dev.off();
 
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     cat(paste0("\nexiting: ",this.function.name,"()"));
     cat(paste0("\n",paste(rep("#",50),collapse=""),"\n"));
     return( list(
         DF.frfc.train = frfc.results.train,
-        DF.frfc.valid = frfc.results.valid,
-        DF.frfc.test  = frfc.results.test) );
+        DF.frfc.valid = frfc.results.valid))
+        #DF.frfc.test  = frfc.results.test) );
 
     }

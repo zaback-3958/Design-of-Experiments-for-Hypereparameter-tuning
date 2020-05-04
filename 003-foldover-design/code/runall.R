@@ -113,8 +113,8 @@ resolution           = "IV"
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.lmfrfc <- lm.fractional.design(
 DF.RFfrfc.train = getfoldover.design[["DF.frfc.train"]],
-DF.RFfrfc.valid = getfoldover.design[["DF.frfc.valid"]],
-DF.RFfrfc.test  = getfoldover.design[["DF.frfc.test"]])
+DF.RFfrfc.valid = getfoldover.design[["DF.frfc.valid"]])
+#DF.RFfrfc.test  = getfoldover.design[["DF.frfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(

@@ -2,7 +2,6 @@
 RF.frfc.results <- function(
     DF.input            = NULL,
     Design              = NULL,
-    randomIndex         = NULL,
     retained.predictors = NULL,
     classes             = NULL,
     resolution          = NULL
@@ -46,6 +45,7 @@ RF.frfc.results <- function(
     frfc.RF.test  <- c();
 
     for (i in 1:nrow(Design)){
+        
         if (Design$ntree[i] == -1)     {ntree <- 100} else {ntree <- 500}
         if (Design$mtry[i] == -1)      {mtry <- floor(log(n.cols-1))} else {mtry <- ceiling(sqrt(n.cols-1))}
         if (Design$replace[i] == -1)   {replace <- FALSE} else {replace <- TRUE}
