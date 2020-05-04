@@ -38,14 +38,13 @@ The method of Analysis of Varaice is used to test the mean treatment effects. Th
 
 Since there are **a** treatments and **n** replicates, there are total of <img src="http://latex.codecogs.com/gif.latex?N=an" border="0"/> observations for this design. As a result the <img src="http://latex.codecogs.com/gif.latex?&space;SS_{Total}" border="0"/> has **N-1** degrees of freedom, <img src="http://latex.codecogs.com/gif.latex?&space;SS_{Treatment}" border="0"/> has **a-1**, and <img src="http://latex.codecogs.com/gif.latex?&space;SS_{Error}" border="0"/> has **N-a** degrees of freedom. The mean square errors can be obtained:
 
-<img src="http://latex.codecogs.com/gif.latex?\begin{align*} & MS_{E}=&space;\frac{SS_{E}}{N-a},&MS_{Treatment}=&space;\frac{SS_{Treatment}}{a-1}\end{align*}" border="0"/>
+<img src="http://latex.codecogs.com/gif.latex?\begin{align*} & MS_{E}=&space;\frac{SS_{E}}{N-a}, & MS_{Treatment}=&space;\frac{SS_{Treatment}}{a-1}\end{align*}" border="0"/>
 
 to evaluate the treatment effects on the response. The expected values of these quantities also can be obtained: 
 
 <img src="http://latex.codecogs.com/gif.latex?\begin{align*} & E(MS_{E})=&space;\sigma_{2},& E(MS_{Treatment})=&space;\sigma^{2}+\frac{n\sum_{i=1}^{a}\tau_{i}}{a-1}" border="0"/>
 
 
-<img src="http://latex.codecogs.com/gif.latex?\begin{align*}E(MS_{E})=&space;\sigma_{2},& E(MS_{Treatment})=&space;\sigma^{2}+\frac{n\sum_{i=1}^{a}\tau_{i}}{a-1}" border="0"/>
 
 As it can be observed if the treatment effects are zero, then both <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> and  <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> are the unbiased estimate of  <img src="http://latex.codecogs.com/gif.latex?\sigma^{2}" border="0"/>. Therefore, it can be concluded that the comparison between the <img src="http://latex.codecogs.com/gif.latex?MS_{Treatment}" border="0"/> and <img src="http://latex.codecogs.com/gif.latex?MS_{E}" border="0"/> can be used to do the hypothesis testing of this design.
 
