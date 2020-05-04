@@ -72,7 +72,7 @@ These hypothesis are evaluating if the main effect of factors ``A`` and ``B`` an
 
 Where <img src="http://latex.codecogs.com/gif.latex?&space;SS_{T}" border="0"/> has <img src="http://latex.codecogs.com/gif.latex?&space;(abn-1)" border="0"/> degrees of freedom and <img src="http://latex.codecogs.com/gif.latex?&space;SS_{A}" border="0"/> , <img src="http://latex.codecogs.com/gif.latex?&space;SS_{B}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?&space;SS_{AB}" border="0"/> ,<img src="http://latex.codecogs.com/gif.latex?&space;SS_{E}" border="0"/> has <img src="http://latex.codecogs.com/gif.latex?&space;(a-1)" border="0"/>, <img src="http://latex.codecogs.com/gif.latex?&space;(b-1)" border="0"/>,<img src="http://latex.codecogs.com/gif.latex?&space;(a-1)(b-1)" border="0"/>, and <img src="http://latex.codecogs.com/gif.latex?&space;ab(n-1)" border="0"/> degrees of freedom respectively. 
 
-Mean square of the main effects, interaction, error and their expectations can be obtained as it was obtained for the single factor design. Also, the F statistic can be computed for each of them to decide if the null hypothesis must be rejected or accepted. 
+Mean square of the main effects, interaction, error and their expectations can be obtained as it was obtained for the single factor design. Also, the F statistic can be computed for each of the effects ``A``,``B``,``AB`` to decide if the null hypothesis must be rejected or accepted for these effects. 
  
 ## Two-level Factorial Designs
 This method is represented by <img src="http://latex.codecogs.com/gif.latex?2^{k}"/>
