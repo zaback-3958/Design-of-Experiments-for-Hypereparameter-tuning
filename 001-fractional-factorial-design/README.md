@@ -70,7 +70,7 @@ is the effect of ``i-th``  level of factor ``A``, <img src="http://latex.codecog
   
  The hypothesis test for this factorial expermient is :
  
- <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\cdots=\tau_{a}\\H_{1}:&space;\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right&space;\;\;\;\;\left\{\begin{matrix}H_{0}:&space;\beta_{1}=\beta_{2}=\cdots=\beta_{b}\\H_{1}:&space;\beta_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right\;\;\;\;\left\{\begin{matrix}H_{0}:&space;(\tau\beta)_{ij}=&space;0\\H_{1}:&space;(\tau\beta)_{ij}\neq0\;\;\;\exists&space;(i)\end{matrix}\right" border="0"/>
+ <img src="http://latex.codecogs.com/gif.latex?\left\{\begin{matrix}H_{0}:&space;\tau_{1}=\tau_{2}=\cdots=\tau_{a}\\H_{1}:&space;\tau_{i}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(i)\end{matrix}\right&space;\;\;\;\;\left\{\begin{matrix}H_{0}:&space;\beta_{1}=\beta_{2}=\cdots=\beta_{b}\\H_{1}:&space;\beta_{j}=0\;\;\;\;\;\;\;\;\;\;\;\:\:\:\;\;\exists&space;(j)\end{matrix}\right\;\;\;\;\left\{\begin{matrix}H_{0}:&space;(\tau\beta)_{ij}=&space;0\\H_{1}:&space;(\tau\beta)_{ij}\neq0\;\;\;\exists&space;(i,j)\end{matrix}\right" border="0"/>
 
 These hypothesis are evaluating if the main effect of factors ``A`` and ``B`` and their interaction has effect on the response. These hypothesis can be tested using two-factor analysis of variance. The total variablility is partitioned as below:
 
