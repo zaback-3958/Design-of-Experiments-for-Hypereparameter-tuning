@@ -41,7 +41,7 @@ Since there are **a** treatments and **n** replicates, there are total of <img s
 <img src="http://latex.codecogs.com/gif.latex?MS_{E}=&space;\frac{SS_{E}}{N-a}&space;&space;&space;,&space;&space;" border="0"/> ,  <img src="http://latex.codecogs.com/gif.latex?&space;MS_{Treatment}=&space;\frac{SS_{Treatment}}{a-1}" border="0"/>
 
 
-<img src="http://latex.codecogs.com/gif.latex?\begin{align*} & MS_{E}=&space;\frac{SS_{E}}{N-a},& MS_{E}=&space;\frac{SS_{E}}{N-a}\end{align*}" border="0"/>
+<img src="http://latex.codecogs.com/gif.latex?\begin{align*} & MS_{E}=&space;\frac{SS_{E}}{N-a},&MS_{Treatment}=&space;\frac{SS_{Treatment}}{a-1}\end{align*}" border="0"/>
 
 
 
