@@ -1,7 +1,5 @@
 # Foldover Design
-As it was discussed in the previous section ``001-fractional-factorial-design-IV`` if some of the factors are alised, they can be dealised by foldover design. The first Design <img src="https://latex.codecogs.com/svg.latex?2_{IV}^{7-2}"/> made the main factors to be alised with higher order interactions and the two-factor interations to be alised with each other. Since in this design the interaction of factor cutoff with some other factors was significant, but its main effect did show significancy, it is required to isolate the two-factor effects to identify the interactions that have significant effect on the response. The number of runs for foldover design is twice the original design. In this design the levels of all the factors are reversed and added to the dsign.
-
-The result of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VI}^{7-2}" border="0"/> that was performed in the first phase ``001-fractional-factorial-design`` displayed the significant effect of replace and interactions of cutoff with other factors on the performance of the model. However, these effects were alised with higher order interactions or with each other and they needed to be de-alised. Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> with higher resolution was performed to be able to de-alise the main effects and two-factor interactions. 
+The Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> made some of the main factors to be alised with higher order interactions and the two-factor interations to be alised with each other. As it was discussed in section ``001-fractional-factorial-design-IV`` if some of the factors are alised, they can be dealised by foldover design. The number of runs for foldover design is twice the original design. In this design the levels of all the factors are reversed and added to the design. although, it has to be noted that the foldover of design <img src="http://latex.codecogs.com/gif.latex?&space;IV" border="0"/> does not necessrily removes all the alises. The design was performed and the result were displayed in output section. 
 # Requirements
 * R v3.6.2
 * packages: FrF2, DoE.base, RandomForest, RSM
@@ -41,23 +39,23 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was performed and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors and interactions are not alised. 
+The foldover design was performed and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/003-fractional-factorial-design/output/2020-05-04-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors are not alised, although, the interactions effects that were alised for design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> remained alised. The interaction effects of ``cutoff`` was aliased with some other interactions. 
 
-![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-main-effects-fractional-factorial-train-VII.png)
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/003-foldover-design/output/2020-05-04-01/plot-main-effects-fractional-factorial-train-IV.png)
 
 This graph shows that the main effects maxnodes, nodesize, and classwt are very significant. The effect of mtry is also significant but it is not as strong as those three factors by looking at the estimated effects. 
 
 
-![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-main-effects-fractional-factorial-valid-VII.png)
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/003-foldover-design/output/2020-05-04-01/plot-main-effects-fractional-factorial-valid-IV.png)
 
 This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, and the effect of mtry is not siginificant for validation data.
 
 
-![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-interactions-fractional-factorial-train-VII.png)
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/003-foldover-design/output/2020-05-04-01/plot-interactions-fractional-factorial-train-IV.png)
 
 As it can be observed from the graph the interactions between the following factors are significant: nodesize:cutoff, nodesize:maxnodes, classwt:cutoff,cutoff:maxnodes.
 
-![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/002-fractional-factorial-design/output/2020-05-01-02/plot-interactions-fractional-factorial-valid-VII.png)
+![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/003-foldover-design/output/2020-05-04-01/plot-interactions-fractional-factorial-valid-IV.png)
 
 This graph shows that the interactions between the following factors are significant:
 nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
