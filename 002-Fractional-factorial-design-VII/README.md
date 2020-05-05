@@ -1,6 +1,5 @@
 # Fractional Factorial Design (Resolution VII)
 The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
-
 # Requirements
 * R v3.6.2
 * packages: FrF2, DoE.base, RandomForest, RSM
@@ -63,5 +62,5 @@ nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes
 
 As it was observed in the graphs for both train and validation data the main effect cutoff is not significant, but its interaction with other factors is significant. 
 
-The comparison between the results of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VI}^{7-2}" border="0"/> and design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> shows that the main effect replace and its interactions  which was siginificant for the validation data in the first design was signinficant for the second design. The main effect cutoff is not siginificant in neither designs, but its interactions with other factors is significant.
+The comparison between the results of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VI}^{7-2}" border="0"/> and design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> shows that the main effect replace and its interactions  which was siginificant for the validation data in the first design was not signinficant for the second design. The main effect cutoff is not siginificant in neither designs, but its interactions with other factors is significant. the main effect factor mtry was significant in both design for train data. 
 
