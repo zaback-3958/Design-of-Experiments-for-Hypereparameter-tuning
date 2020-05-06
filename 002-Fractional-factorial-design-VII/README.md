@@ -2,7 +2,7 @@
 The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
 # Requirements
 * R v3.6.2
-* packages: FrF2, DoE.base, RandomForest, RSM
+* packages: FrF2, RandomForest
 # How to execute the pipeline
 Clone this repository by running the following at the command line:
 
@@ -39,7 +39,7 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was performed and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors and interactions are not alised. 
+The Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was performed using FrF2 package in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors and interactions are not alised. 
 
 ![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/002-Fractional-factorial-design-VII/output/2020-05-01-02/plot-main-effects-fractional-factorial-train-VII.png)
 

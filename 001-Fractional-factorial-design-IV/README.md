@@ -132,7 +132,7 @@ In this experiment, Fractional Factorial and full Factorial designs were used to
 
 # Requirements
 * R v3.6.2
-* packages: FrF2, DoE.base, RandomForest, RSM
+* packages: FrF2, RandomForest
 # How to execute the pipeline
 Clone this repository by running the following at the command line:
 
@@ -168,7 +168,7 @@ These datasets were obtained from UCI ML repository:
 The adult dataset is used for classification to predict whether income exceeds $50K a year according to the census data. The housing dataset is used for regression to predict the median housing price. 
 
 # Main output files
-This is the first phase of this project for which the results of Fractional Factorial Design were obtained. In this phase the effect of seven hyper-parameters of Random Forest was evaluated on the perfomrmance of the model (i.e. BACC for adult dataset as classification problem). As it was mentioned above the Fractional Factorial Design of <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/>  was selected. In this design the main effects are not alised with two-factor interactions, However the main effects are alised with three-factor interactions and two-factor interactions are alised with each other. It is required to see the results and decide if some of the main effects or interactions need to be de-alised. All the outputs of this experiments can be seen ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/``. 
+The results of Fractional Factorial Design were obtained using FrF2 package in R. In this phase the effect of seven hyper-parameters of Random Forest was evaluated on the perfomrmance of the model (i.e. BACC for adult dataset as classification problem). As it was mentioned above the Fractional Factorial Design of <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/>  was selected. In this design the main effects are not alised with two-factor interactions, However the main effects are alised with three-factor interactions and two-factor interactions are alised with each other. It is required to see the results and decide if some of the main effects or interactions need to be de-alised. All the outputs of this experiments can be seen ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/``. 
 
 The experiments was done by dividing the dataset into train, valiadtion, and test sets and a 10-fold cross validation was performed. The test set will be used at the final stage to evaluate the performance of the selected model. In this phase it is required to investigate the results and decide if the result that was produced could be used to select the final model or further steps need to be taken. The R output file can be found here ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/2020-05-01/stdout.R.runall`` and the graphs of main effects and interactions are displayed below.  
 
