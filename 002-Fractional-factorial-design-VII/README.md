@@ -1,6 +1,5 @@
 # Fractional Factorial Design (Resolution VII)
-This is the second experiment to use Fractional Factorial Design to have fewer main effects and two-factor interaction effect to be aliased. From the first phase it was observed that the main effect cutoff was not significant, but its interaction with some other factors was significant. In this phase another design was used to be able to isolate the effect of this main factor and hopefully its interaction with other factors. The Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was selected . 
-
+The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
 # Requirements
 * R v3.6.2
 * packages: FrF2, DoE.base, RandomForest, RSM
@@ -40,4 +39,28 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-This is the second phase of this project for which the result of Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was obtained. 
+The Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was performed and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors and interactions are not alised. 
+
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/002-Fractional-factorial-design-VII/output/2020-05-01-02/plot-main-effects-fractional-factorial-train-VII.png)
+
+This graph shows that the main effects maxnodes, nodesize, and classwt are very significant. The effect of mtry is also significant but it is not as strong as those three factors by looking at the estimated effects. 
+
+
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/002-Fractional-factorial-design-VII/output/2020-05-01-02/plot-main-effects-fractional-factorial-valid-VII.png)
+
+This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, and the effect of mtry is not siginificant for validation data.
+
+
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/002-Fractional-factorial-design-VII/output/2020-05-01-02/plot-interactions-fractional-factorial-train-VII.png)
+
+As it can be observed from the graph the interactions between the following factors are significant: nodesize:cutoff, nodesize:maxnodes, classwt:cutoff,cutoff:maxnodes.
+
+![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/002-Fractional-factorial-design-VII/output/2020-05-01-02/plot-interactions-fractional-factorial-valid-VII.png)
+
+This graph shows that the interactions between the following factors are significant:
+nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
+
+As it was observed in the graphs for both train and validation data the main effect cutoff is not significant, but its interaction with other factors is significant. 
+
+The comparison between the results of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VI}^{7-2}" border="0"/> and design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> shows that the main effect replace and its interactions  which was siginificant for the validation data in the first design was not signinficant for the second design. The main effect cutoff is not siginificant in neither designs, but its interactions with other factors is significant. the main effect factor mtry was significant in both design for train data. 
+

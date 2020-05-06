@@ -172,26 +172,26 @@ This is the first phase of this project for which the results of Fractional Fact
 
 The experiments was done by dividing the dataset into train, valiadtion, and test sets and a 10-fold cross validation was performed. The test set will be used at the final stage to evaluate the performance of the selected model. In this phase it is required to investigate the results and decide if the result that was produced could be used to select the final model or further steps need to be taken. The R output file can be found here ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/2020-05-01/stdout.R.runall`` and the graphs of main effects and interactions are displayed below.  
 
-![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-main-effects-fractional-factorial-train-IV.png)
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-main-effects-fractional-factorial-train-IV.png)
 
 This graph shows that the main effects maxnodes, nodesize, and classwt are very significant, Also, Mtry shows an effect on the response, but not as strong as those three factors. 
 
 
-![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-main-effects-fractional-factorial-valid-IV.png)
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-main-effects-fractional-factorial-valid-IV.png)
 
 This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, then it can be seen that the effect of replace is less significant than those three. the effect of Mtry is not siginificant for cvalidation data.
 
 The interaction graphs for train and validation data show which of them have effect on the response. 
 
-![Test Image 5](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-interactions-fractional-factorial-train-IV.png)
+![Test Image 5](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-interactions-fractional-factorial-train-IV.png)
 
 As it can be observed from the graph the interactions between the following factors are significant: replace:classwt,nodesize:cutoff,nodesize:maxnodes,classwt:cutoff,cutoff:maxnodes.  
 
-![Test Image 6](https://github.com/zaback-3958/ML-DoE/blob/master/001-fractional-factorial-design/output/2020-05-01/plot-interactions-fractional-factorial-valid-IV.png)
+![Test Image 6](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-interactions-fractional-factorial-valid-IV.png)
 
 This graph shows that the interactions between the following factors are significant:
 replace:classwt, replace:maxnodes, nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
 
 After comparing the interaction effect of train and validation data it can be seen that the interaction of effect of replace:maxnodes is significant in the validation data, but not in the train data. 
 
-As it was observed in the graphs for both train and validation data the main effect cutoff is not significant, but its interaction with other factors is significant. Since in this design the main effects are alised with higher order effects and two-factor interactions are alised with other two-factor interactions, it is required to de-alise the factor effects to find the real main effects and interactions that have significant effect on the response. In the next phase another method of Fractional Factorial Design and in the third phase the method of foldover design will be used to extract the significant main effects and interactions.
+The output file ``stdout.R.runall`` in the output folder of the repository shows that main effect ``cutoff`` is counfounded with three order interaction ``ntre:mtry:replace``. In addition, it can be seen that interactions ``ntree:mtry`` are confounded with ``replace:cutoff``, ``ntree:replace`` are confounded with ``mtry:cutoff``, and ``ntree:cutoff`` are confounded with ``mtry:replace``. Also, the graphs for both train and validation data shows that the main effect ``cutoff`` is not significant, but its interaction with other factors is significant. Since some effects are alised, it is required to de-alise the factor effects to find the real main effects and interactions that have significant effect on the response. In the next section ``002-Fractional-factorial-design-VII``, second  method of Fractional Factorial Design and in the third section ``003-foldover-design`` the method of foldover will be used to extract the significant main effects and interactions.
