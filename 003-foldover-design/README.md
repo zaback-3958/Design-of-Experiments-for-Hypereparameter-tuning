@@ -2,7 +2,7 @@
 The Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> made some of the main factors to be alised with higher order interactions and the two-factor interations to be alised with each other. As it was discussed in section ``001-fractional-factorial-design-IV`` if some of the factors are alised, they can be dealised by foldover design. The number of runs for foldover design is twice the original design. In this design the levels of all the factors are reversed and added to the design. Although, it has to be noted that the foldover design <img src="http://latex.codecogs.com/gif.latex?&space;IV" border="0"/> does not necessrily removes all the alises. The design was performed and the result were displayed in output section. 
 # Requirements
 * R v3.6.2
-* packages: FrF2, DoE.base, RandomForest, RSM
+* packages: FrF2, RandomForest
 # How to execute the pipeline
 Clone this repository by running the following at the command line:
 
@@ -39,7 +39,7 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The foldover design was performed and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/003-fractional-factorial-design/output/2020-05-04-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors are not alised, although, the interactions effects that were alised for design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> remained alised. The interaction effects of ``cutoff`` was aliased with some other interactions. 
+The foldover design was performed from package FrF2 in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/003-fractional-factorial-design/output/2020-05-04-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors are not alised, although, the interactions effects that were alised for design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> remained alised. The interaction effects of ``cutoff`` was aliased with some other interactions. 
 
 ![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/003-foldover-design/output/2020-05-04-01/plot-main-effects-fractional-factorial-train-IV.png)
 
