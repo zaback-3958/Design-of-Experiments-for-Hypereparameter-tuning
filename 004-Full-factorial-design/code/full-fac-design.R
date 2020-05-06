@@ -10,9 +10,10 @@ full.fac.design <- function(
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     require(dplyr);
     require(DoE.base);
+    require(FrF2);
 
 	##################################################
-	cat(paste0(" \n Factorial Design:","n=",nFactors ,"\n"))
+	cat(paste0(" \n Full Factorial Design:","n=",nFactors ,"\n"))
 
 	design <- fac.design(
 		nfactors         = nFactors,

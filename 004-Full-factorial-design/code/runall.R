@@ -24,12 +24,13 @@ code.files <- c(
 	"getData-sample.R",
 	#"get-DoEfactors.R",
 	"splitTrainTest.R",
-	"get-DoEdesign.R",
+	#"get-DoEdesign.R",
+	"full-fac-design.R",
 	"cross-validation.R",
 	"bacc-measure.R",
-	"RF-frcfac-results.R",
+	"RF-fullfac-results.R",
 	#"RF-results.R",
-	"lm-fractional-design.R",
+	"lm-fullfac-design.R",
 	"test-RF.R"
 	#"visualize-effects.R"
 	# "initializePlot.R",
@@ -94,7 +95,7 @@ retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.DoEDesign <- full.fac.design(
-kFactors = 4)
+nFactors = 4)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # get.crossvalidation <- cross.validation(
@@ -105,13 +106,14 @@ getRF.results <- RF.fullfac.results(
 DF.input             = DF.adult,
 Design               = get.DoEDesign,
 retained.predictors  = retained.predictors,
-classes              = classes
+classes              = classes,
+nFactors             = 4
 )
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-get.lmfullfc <- lm.fractional.design(
+get.lmfullfc <- lm.fullfac.design(
 DF.RFfullfc.train = getRF.results[["DF.fullfc.train"]],
-DF.RFfullfc.valid = getRF.results[["DF.fullfc.valid"]],
-DF.RFfullfc.test  = getRF.results[["DF.fullfc.test"]])
+DF.RFfullfc.valid = getRF.results[["DF.fullfc.valid"]])
+#DF.RFfullfc.test  = getRF.results[["DF.fullfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(
