@@ -28,7 +28,7 @@ code.files <- c(
 	"cross-validation.R",
 	"bacc-measure.R",
 	"foldover-design.R",
-	#"RF-frcfac-results.R",
+	"RF-frcfac-results.R",
 	#"RF-results.R",
 	"lm-fractional-design.R"
 	#"test-RF.R"
@@ -98,23 +98,28 @@ get.frfcDesign <- frfc.design(
 kFactors = 7,
 pFactors = 2)
 
+
+getfoldover.design <- foldover.design(
+DF.Design  = get.frfcDesign,
+resolution = "IV")
+
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # get.crossvalidation <- cross.validation(
 # DF.input = DF.adult)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-getfoldover.design <- foldover.design(
+getRF.frfc.results <- RF.frfc.results(
 DF.input             = DF.adult,
-Design               = get.frfcDesign,
+Design               = getfoldover.design,
 retained.predictors  = retained.predictors,
 classes              = classes,
 resolution           = "IV"
 )
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.lmfrfc <- lm.fractional.design(
-DF.RFfrfc.train = getfoldover.design[["DF.frfc.train"]],
-DF.RFfrfc.valid = getfoldover.design[["DF.frfc.valid"]])
-#DF.RFfrfc.test  = getfoldover.design[["DF.frfc.test"]])
+DF.RFfrfc.train = getRF.frfc.results[["DF.frfc.train"]],
+DF.RFfrfc.test = getRF.frfc.results[["DF.frfc.test"]])
+#DF.RFfrfc.valid  = getfoldover.design[["DF.frfc.valid"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(
