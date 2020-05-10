@@ -172,22 +172,22 @@ The results of Fractional Factorial Design were obtained using FrF2 package in R
 
 The experiments was done by dividing the dataset into train, valiadtion, and test sets and a 10-fold cross validation was performed. The test set will be used at the final stage to evaluate the performance of the selected model. In this phase it is required to investigate the results and decide if the result that was produced could be used to select the final model or further steps need to be taken. The R output file can be found here ``<LOCAL CLONED REPOSITORY>/ML-DoE/output/2020-05-01/stdout.R.runall`` and the graphs of main effects and interactions are displayed below.  
 
-![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-main-effects-fractional-factorial-train-IV.png)
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-08/plot-interactions-fractional-factorial-train-IV.png)
 
 This graph shows that the main effects maxnodes, nodesize, and classwt are very significant, Also, Mtry shows an effect on the response, but not as strong as those three factors. 
 
 
-![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-main-effects-fractional-factorial-valid-IV.png)
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-08/plot-interactions-fractional-factorial-test-IV.png)
 
 This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, then it can be seen that the effect of replace is less significant than those three. the effect of Mtry is not siginificant for cvalidation data.
 
 The interaction graphs for train and validation data show which of them have effect on the response. 
 
-![Test Image 5](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-interactions-fractional-factorial-train-IV.png)
+![Test Image 5](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-08/plot-main-effects-fractional-factorial-train-IV.png)
 
 As it can be observed from the graph the interactions between the following factors are significant: replace:classwt,nodesize:cutoff,nodesize:maxnodes,classwt:cutoff,cutoff:maxnodes.  
 
-![Test Image 6](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-01/plot-interactions-fractional-factorial-valid-IV.png)
+![Test Image 6](https://github.com/zaback-3958/ML-DoE/blob/master/001-Fractional-factorial-design-IV/output/2020-05-08/plot-main-effects-fractional-factorial-test-IV.png)
 
 This graph shows that the interactions between the following factors are significant:
 replace:classwt, replace:maxnodes, nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
