@@ -105,7 +105,6 @@ pFactors = 2)
 getRF.results <- RF.frfc.results(
 DF.input             = DF.adult,
 Design               = get.frfcDesign,
-#randomIndex          = get.crossvalidation,
 retained.predictors  = retained.predictors,
 classes              = classes,
 resolution           = "IV"
@@ -113,8 +112,8 @@ resolution           = "IV"
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.lmfrfc <- lm.fractional.design(
 DF.RFfrfc.train = getRF.results[["DF.frfc.train"]],
-DF.RFfrfc.valid = getRF.results[["DF.frfc.valid"]])
-#DF.RFfrfc.test  = getRF.results[["DF.frfc.test"]])
+#DF.RFfrfc.valid = getRF.results[["DF.frfc.valid"]]
+DF.RFfrfc.test  = getRF.results[["DF.frfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(

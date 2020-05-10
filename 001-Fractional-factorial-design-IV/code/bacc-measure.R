@@ -1,11 +1,11 @@
 
 bacc.measure.func <- function(
 	DF.train           = NULL,
-	DF.validation      = NULL,
-	#DF.test            = NULL,
+	#DF.validation      = NULL,
+	DF.test            = NULL,
 	DF.pred.train      = NULL,
-	DF.pred.validation = NULL,
-	#DF.pred.test       = NULL,
+	#DF.pred.validation = NULL,
+	DF.pred.test       = NULL,
 	classes            = NULL
 	) {
 
@@ -27,19 +27,19 @@ bacc.measure.func <- function(
 
 
 	confusion.train = table(DF.train[,"income_year"],DF.pred.train);
-	confusion.valid = table(DF.validation[,"income_year"],DF.pred.validation);
-	#confusion.test  = table(DF.test[,"income_year"],DF.pred.test);
+	#confusion.valid = table(DF.validation[,"income_year"],DF.pred.validation);
+	confusion.test  = table(DF.test[,"income_year"],DF.pred.test);
 
 
 
 	confmtrx.train = confusion.mtrx(DF.input = confusion.train,classes = classes)
-  	confmtrx.valid = confusion.mtrx(DF.input = confusion.valid,classes = classes)
-  	#confmtrx.test  = confusion.mtrx(DF.input = confusion.test,classes = classes)
+  	#confmtrx.valid = confusion.mtrx(DF.input = confusion.valid,classes = classes)
+  	confmtrx.test  = confusion.mtrx(DF.input = confusion.test,classes = classes)
 
   
   	bacc.train = bacc.fnc(DF.input = confmtrx.train)
-  	bacc.valid = bacc.fnc(DF.input = confmtrx.valid)
-  	#bacc.test  = bacc.fnc(DF.input = confmtrx.test)
+  	#bacc.valid = bacc.fnc(DF.input = confmtrx.valid)
+  	bacc.test  = bacc.fnc(DF.input = confmtrx.test)
   
   	
     # cat("\n print(bacc.valid)\n");
@@ -52,8 +52,8 @@ bacc.measure.func <- function(
 
     return( list(
 	    DF.bacc.train = bacc.train,
-	    DF.bacc.valid = bacc.valid))
-	    #DF.bacc.test  = bacc.test));
+	    #DF.bacc.valid = bacc.valid
+	    DF.bacc.test  = bacc.test));
 
 	}
 
