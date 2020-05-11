@@ -24,13 +24,12 @@ code.files <- c(
 	"getData-sample.R",
 	#"get-DoEfactors.R",
 	"splitTrainTest.R",
-	#"get-DoEdesign.R",
 	"full-fac-design.R",
 	"cross-validation.R",
 	"bacc-measure.R",
 	"RF-fullfac-results.R",
 	#"RF-results.R",
-	"lm-fullfac-design.R",
+	"lm-fractional-design.R",
 	"test-RF.R"
 	#"visualize-effects.R"
 	# "initializePlot.R",
@@ -75,7 +74,7 @@ DF.adult <- read.csv(
     file   = file.path(dir.data,"adult.csv"),
     header = TRUE
     );
-DF.adult <- na.omit(DF.adult)
+#DF.adult <- na.omit(DF.adult)
 
 list_na <- colnames(DF.adult)[ apply(DF.adult, 2, anyNA) ]
 median_missing <- apply(DF.adult[,colnames(DF.adult) %in% list_na],2,median,na.rm =  TRUE)
@@ -94,7 +93,7 @@ retained.predictors <- setdiff(colnames(DF.adult),"income_year");
 #print( str(LIST.trainTest)   );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-get.DoEDesign <- full.fac.design(
+get.fullfc.Design <- full.fac.design(
 nFactors = 4)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
@@ -102,18 +101,17 @@ nFactors = 4)
 # DF.input = DF.adult)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-getRF.results <- RF.fullfac.results(
+getRF.results <- RF.fullfc.results(
 DF.input             = DF.adult,
-Design               = get.DoEDesign,
+Design               = get.fullfc.Design,
 retained.predictors  = retained.predictors,
-classes              = classes,
-nFactors             = 4
+classes              = classes
 )
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-get.lmfullfc <- lm.fullfac.design(
-DF.RFfullfc.train = getRF.results[["DF.fullfc.train"]],
-DF.RFfullfc.valid = getRF.results[["DF.fullfc.valid"]])
-#DF.RFfullfc.test  = getRF.results[["DF.fullfc.test"]])
+get.lmfrfc <- lm.fullfac.design(
+DF.fullfc.train = getRF.results[["DF.fullfc.train"]],
+#DF.fullfc.valid = getRF.results[["DF.fullfc.valid"]]
+DF.RFfrfc.test  = getRF.results[["DF.fullfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(
