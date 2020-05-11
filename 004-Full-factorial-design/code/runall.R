@@ -29,7 +29,7 @@ code.files <- c(
 	"bacc-measure.R",
 	"RF-fullfac-results.R",
 	#"RF-results.R",
-	"lm-fractional-design.R",
+	"lm-fullfac-design.R",
 	"test-RF.R"
 	#"visualize-effects.R"
 	# "initializePlot.R",
@@ -111,7 +111,7 @@ classes              = classes
 get.lmfrfc <- lm.fullfac.design(
 DF.fullfc.train = getRF.results[["DF.fullfc.train"]],
 #DF.fullfc.valid = getRF.results[["DF.fullfc.valid"]]
-DF.RFfrfc.test  = getRF.results[["DF.fullfc.test"]])
+DF.fullfc.test  = getRF.results[["DF.fullfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(
