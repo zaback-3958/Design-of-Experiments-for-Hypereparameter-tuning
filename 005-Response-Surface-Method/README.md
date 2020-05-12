@@ -1,5 +1,10 @@
-# Fractional Factorial Design (Resolution VII)
+# Response Surface Methods 
+Response Surface methodology (**RSM**) is a series of statistical and mathematica technique that are useful to optimize a reponse variable that is influenced by some variables. For instance an experimenter would be interested in finding the levels of variables <img src="http://latex.codecogs.com/gif.latex?&space;x_{1}" border="0"/>   and  <img src="http://latex.codecogs.com/gif.latex?&space;x_{2}" border="0"/> that maximize or minimize the response <img src="http://latex.codecogs.com/gif.latex?&space;y" border="0"/>
+
+
+
 The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
+
 # Requirements
 * R v3.6.2
 * packages: FrF2, RandomForest
