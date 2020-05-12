@@ -45,6 +45,8 @@ If you are using a Linux or macOS computer, execute the following shell script i
 
 This will trigger the creation of the output folder <LOCAL CLONED REPOSITORY>/ML-DoE/output/ if it does not already exist, followed by execution of the pipeline. All output and log files will be saved to the output folder. See below for information about the contents of the output folder.
   
+  hi
+  
 # Input file
 
 The required input data files in cluded adult dataset and Boston housing dataset are located in ``<LOCAL CLONED REPOSITORY>/data/``.
