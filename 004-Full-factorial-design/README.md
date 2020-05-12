@@ -1,4 +1,12 @@
 # Design-of-Experiments-for-Hypereparameter-tuning (Full Factorial Design)
+In the previous section ``003-Fractiona-factorial-design-VII`` the main effects and interactions were not confounded with higher order effects or each other. It was dispalyed in the graphs and in the output file that the main effects ``nodesize, classwt, maxnodes`` were significant and the interactions ``nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes`` were also siginificant. Since the main effect ``cutoff`` was not significant, but its interactions were, it was decided to keep this factor and run the full factorial design using the four factors mentioned above. 
+
+There are two principles that needs to be considered when keeping a factor whose main effect is not significant, but its interactions are. These principles include the hierarchy and the heredity approaches. According to the former a model can achieve consistency by retaining the lower order terms in the model when the higher order terms are significant. However, according to the latter only when both factors are siginificant their interactions will be siginificant, which can be deviated if the weak heredity to be considered. 
+
+The Full factorial design 
+
+
+
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y_{ijk} = \tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}"/>
 
 # Requirements
