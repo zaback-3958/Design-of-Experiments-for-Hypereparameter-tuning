@@ -4,6 +4,13 @@ Response Surface methodology (**RSM**) is a series of statistical and mathematic
 
 <img src="http://latex.codecogs.com/gif.latex?&space;y=&space;f(x_{1},x_{2})&space;+\epsilon" border="0"/>
 
+Where <img src="http://latex.codecogs.com/gif.latex?&space;\epsilon" border="0"/> represents the error of the model. The expected value of the response is :
+
+<img src="http://latex.codecogs.com/gif.latex?&space;E(y)=&space;f(x_{1},x_{2})=&space;\eta" border="0"/>
+
+As a result the surface is represented by:
+
+<img src="http://latex.codecogs.com/gif.latex?&space;\eta=&space;f(x_{1},x_{2})" border="0"/>
 
 
 The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
