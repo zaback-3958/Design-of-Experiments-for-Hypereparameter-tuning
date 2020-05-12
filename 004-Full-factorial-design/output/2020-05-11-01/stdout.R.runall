@@ -1,0 +1,5711 @@
+
+dir.data:  D:\courses\Data_Science\DoE\ML-DoE\004-Full-factorial-design\data
+dir.code:  D:\courses\Data_Science\DoE\ML-DoE\004-Full-factorial-design\code
+dir.out:   D:\courses\Data_Science\DoE\ML-DoE\004-Full-factorial-design\output
+
+##### Sys.time():  2020-05-11 07:50:29 EDT 
+
+##################################################
+
+##################################################
+starting: full.fac.designn()
+ 
+ Full Factorial Design:n=4
+ print(full.factorial.design )
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks
+1       1           3.1       -1       1     -1       -1     .1
+2       2          10.1        1      -1     -1        1     .1
+3       3          16.1        1       1      1        1     .1
+4       4          12.1        1       1     -1        1     .1
+5       5          11.1       -1       1     -1        1     .1
+6       6           6.1        1      -1      1       -1     .1
+7       7          13.1       -1      -1      1        1     .1
+8       8           7.1       -1       1      1       -1     .1
+9       9          14.1        1      -1      1        1     .1
+10     10           9.1       -1      -1     -1        1     .1
+11     11           1.1       -1      -1     -1       -1     .1
+12     12           5.1       -1      -1      1       -1     .1
+13     13           4.1        1       1     -1       -1     .1
+14     14          15.1       -1       1      1        1     .1
+15     15           2.1        1      -1     -1       -1     .1
+16     16           8.1        1       1      1       -1     .1
+17     17          15.2       -1       1      1        1     .2
+18     18          13.2       -1      -1      1        1     .2
+19     19           9.2       -1      -1     -1        1     .2
+20     20          12.2        1       1     -1        1     .2
+21     21          14.2        1      -1      1        1     .2
+22     22          16.2        1       1      1        1     .2
+23     23           4.2        1       1     -1       -1     .2
+24     24           3.2       -1       1     -1       -1     .2
+25     25           5.2       -1      -1      1       -1     .2
+26     26           7.2       -1       1      1       -1     .2
+27     27           1.2       -1      -1     -1       -1     .2
+28     28          11.2       -1       1     -1        1     .2
+29     29           2.2        1      -1     -1       -1     .2
+30     30           6.2        1      -1      1       -1     .2
+31     31           8.2        1       1      1       -1     .2
+32     32          10.2        1      -1     -1        1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation, 
+ not part of the data frame
+NULL
+ summary(full.factorial.design )
+Call:
+fac.design(nfactors = nFactors, factor.names = list(nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), replications = 2, seed = 6285)
+
+Experimental design of type  full factorial 
+16  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff maxnodes
+1       -1      -1     -1       -1
+2        1       1      1        1
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks
+1       1           3.1       -1       1     -1       -1     .1
+2       2          10.1        1      -1     -1        1     .1
+3       3          16.1        1       1      1        1     .1
+4       4          12.1        1       1     -1        1     .1
+5       5          11.1       -1       1     -1        1     .1
+6       6           6.1        1      -1      1       -1     .1
+7       7          13.1       -1      -1      1        1     .1
+8       8           7.1       -1       1      1       -1     .1
+9       9          14.1        1      -1      1        1     .1
+10     10           9.1       -1      -1     -1        1     .1
+11     11           1.1       -1      -1     -1       -1     .1
+12     12           5.1       -1      -1      1       -1     .1
+13     13           4.1        1       1     -1       -1     .1
+14     14          15.1       -1       1      1        1     .1
+15     15           2.1        1      -1     -1       -1     .1
+16     16           8.1        1       1      1       -1     .1
+17     17          15.2       -1       1      1        1     .2
+18     18          13.2       -1      -1      1        1     .2
+19     19           9.2       -1      -1     -1        1     .2
+20     20          12.2        1       1     -1        1     .2
+21     21          14.2        1      -1      1        1     .2
+22     22          16.2        1       1      1        1     .2
+23     23           4.2        1       1     -1       -1     .2
+24     24           3.2       -1       1     -1       -1     .2
+25     25           5.2       -1      -1      1       -1     .2
+26     26           7.2       -1       1      1       -1     .2
+27     27           1.2       -1      -1     -1       -1     .2
+28     28          11.2       -1       1     -1        1     .2
+29     29           2.2        1      -1     -1       -1     .2
+30     30           6.2        1      -1      1       -1     .2
+31     31           8.2        1       1      1       -1     .2
+32     32          10.2        1      -1     -1        1     .2
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation, 
+ not part of the data frame
+NULL
+
+exiting: full.fac.designn()
+##################################################
+
+##################################################
+starting: RF.fullfc.results()
+[1] 32561
+[1] 15
+
+### full factorial Design: 
+[1] "fold 1 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5097127
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5108075
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.50652
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5032103
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5063525
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.504902
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.500613
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5022222
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 1"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5071633
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5097127 0.5108075 0.5065200 0.5032103 0.5063525 0.5049020 0.5006130
+ [8] 0.5022222 0.5000000 0.5071633
+
+ print(mean.bacc.test )
+[1] 0.5051503
+[1] "fold 1 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6050258
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5956017
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5917005
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.598416
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.594286
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5971258
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5868658
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6059338
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6051033
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 2"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5939356
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.6050258 0.5956017 0.5917005 0.5984160 0.5942860 0.5971258 0.5868658
+ [8] 0.6059338 0.6051033 0.5939356
+
+ print(mean.bacc.test )
+[1] 0.5973994
+[1] "fold 1 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7305663
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7426936
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7310165
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.742592
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7420263
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7409657
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7379714
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7369861
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7399464
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 3"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7388097
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7305663 0.7426936 0.7310165 0.7425920 0.7420263 0.7409657 0.7379714
+ [8] 0.7369861 0.7399464 0.7388097
+
+ print(mean.bacc.test )
+[1] 0.7383574
+[1] "fold 1 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5561475
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5491737
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5581158
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5613637
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5499398
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5564226
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5492929
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5566783
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5549204
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 4"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5475516
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5561475 0.5491737 0.5581158 0.5613637 0.5499398 0.5564226 0.5492929
+ [8] 0.5566783 0.5549204 0.5475516
+
+ print(mean.bacc.test )
+[1] 0.5539606
+[1] "fold 1 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8012563
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8080752
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7959297
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8191181
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8163345
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8076319
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8108002
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8166333
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8060199
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 5"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8110995
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.8012563 0.8080752 0.7959297 0.8191181 0.8163345 0.8076319 0.8108002
+ [8] 0.8166333 0.8060199 0.8110995
+
+ print(mean.bacc.test )
+[1] 0.8092899
+[1] "fold 1 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 6"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+
+ print(mean.bacc.test )
+[1] 0.5
+[1] "fold 1 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6410426
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6416356
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6492281
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6334671
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6432
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6491579
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6429724
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6317961
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6448688
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 7"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6501729
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.6410426 0.6416356 0.6492281 0.6334671 0.6432000 0.6491579 0.6429724
+ [8] 0.6317961 0.6448688 0.6501729
+
+ print(mean.bacc.test )
+[1] 0.6427541
+[1] "fold 1 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7102484
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.703751
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7142953
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7112825
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7071686
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7031477
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6883324
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7078761
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7039542
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 8"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7064732
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7102484 0.7037510 0.7142953 0.7112825 0.7071686 0.7031477 0.6883324
+ [8] 0.7078761 0.7039542 0.7064732
+
+ print(mean.bacc.test )
+[1] 0.7056529
+[1] "fold 1 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 9"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+
+ print(mean.bacc.test )
+[1] 0.5
+[1] "fold 1 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8061236
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8152585
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8101517
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8225768
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7935932
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8093557
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7982135
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8091693
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8176832
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 10"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8190214
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.8061236 0.8152585 0.8101517 0.8225768 0.7935932 0.8093557 0.7982135
+ [8] 0.8091693 0.8176832 0.8190214
+
+ print(mean.bacc.test )
+[1] 0.8101147
+[1] "fold 1 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5887909
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5804014
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6093951
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5795191
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5887599
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5738576
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5847912
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5796515
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5881397
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 11"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5845221
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5887909 0.5804014 0.6093951 0.5795191 0.5887599 0.5738576 0.5847912
+ [8] 0.5796515 0.5881397 0.5845221
+
+ print(mean.bacc.test )
+[1] 0.5857829
+[1] "fold 1 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 12"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+
+ print(mean.bacc.test )
+[1] 0.5
+[1] "fold 1 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5039403
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 13"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5000000 0.5000000 0.5000000 0.5000000 0.5000000 0.5000000 0.5000000
+ [8] 0.5000000 0.5039403 0.5000000
+
+ print(mean.bacc.test )
+[1] 0.500394
+[1] "fold 1 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7345286
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7366494
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.744832
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7372776
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7327507
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7330242
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7272727
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7417666
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7360208
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 14"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7206018
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7345286 0.7366494 0.7448320 0.7372776 0.7327507 0.7330242 0.7272727
+ [8] 0.7417666 0.7360208 0.7206018
+
+ print(mean.bacc.test )
+[1] 0.7344724
+[1] "fold 1 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5777783
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.579671
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5924591
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5761261
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5828066
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5938331
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5816714
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5819625
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5941714
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 15"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5850277
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5777783 0.5796710 0.5924591 0.5761261 0.5828066 0.5938331 0.5816714
+ [8] 0.5819625 0.5941714 0.5850277
+
+ print(mean.bacc.test )
+[1] 0.5845507
+[1] "fold 1 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7143945
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7165052
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7258534
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7222626
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7244593
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7177066
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.708897
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7220277
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7088547
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 16"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7115042
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7143945 0.7165052 0.7258534 0.7222626 0.7244593 0.7177066 0.7088970
+ [8] 0.7220277 0.7088547 0.7115042
+
+ print(mean.bacc.test )
+[1] 0.7172465
+[1] "fold 1 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7482512
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7409455
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7453143
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7359813
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7348255
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7426938
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7419173
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7358208
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7451096
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 17"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7325174
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7482512 0.7409455 0.7453143 0.7359813 0.7348255 0.7426938 0.7419173
+ [8] 0.7358208 0.7451096 0.7325174
+
+ print(mean.bacc.test )
+[1] 0.7403377
+[1] "fold 1 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6486643
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6540306
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6432555
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6334463
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6506475
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6327705
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6408314
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.639969
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6351787
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 18"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.656115
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.6486643 0.6540306 0.6432555 0.6334463 0.6506475 0.6327705 0.6408314
+ [8] 0.6399690 0.6351787 0.6561150
+
+ print(mean.bacc.test )
+[1] 0.6434909
+[1] "fold 1 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8000717
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8263118
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8192946
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8103855
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8115397
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8121326
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8124247
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8108985
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8153075
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 19"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8003386
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.8000717 0.8263118 0.8192946 0.8103855 0.8115397 0.8121326 0.8124247
+ [8] 0.8108985 0.8153075 0.8003386
+
+ print(mean.bacc.test )
+[1] 0.8118705
+[1] "fold 1 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5564516
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.555937
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5587289
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5495621
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5584958
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5664237
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5607271
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5581207
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.55341
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 20"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.551695
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5564516 0.5559370 0.5587289 0.5495621 0.5584958 0.5664237 0.5607271
+ [8] 0.5581207 0.5534100 0.5516950
+
+ print(mean.bacc.test )
+[1] 0.5569552
+[1] "fold 1 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 21"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+
+ print(mean.bacc.test )
+[1] 0.5
+[1] "fold 1 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7445038
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7389993
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7356936
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7361337
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7400552
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7315715
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7371134
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7576347
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7417834
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 22"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7428506
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7445038 0.7389993 0.7356936 0.7361337 0.7400552 0.7315715 0.7371134
+ [8] 0.7576347 0.7417834 0.7428506
+
+ print(mean.bacc.test )
+[1] 0.7406339
+[1] "fold 1 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.505071
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 23"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5019984
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5000000 0.5000000 0.5000000 0.5000000 0.5000000 0.5050710 0.5000000
+ [8] 0.5000000 0.5000000 0.5019984
+
+ print(mean.bacc.test )
+[1] 0.5007069
+[1] "fold 1 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5056566
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.508381
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5081103
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5108477
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5072493
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5091352
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5029964
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5060193
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5008029
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 24"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5074267
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5056566 0.5083810 0.5081103 0.5108477 0.5072493 0.5091352 0.5029964
+ [8] 0.5060193 0.5008029 0.5074267
+
+ print(mean.bacc.test )
+[1] 0.5066625
+[1] "fold 1 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 25"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+
+ print(mean.bacc.test )
+[1] 0.5
+[1] "fold 1 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7008937
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7060972
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7104245
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.703435
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6962608
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7040072
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7120963
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7133193
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.6781404
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 26"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7019794
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7008937 0.7060972 0.7104245 0.7034350 0.6962608 0.7040072 0.7120963
+ [8] 0.7133193 0.6781404 0.7019794
+
+ print(mean.bacc.test )
+[1] 0.7026654
+[1] "fold 1 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5942913
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5886093
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.593992
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5912299
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5905276
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5953947
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5871438
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5683203
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5753165
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 27"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.576615
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5942913 0.5886093 0.5939920 0.5912299 0.5905276 0.5953947 0.5871438
+ [8] 0.5683203 0.5753165 0.5766150
+
+ print(mean.bacc.test )
+[1] 0.586144
+[1] "fold 1 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8063695
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8138087
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7991997
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8008798
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8091168
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8061492
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8105787
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8133978
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8052508
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 28"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.8239081
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.8063695 0.8138087 0.7991997 0.8008798 0.8091168 0.8061492 0.8105787
+ [8] 0.8133978 0.8052508 0.8239081
+
+ print(mean.bacc.test )
+[1] 0.8088659
+[1] "fold 1 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5840932
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5913095
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5863489
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.581786
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5799161
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5840522
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5908062
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5863466
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5934282
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 29"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5845221
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5840932 0.5913095 0.5863489 0.5817860 0.5799161 0.5840522 0.5908062
+ [8] 0.5863466 0.5934282 0.5845221
+
+ print(mean.bacc.test )
+[1] 0.5862609
+[1] "fold 1 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 30"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+
+ print(mean.bacc.test )
+[1] 0.5
+[1] "fold 1 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7219493
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7027154
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7237487
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7053849
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7265153
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7180746
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7269586
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7057442
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7129111
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 31"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.7177327
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.7219493 0.7027154 0.7237487 0.7053849 0.7265153 0.7180746 0.7269586
+ [8] 0.7057442 0.7129111 0.7177327
+
+ print(mean.bacc.test )
+[1] 0.7161735
+[1] "fold 1 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5984042
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 2 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5897338
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 3 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5873476
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 4 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5933924
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 5 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5926001
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 6 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5973124
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 7 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5911493
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 8 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5891586
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 9 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5959191
+
+exiting: bacc.measure.func()
+##################################################
+[1] "fold 10 of run 32"
+
+##################################################
+starting: cross.validation()
+
+exiting: cross.validation()
+##################################################
+
+##################################################
+starting: bacc.measure.func()
+
+ print(bacc.test)
+[1] 0.5999152
+
+exiting: bacc.measure.func()
+##################################################
+
+ print(RF.results.test)
+ [1] 0.5984042 0.5897338 0.5873476 0.5933924 0.5926001 0.5973124 0.5911493
+ [8] 0.5891586 0.5959191 0.5999152
+
+ print(mean.bacc.test )
+[1] 0.5934933
+
+ print(summary(fullfc.results.train))
+Call:
+fac.design(nfactors = nFactors, factor.names = list(nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), replications = 2, seed = 6285)
+
+Experimental design of type  full factorial 
+16  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff maxnodes
+1       -1      -1     -1       -1
+2        1       1      1        1
+
+Responses:
+[1] fullfc.RF.train
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks fullfc.RF.train
+1       1           3.1       -1       1     -1       -1     .1       0.5054301
+2       2          10.1        1      -1     -1        1     .1       0.5920983
+3       3          16.1        1       1      1        1     .1       0.7397743
+4       4          12.1        1       1     -1        1     .1       0.5544565
+5       5          11.1       -1       1     -1        1     .1       0.8738655
+6       6           6.1        1      -1      1       -1     .1       0.5000000
+7       7          13.1       -1      -1      1        1     .1       0.6871604
+8       8           7.1       -1       1      1       -1     .1       0.7044223
+9       9          14.1        1      -1      1        1     .1       0.5000000
+10     10           9.1       -1      -1     -1        1     .1       0.9613157
+11     11           1.1       -1      -1     -1       -1     .1       0.5877294
+12     12           5.1       -1      -1      1       -1     .1       0.5000000
+13     13           4.1        1       1     -1       -1     .1       0.5002937
+14     14          15.1       -1       1      1        1     .1       0.8911806
+15     15           2.1        1      -1     -1       -1     .1       0.5878671
+16     16           8.1        1       1      1       -1     .1       0.7164455
+17     17          15.2       -1       1      1        1     .2       0.8917237
+18     18          13.2       -1      -1      1        1     .2       0.6872652
+19     19           9.2       -1      -1     -1        1     .2       0.9610800
+20     20          12.2        1       1     -1        1     .2       0.5552877
+21     21          14.2        1      -1      1        1     .2       0.5000000
+22     22          16.2        1       1      1        1     .2       0.7415437
+23     23           4.2        1       1     -1       -1     .2       0.5008498
+24     24           3.2       -1       1     -1       -1     .2       0.5068720
+25     25           5.2       -1      -1      1       -1     .2       0.5000000
+26     26           7.2       -1       1      1       -1     .2       0.7049006
+27     27           1.2       -1      -1     -1       -1     .2       0.5876882
+28     28          11.2       -1       1     -1        1     .2       0.8734598
+29     29           2.2        1      -1     -1       -1     .2       0.5876736
+30     30           6.2        1      -1      1       -1     .2       0.5000000
+31     31           8.2        1       1      1       -1     .2       0.7166538
+32     32          10.2        1      -1     -1        1     .2       0.5925528
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation, 
+ not part of the data frame
+NULL
+
+ print(summary(fullfc.results.test))
+Call:
+fac.design(nfactors = nFactors, factor.names = list(nodesize = c(-1, 
+    1), classwt = c(-1, 1), cutoff = c(-1, 1), maxnodes = c(-1, 
+    1)), replications = 2, seed = 6285)
+
+Experimental design of type  full factorial 
+16  runs
+each run independently conducted  2  times
+
+Factor settings (scale ends):
+  nodesize classwt cutoff maxnodes
+1       -1      -1     -1       -1
+2        1       1      1        1
+
+Responses:
+[1] fullfc.RF.test
+
+The design itself:
+   run.no run.no.std.rp nodesize classwt cutoff maxnodes Blocks fullfc.RF.test
+1       1           3.1       -1       1     -1       -1     .1      0.5051503
+2       2          10.1        1      -1     -1        1     .1      0.5973994
+3       3          16.1        1       1      1        1     .1      0.7383574
+4       4          12.1        1       1     -1        1     .1      0.5539606
+5       5          11.1       -1       1     -1        1     .1      0.8092899
+6       6           6.1        1      -1      1       -1     .1      0.5000000
+7       7          13.1       -1      -1      1        1     .1      0.6427541
+8       8           7.1       -1       1      1       -1     .1      0.7056529
+9       9          14.1        1      -1      1        1     .1      0.5000000
+10     10           9.1       -1      -1     -1        1     .1      0.8101147
+11     11           1.1       -1      -1     -1       -1     .1      0.5857829
+12     12           5.1       -1      -1      1       -1     .1      0.5000000
+13     13           4.1        1       1     -1       -1     .1      0.5003940
+14     14          15.1       -1       1      1        1     .1      0.7344724
+15     15           2.1        1      -1     -1       -1     .1      0.5845507
+16     16           8.1        1       1      1       -1     .1      0.7172465
+17     17          15.2       -1       1      1        1     .2      0.7403377
+18     18          13.2       -1      -1      1        1     .2      0.6434909
+19     19           9.2       -1      -1     -1        1     .2      0.8118705
+20     20          12.2        1       1     -1        1     .2      0.5569552
+21     21          14.2        1      -1      1        1     .2      0.5000000
+22     22          16.2        1       1      1        1     .2      0.7406339
+23     23           4.2        1       1     -1       -1     .2      0.5007069
+24     24           3.2       -1       1     -1       -1     .2      0.5066625
+25     25           5.2       -1      -1      1       -1     .2      0.5000000
+26     26           7.2       -1       1      1       -1     .2      0.7026654
+27     27           1.2       -1      -1     -1       -1     .2      0.5861440
+28     28          11.2       -1       1     -1        1     .2      0.8088659
+29     29           2.2        1      -1     -1       -1     .2      0.5862609
+30     30           6.2        1      -1      1       -1     .2      0.5000000
+31     31           8.2        1       1      1       -1     .2      0.7161735
+32     32          10.2        1      -1     -1        1     .2      0.5934933
+class=design, type= full factorial 
+NOTE: columns run.no and run.no.std.rp  are annotation, 
+ not part of the data frame
+NULL
+
+exiting: RF.fullfc.results()
+##################################################
+
+##################################################
+starting: lm.fullfac.design()
+ print(summary(fullfc.model.train) )
+Number of observations used: 32 
+Formula:
+fullfc.RF.train ~ (nodesize + classwt + cutoff + maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0289716 -0.0199548 -0.0001729  0.0195180  0.0293245 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          0.650300   0.004690 138.656  < 2e-16 ***
+nodesize1           -0.063706   0.004690 -13.583 7.17e-12 ***
+classwt1             0.035773   0.004690   7.627 1.75e-07 ***
+cutoff1              0.004767   0.004690   1.016    0.321    
+maxnodes1            0.074873   0.004690  15.964 3.22e-13 ***
+nodesize1:classwt1   0.005797   0.004690   1.236    0.230    
+nodesize1:cutoff1    0.022941   0.004690   4.892 7.75e-05 ***
+nodesize1:maxnodes1 -0.064502   0.004690 -13.753 5.67e-12 ***
+classwt1:cutoff1     0.072491   0.004690  15.456 6.03e-13 ***
+classwt1:maxnodes1   0.004216   0.004690   0.899    0.379    
+cutoff1:maxnodes1   -0.025109   0.004690  -5.354 2.61e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02653 on 21 degrees of freedom
+Multiple R-squared:  0.9791,	Adjusted R-squared:  0.9691 
+F-statistic: 98.16 on 10 and 21 DF,  p-value: 2.554e-15
+
+NULL
+ print(press.result.train )
+[1] 0.03432239
+[1] 0.03432239
+ print(summary(fullfc.model.test) )
+Number of observations used: 32 
+Formula:
+fullfc.RF.test ~ (nodesize + classwt + cutoff + maxnodes)^2
+
+Call:
+lm.default(formula = fo, data = model.frame(fo, data = formula))
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.064541 -0.018661 -0.005956  0.026003  0.049397 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          0.624356   0.006368  98.038  < 2e-16 ***
+nodesize1           -0.037723   0.006368  -5.923 7.03e-06 ***
+classwt1             0.034239   0.006368   5.376 2.48e-05 ***
+cutoff1              0.005756   0.006368   0.904 0.376363    
+maxnodes1            0.049519   0.006368   7.776 1.30e-07 ***
+nodesize1:classwt1   0.007181   0.006368   1.128 0.272232    
+nodesize1:cutoff1    0.021662   0.006368   3.402 0.002689 ** 
+nodesize1:maxnodes1 -0.038552   0.006368  -6.054 5.24e-06 ***
+classwt1:cutoff1     0.060091   0.006368   9.436 5.30e-09 ***
+classwt1:maxnodes1   0.002245   0.006368   0.352 0.727977    
+cutoff1:maxnodes1   -0.024625   0.006368  -3.867 0.000893 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.03603 on 21 degrees of freedom
+Multiple R-squared:   0.93,	Adjusted R-squared:  0.8966 
+F-statistic: 27.89 on 10 and 21 DF,  p-value: 6.761e-10
+
+NULL
+ print(press.result.test )
+[1] 0.06328537
+[1] 0.06328537
+
+exiting: lm.fullfac.design()
+##################################################
+
+##################################################
+
+##### warnings():
+NULL
+
+##### getOption('repos'):
+    CRAN 
+"@CRAN@" 
+
+##### .libPaths():
+[1] "E:/softwares/R/R-3.6.3/library"
+
+##### sessionInfo():
+R version 3.6.3 (2020-02-29)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 8.1 x64 (build 9600)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] e1071_1.7-3         caret_6.0-85        ggplot2_3.3.0      
+ [4] lattice_0.20-38     randomForest_4.6-14 rsm_2.10           
+ [7] FrF2_2.1-1          DoE.base_1.1-3      conf.design_2.0.0  
+[10] dplyr_0.8.5        
+
+loaded via a namespace (and not attached):
+ [1] zoo_1.8-7            tidyselect_1.0.0     partitions_1.9-22   
+ [4] reshape2_1.4.3       purrr_0.3.3          splines_3.6.3       
+ [7] colorspace_1.4-1     generics_0.0.2       stats4_3.6.3        
+[10] gmp_0.5-13.6         survival_3.1-8       prodlim_2019.11.13  
+[13] rlang_0.4.5          ModelMetrics_1.2.2.1 pillar_1.4.3        
+[16] glue_1.3.1           withr_2.1.2          foreach_1.4.8       
+[19] lifecycle_0.2.0      plyr_1.8.6           lava_1.6.7          
+[22] stringr_1.4.0        timeDate_3043.102    munsell_0.5.0       
+[25] combinat_0.0-8       gtable_0.3.0         recipes_0.1.10      
+[28] codetools_0.2-16     lmtest_0.9-37        numbers_0.7-5       
+[31] class_7.3-15         vcd_1.4-6            Rcpp_1.0.3          
+[34] polynom_1.4-0        scales_1.1.0         ipred_0.9-9         
+[37] scatterplot3d_0.3-41 stringi_1.4.6        tools_3.6.3         
+[40] magrittr_1.5         tibble_2.1.3         crayon_1.3.4        
+[43] pkgconfig_2.0.3      MASS_7.3-51.5        Matrix_1.2-18       
+[46] data.table_1.12.8    pROC_1.16.1          lubridate_1.7.4     
+[49] gower_0.2.1          assertthat_0.2.1     iterators_1.0.12    
+[52] R6_2.4.1             rpart_4.1-15         sfsmisc_1.1-5       
+[55] nnet_7.3-12          igraph_1.2.4.2       nlme_3.1-144        
+[58] compiler_3.6.3      
+
+##### Sys.time():  2020-05-11 11:44:04 EDT 
+
+##### stop.proc.time - start.proc.time:
+    user   system  elapsed 
+13651.23   321.46 14014.67 
