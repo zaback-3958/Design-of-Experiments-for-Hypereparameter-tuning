@@ -17,8 +17,9 @@ And it is called **response surface**.
 Since in most RSM methods the relationship between responce and the independent variables is not known, a proper approximation of the relationship between them must be found. In general, at first a low order poly-nomial model is applied in some regions of the independent variables and if the statistical analysis shows that it this model is not appropriate a higher order model will be applied. The first-order model can be written as below:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;y=&space;\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+\cdots+\beta_{k}x_{k}+\epsilon" border="0"/>
+if a highr order model is identified the second-order model will be applied as below:
 
-
+<img src="http://latex.codecogs.com/gif.latex?&space;y=&space;\beta_{0}+\sum_{i=1}^{k}\beta_{i}x_{i}+\sum_{i=1}^{k}\beta_{ii}x_{i}^{2}+\sum_{i<j}\sum\beta_{ij}x_{i}x_{j}+\epsilon" border="0"/>
 
 The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
 
