@@ -3,8 +3,7 @@ In the previous section ``003-Fractiona-factorial-design-VII`` the main effects 
 
 There are two principles that needs to be considered when keeping a factor whose main effect is not significant, but its interactions are. These principles include the hierarchy and the heredity approaches. According to the former a model can achieve consistency by retaining the lower order terms in the model when the higher order terms are significant. However, according to the latter only when both factors are siginificant their interactions will be siginificant, which can be deviated if the weak heredity to be considered. 
 
-The Full factorial design 
-
+The Full factorial design <img src="http://latex.codecogs.com/gif.latex?2^{4}" border="0"/> including the factors ``nodesize, classwt, maxnodes, cutoff`` was run, and the result was obtained. The output file can be found
 
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;Y_{ijk} = \tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ijk}"/>
