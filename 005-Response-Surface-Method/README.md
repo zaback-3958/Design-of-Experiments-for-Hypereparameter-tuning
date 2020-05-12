@@ -21,7 +21,8 @@ if a highr order model is identified the second-order model will be applied as b
 
 <img src="http://latex.codecogs.com/gif.latex?&space;y=&space;\beta_{0}+\sum_{i=1}^{k}\beta_{i}x_{i}+\sum_{i=1}^{k}\beta_{ii}x_{i}^{2}+\sum_{i<j}\sum\beta_{ij}x_{i}x_{j}+\epsilon" border="0"/>
 
-The fractional factorial design <img src="http://latex.codecogs.com/gif.latex?2_{IV}^{7-2}" border="0"/> was performed in section ``001-Fractional-factorial-design-IV`` to have fewer runs and reduce the cost, although have some of the effects to be alised. Since in this design was not possible to recognise the effect of some main effects and interactions on the response, the design <img src="http://latex.codecogs.com/gif.latex?2_{VII}^{7-1}" border="0"/> was performed. In fact, this design isolated the main effect factors and interactions that were aliased in the previous design. 
+This poly-nomial model does not represent the functional relationship between response and the variables over the entire space, but it could be a proper approximation for a very small region of the function. The experimental designs are performed to collect the data and the RSM parameters can be estimated. These designs are called RSM designs. There are different methods to find the optimum for response depending on the type of model. For the first-order model, method of steepest ascend/descend is performed to maximize/minimize the function. For the second order model the ridge analysis is performed.
+
 
 # Requirements
 * R v3.6.2
