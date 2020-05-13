@@ -52,10 +52,9 @@ When the stationary point is obtained, it is required to find if it is a Maximum
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;\hat{y}_{s}+\lambda_{1}w_{1}^{2}+\lambda_{2}w_{2}^{2}+\cdots&space;\lambda_{k}w_{k}^{2}" border="0"/>
 
-where <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;w_{i}" border="0"/> are the transformed independent variables and <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are eigen values of matrix **B**. 
+where <img src="http://latex.codecogs.com/gif.latex?&space;w_{i}" border="0"/> are the transformed independent variables and <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are eigenvalues of matrix **B**. This model was obtained by transforming the second-order model into new coordinate system where the origin is the stationary point. Then, the axes of this system are rotated until they become parallel to the axes of the fitted response surface. If the eigenvalues <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are all negative, then the stationary point is Maximum, if they are all positive, then the stationary point is Minimum, if they have different signs, then, it is a saddle point. In the canonical form when the stationary point is within the experimentation region and and one or more <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are zero or very close to zero, this type of surface methid is called stationary ridge system. If the stationary point is outside the experimentation region and the same condition holds for <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/>, then if eigenvalues are negative it is called a rising ridge and id they are positive, it is called falling ridge. 
 
-
-Where 
+ 
 
 # Requirements
 * R v3.6.2
