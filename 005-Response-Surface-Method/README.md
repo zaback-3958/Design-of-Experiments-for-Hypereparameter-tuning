@@ -48,10 +48,14 @@ The predicted responce at stationary point can also be obtained by replacing the
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}_{s}=&space;\hat{\beta}_{0}+\frac{1}{2}{\bold{x}}'_{s}\bold{b}" border="0"/>
 
-When the stationary point is obtained, it is required to find if it is a Maximum, Minimum, or saddle point. Also, it is important to know how sensitive the response is to the levels of the variables. The Canonical Analysis helps to find the required information. The canonical form of the information is:
+When the stationary point is obtained, it is required to find if it is a Maximum, Minimum, or saddle point. Also, it is important to know how sensitive the response is to the levels of the variables. The Canonical Analysis helps to find the required information. The canonical form of the model is:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;\hat{y}_{s}+\lambda_{1}w_{1}^{2}+\lambda_{2}w_{2}^{2}+\cdots&space;\lambda_{k}w_{k}^{2}" border="0"/>
 
+where <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;w_{i}" border="0"/> are the transformed independent variables and <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are eigen values of matrix **B**. 
+
+
+Where 
 
 # Requirements
 * R v3.6.2
