@@ -36,6 +36,7 @@ where:
 
 <img src="http://latex.codecogs.com/gif.latex?\begin{bmatrix}x_{1}\\x_{2}\\&space;\vdots\\x_{k}\end{bmatrix}&space;&space;&space;&space;&space;\;\;\;\begin{bmatrix}\beta_{1}\\\beta_{2}\\&space;\vdots\\&space;\beta_{k\end{bmatrix}\;\;\;\;\begin{bmatrix}\hat{\beta_{11}} & \hat{\beta_{12}}/2 &\cdots & \hat{\beta_{1k}}/2 & \\ & \hat{\beta_{22}}/2 &\cdots &\hat{\beta_{2k}}/2 & \\ & &\ddots\\sym.&  &  & \hat{\beta_{kk}}\end{bmatrix}" border="0"/>
 
+In these matrices **b** is a <img src="http://latex.codecogs.com/gif.latex?&space;(K\times&space;1)" border="0"/> vecotr of the coefficients, **B** is a symmetric matrix with the pure quadratic cooefficents as diagonal elements and the interactions coefficients as off-diagonal elemennts. The
 
 
 # Requirements
