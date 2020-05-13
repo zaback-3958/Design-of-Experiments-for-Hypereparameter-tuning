@@ -52,7 +52,19 @@ When the stationary point is obtained, it is required to find if it is a Maximum
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;\hat{y}_{s}+\lambda_{1}w_{1}^{2}+\lambda_{2}w_{2}^{2}+\cdots&space;\lambda_{k}w_{k}^{2}" border="0"/>
 
-where <img src="http://latex.codecogs.com/gif.latex?&space;w_{i}" border="0"/> are the transformed independent variables and <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are eigenvalues of matrix **B**. This model was obtained by transforming the second-order model into new coordinate system where the origin is the stationary point. Then, the axes of this system are rotated until they become parallel to the axes of the fitted response surface. If the eigenvalues <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are all negative, then the stationary point is Maximum, if they are all positive, then the stationary point is Minimum, if they have different signs, then, it is a saddle point. In the canonical form when the stationary point is within the experimentation region and and one or more <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are zero or very close to zero, this type of surface methid is called stationary ridge system. If the stationary point is outside the experimentation region and the same condition holds for <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/>, then if eigenvalues are negative it is called a rising ridge and id they are positive, it is called falling ridge. 
+where <img src="http://latex.codecogs.com/gif.latex?&space;w_{i}" border="0"/> are the transformed independent variables and <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are eigenvalues of matrix **B**. This model was obtained by transforming the second-order model into new coordinate system where the origin is the stationary point. Then, the axes of this system are rotated until they become parallel to the axes of the fitted response surface. If the eigenvalues <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are all negative, then the stationary point is Maximum, if they are all positive, then the stationary point is Minimum, if they have different signs, then, it is a saddle point. In the canonical form when the stationary point is within the experimentation region and and one or more <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/> are zero or very close to zero, this type of surface methid is called stationary ridge system. If the stationary point is outside the experimentation region and the same condition holds for <img src="http://latex.codecogs.com/gif.latex?&space;\lambda_{i}" border="0"/>, then if eigenvalues are negative it is called a rising ridge and id they are positive, it is called falling ridge.
+## Response Surface Designs
+The proper experimental designs that are used to collect the data helps to estimate the RSM parameters more effectively. These designs that are used to fit the RSM models are called Response Surface Designs. There are two types of designs which include Central Composit Design and Box-Behnken Design. 
+### Central Composit Design (CCD)
+This design is the most popular design for fitting second-order models. The CCD design consists of factorial points, axial or star points and center points. for in stance for a <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial design with <img src="http://latex.codecogs.com/gif.latex?&space;k" border="0"/> factors there are <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial points, <img src="http://latex.codecogs.com/gif.latex?&space;2k" border="0"/> axial points and <img src="http://latex.codecogs.com/gif.latex?&space;n_{c}" border="0"/> center points that could be determined. The axial points are placed at <img src="http://latex.codecogs.com/gif.latex?&space;\alpha" border="0"/> distance from the design center. The image below shows the visualization of this design:
+
+![Test Image 1]()
+
+
+
+
+
+### Box-Behnken Design
 
  
 
@@ -99,7 +111,7 @@ The adult dataset is used for classification to predict whether income exceeds $
 # Main output files
 The Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was performed using FrF2 package in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. The output includes the main effect graphs for train and test data, the interaction effect graphs of train and test data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors and interactions are not alised. 
 
-![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/003-Fractional-factorial-design-VII/output/2020-05-09/plot-main-effects-fractional-factorial-train-VII.png)
+![Test Image 11](https://github.com/zaback-3958/ML-DoE/blob/master/003-Fractional-factorial-design-VII/output/2020-05-09/plot-main-effects-fractional-factorial-train-VII.png)
 
 This graph shows that the main effects maxnodes, nodesize, and classwt are very significant. The effect of mtry is also significant but it is not as strong as those three factors by looking at the estimated effects. 
 
