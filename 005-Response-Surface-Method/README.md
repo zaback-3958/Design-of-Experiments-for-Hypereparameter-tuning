@@ -1,5 +1,5 @@
 # Response Surface Methods
-Response Surface methodology (**RSM**) as Montgomery, D.C. (2017). Design and Analysis of Experiments (9th). Hoboken, NJ.:Wiley
+Response Surface methodology (**RSM**) as (Montgomery, D.C. (2017). Design and Analysis of Experiments (9th). Hoboken, NJ.:Wiley)
 defines is a series of statistical and mathematica technique that are useful to optimize a reponse variable that is influenced by some variables. For instance an experimenter would be interested in finding the levels of variables <img src="http://latex.codecogs.com/gif.latex?&space;x_{1}" border="0"/>   and  <img src="http://latex.codecogs.com/gif.latex?&space;x_{2}" border="0"/> that maximize or minimize the response <img src="http://latex.codecogs.com/gif.latex?&space;y" border="0"/>. The response is a function of levels of these two variables as below:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;y=&space;f(x_{1},x_{2})&space;+\epsilon" border="0"/>
@@ -28,7 +28,7 @@ This poly-nomial model does not represent the functional relationship between re
 Most of the time the initial values for the variables to optimize the response is far from optimum. In this situation the experimenter desires to move very rapidly to the closest neighborhood of the optimum. At the begining, it is assumed that the first order model can provide a good approximation in a small region of the independent variables. The method of steepest ascend/descend is a sequential procedure which provides a path in the direction of the maximum increase/decsease in the response step by step. The steepest ascend/descend direction is parallel to the normal to the fitted response and its steps are proportional to the model parameters <img src="http://latex.codecogs.com/gif.latex?&space;\beta_{i}" border="0"/>. The experimenter decides on the steps according to the experience or other consideration. The optimization of the model continues untill no further increase/decsrease in the response is observed. Then, a new first-order model might be applied with new steepest ascend/descend method. At the end, by repeating this process, it can be get closer to the optimum. At this point lack of fit test shows if the first-order model is adequate or a second-order model should be applied.
 
 ## Second-Order Model (Ridge Analysis) 
-When the first-order model is not adequate and the experimenter is in the vicinity of the optimum, most of the time a second order model would be appropriate to find the set of values for independent variables that optimizes the response. In fact, the experimenter is looking for levels of the independent variables that partail derivatives of the second-order function at those levels are zero. That point is called a stationary point which could represent a Maximum, Minimum, or saddle point. The second-order model can be written in matrix notation as below:
+When the first-order model is not adequate and the experimenter is in the vicinity of the optimum, most of the time a second order model would be appropriate to find the set of values for independent variables that optimizes the response. In fact, the experimenter is looking for levels of the independent variables in which the partail derivatives of the second-order function is zero. That point is called a stationary point which could represent a Maximum, Minimum, or saddle point. The second-order model can be written in matrix notation as below:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;\hat{\beta}_{0}+\acute{\bold{x}}b+\acute{\bold{x}}B\bold{x}" border="0"/>
 
@@ -36,17 +36,21 @@ where:
 
 <img src="http://latex.codecogs.com/gif.latex?\begin{bmatrix}x_{1}\\x_{2}\\&space;\vdots\\x_{k}\end{bmatrix}&space;&space;&space;&space;&space;\;\;\;\begin{bmatrix}\beta_{1}\\\beta_{2}\\&space;\vdots\\&space;\beta_{k\end{bmatrix}\;\;\;\;\begin{bmatrix}\hat{\beta_{11}} & \hat{\beta_{12}}/2 &\cdots & \hat{\beta_{1k}}/2 & \\ & \hat{\beta_{22}}/2 &\cdots &\hat{\beta_{2k}}/2 & \\ & &\ddots\\sym.&  &  & \hat{\beta_{kk}}\end{bmatrix}" border="0"/>
 
-In these matrices **b** is a <img src="http://latex.codecogs.com/gif.latex?&space;(K\times&space;1)" border="0"/> vecotr of the coefficients, **B** is a symmetric matrix with the pure quadratic cooefficents as diagonal elements and the interactions coefficients as off-diagonal elements. The derivative of the <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}" border="0"/> with respect to the **x** equated to zero:
+In these matrices **b** is a <img src="http://latex.codecogs.com/gif.latex?&space;(K\times&space;1)" border="0"/> vecotr of the coefficients, **B** is a symmetric matrix with the pure quadratic coefficents as diagonal elements and the interactions coefficients as off-diagonal elements. The derivative of the <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}" border="0"/> with respect to the **x** equated to zero:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\frac{\partial&space;\hat{y}}{\partial&space;\bold{x}}=&space;\bold{b}+2\bold{B}\bold{x}=&space;0" border="0"/>
 
-and the stationary point can be obtained by solving the equation above:
+The stationary point can be obtained by solving the equation above:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\bold{x}_{s}=&space;-\frac{1}{2}\bold{B}^{-1}\bold{b}" border="0"/>
 
-and by replacing in the first equation the predicted responce at stationary point can also be obtained:
+The predicted responce at stationary point can also be obtained by replacing the <img src="http://latex.codecogs.com/gif.latex?&space;\bold{x}_{s}" border="0"/> in the first equation:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}_{s}=&space;\hat{\beta}_{0}+\frac{1}{2}{\bold{x}}'_{s}\bold{b}" border="0"/>
+
+When the stationary point is obtained, it is required to find if it is a Maximum, Minimum, or saddle point. Also, it is important to know how sensitive the response is to the levels of the variables. The Canonical Analysis helps to find the required information. The canonical form of the information is:
+
+<img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;\hat{y}_{s}+\lambda_{1}w_{1}^{2}+\lambda_{2}w_{2}^{2}+\cdots&space;\lambda_{k}w_{k}^{2}" border="0"/>
 
 
 # Requirements
