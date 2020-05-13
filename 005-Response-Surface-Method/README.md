@@ -36,7 +36,17 @@ where:
 
 <img src="http://latex.codecogs.com/gif.latex?\begin{bmatrix}x_{1}\\x_{2}\\&space;\vdots\\x_{k}\end{bmatrix}&space;&space;&space;&space;&space;\;\;\;\begin{bmatrix}\beta_{1}\\\beta_{2}\\&space;\vdots\\&space;\beta_{k\end{bmatrix}\;\;\;\;\begin{bmatrix}\hat{\beta_{11}} & \hat{\beta_{12}}/2 &\cdots & \hat{\beta_{1k}}/2 & \\ & \hat{\beta_{22}}/2 &\cdots &\hat{\beta_{2k}}/2 & \\ & &\ddots\\sym.&  &  & \hat{\beta_{kk}}\end{bmatrix}" border="0"/>
 
-In these matrices **b** is a <img src="http://latex.codecogs.com/gif.latex?&space;(K\times&space;1)" border="0"/> vecotr of the coefficients, **B** is a symmetric matrix with the pure quadratic cooefficents as diagonal elements and the interactions coefficients as off-diagonal elemennts. The
+In these matrices **b** is a <img src="http://latex.codecogs.com/gif.latex?&space;(K\times&space;1)" border="0"/> vecotr of the coefficients, **B** is a symmetric matrix with the pure quadratic cooefficents as diagonal elements and the interactions coefficients as off-diagonal elements. The derivative of the <img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}" border="0"/> with respect to the **x** equated to zero:
+
+<img src="http://latex.codecogs.com/gif.latex?&space;\frac{\partial&space;\hat{y}}{\partial&space;\bold{x}}=&space;\bold{b}+2\bold{B}\bold{x}=&space;0" border="0"/>
+
+and the stationary point can be obtained by solving the equation above:
+
+<img src="http://latex.codecogs.com/gif.latex?&space;\bold{x}_{s}=&space;-\frac{1}{2}\bold{B}^{-1}\bold{b}" border="0"/>
+
+and by replacing in the first equation the predicted responce at stationary point can also be obtained:
+
+<img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}_{s}=&space;\hat{\beta}_{0}+\frac{1}{2}{\bold{x}}'_{s}\bold{b}" border="0"/>
 
 
 # Requirements
