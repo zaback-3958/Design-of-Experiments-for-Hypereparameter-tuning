@@ -23,12 +23,14 @@ if a highr order model is identified the second-order model will be applied as b
 
 This poly-nomial model does not represent the functional relationship between response and the variables over the entire space, but it could be a proper approximation for a very small region of the function. The experimental designs are performed to collect the data and the RSM parameters can be estimated. These designs are called RSM designs. There are different methods to find the optimum for response depending on the type of model. For the first-order model, method of steepest ascend/descend is performed to maximize/minimize the function. For the second order model the ridge analysis is performed.
 
-## First-order model (Steepest Ascend/Descend Method)
+## First-Order Model (Steepest Ascend/Descend Method)
 
 Most of the time the initial values for the variables to optimize the response is far from optimum. In this situation the experimenter desires to move very rapidly to the closest neighborhood of the optimum. At the begining, it is assumed that the first order model can provide a good approximation in a small region of the independent variables. The method of steepest ascend/descend is a sequential procedure which provides a path in the direction of the maximum increase/decsease in the response step by step. The steepest ascend/descend direction is parallel to the normal to the fitted response and its steps are proportional to the model parameters <img src="http://latex.codecogs.com/gif.latex?&space;\beta_{i}" border="0"/>. The experimenter decides on the steps according to the experience or other consideration. The optimization of the model continues untill no further increase/decsrease in the response is observed. Then, a new first-order model might be applied with new steepest ascend/descend method. At the end, by repeating this process, it can be get closer to the optimum. At this point lack of fit test shows if the first-order model is adequate or a second-order model should be applied.
 
-## second-order model (Ridge analysis) 
+## Second-Order Model (Ridge Analysis) 
+When the first-order model is not adequate and the experimenter is in the vicinity of the optimum, most of the time a second order model would be appropriate to find the set of values for independent variables that optimizes the response. In fact, the experimenter is looking for levels of the independent variables that partail derivatives of the second-order function at those levels are zero. That point is called a stationary point which could represent a Maximum, Minimum, or saddle point. The second-order model can be written in matrix notation as below:
 
+<img src="http://latex.codecogs.com/gif.latex?&space;y=&space;\hat{\beta}_{0}+\acute{\bold{x}}b+\acute{\bold{x}}B\bold{x}" border="0"/>
 
 
 # Requirements
