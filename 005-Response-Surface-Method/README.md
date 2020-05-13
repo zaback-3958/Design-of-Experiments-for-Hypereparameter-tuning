@@ -30,7 +30,23 @@ Most of the time the initial values for the variables to optimize the response i
 ## Second-Order Model (Ridge Analysis) 
 When the first-order model is not adequate and the experimenter is in the vicinity of the optimum, most of the time a second order model would be appropriate to find the set of values for independent variables that optimizes the response. In fact, the experimenter is looking for levels of the independent variables that partail derivatives of the second-order function at those levels are zero. That point is called a stationary point which could represent a Maximum, Minimum, or saddle point. The second-order model can be written in matrix notation as below:
 
-<img src="http://latex.codecogs.com/gif.latex?&space;y=&space;\hat{\beta}_{0}+\acute{\bold{x}}b+\acute{\bold{x}}B\bold{x}" border="0"/>
+<img src="http://latex.codecogs.com/gif.latex?&space;\hat{y}=&space;\hat{\beta}_{0}+\acute{\bold{x}}b+\acute{\bold{x}}B\bold{x}" border="0"/>
+
+where:
+
+<img src="http://latex.codecogs.com/gif.latex?\begin{bmatrix}x_{1}\\x_{2}\\&space;\vdots\\x_{k}
+\end{bmatrix}&space;&space;&space;&space;&space;\;\;\;\begin{bmatrix}
+\beta_{1}\\ 
+\beta_{2}\\ 
+\vdots \\ 
+\beta_{k}
+\end{bmatrix}\;\;\;\;\begin{bmatrix}
+\hat{\beta_{11}} & \hat{\beta_{12}}/2 &\cdots & \hat{\beta_{1k}}/2 & \\ 
+ & \hat{\beta_{22}}/2 &\cdots & \hat{\beta_{2k}}/2 & \\ 
+ & &\ddots\\ 
+ sym.&  &  & \hat{\beta_{kk}}
+\end{bmatrix}" border="0"/>
+
 
 
 # Requirements
