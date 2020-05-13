@@ -58,7 +58,7 @@ The proper experimental designs that are used to collect the data helps to estim
 ### Central Composit Design (CCD)
 This design is the most popular design for fitting second-order models. The CCD design consists of factorial points, axial or star points and center points. for in stance for a <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial design with <img src="http://latex.codecogs.com/gif.latex?&space;k" border="0"/> factors there are <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial points, <img src="http://latex.codecogs.com/gif.latex?&space;2k" border="0"/> axial points and <img src="http://latex.codecogs.com/gif.latex?&space;n_{c}" border="0"/> center points that could be determined. The axial points are placed at <img src="http://latex.codecogs.com/gif.latex?&space;\alpha" border="0"/> distance from the design center. The image below shows the visualization of this design:
 
-![Test Image 1]()
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/005-Response-Surface-Method/Central-composite-design.png)
 
 
 
