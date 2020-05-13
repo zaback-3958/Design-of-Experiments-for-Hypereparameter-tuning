@@ -34,18 +34,7 @@ When the first-order model is not adequate and the experimenter is in the vicini
 
 where:
 
-<img src="http://latex.codecogs.com/gif.latex?\begin{bmatrix}x_{1}\\x_{2}\\&space;\vdots\\x_{k}
-\end{bmatrix}&space;&space;&space;&space;&space;\;\;\;\begin{bmatrix}
-\beta_{1}\\ 
-\beta_{2}\\ 
-\vdots \\ 
-\beta_{k}
-\end{bmatrix}\;\;\;\;\begin{bmatrix}
-\hat{\beta_{11}} & \hat{\beta_{12}}/2 &\cdots & \hat{\beta_{1k}}/2 & \\ 
- & \hat{\beta_{22}}/2 &\cdots & \hat{\beta_{2k}}/2 & \\ 
- & &\ddots\\ 
- sym.&  &  & \hat{\beta_{kk}}
-\end{bmatrix}" border="0"/>
+<img src="http://latex.codecogs.com/gif.latex?\begin{bmatrix}x_{1}\\x_{2}\\&space;\vdots\\x_{k}\end{bmatrix}&space;&space;&space;&space;&space;\;\;\;\begin{bmatrix}\beta_{1}\\\beta_{2}\\&space;\vdots\\&space;\beta_{k\end{bmatrix}\;\;\;\;\begin{bmatrix}\hat{\beta_{11}} & \hat{\beta_{12}}/2 &\cdots & \hat{\beta_{1k}}/2 & \\ & \hat{\beta_{22}}/2 &\cdots &\hat{\beta_{2k}}/2 & \\ & &\ddots\\sym.&  &  & \hat{\beta_{kk}}\end{bmatrix}" border="0"/>
 
 
 
