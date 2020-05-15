@@ -56,16 +56,19 @@ where <img src="http://latex.codecogs.com/gif.latex?&space;w_{i}" border="0"/> a
 ## Response Surface Designs
 The proper experimental designs that are used to collect the data helps to estimate the RSM parameters more effectively. These designs that are used to fit the RSM models are called Response Surface Designs. There are two types of designs which include Central Composit Design and Box-Behnken Design. 
 ### Central Composit Design (CCD)
-This design is the most popular design for fitting second-order models. The CCD design consists of factorial points, axial or star points and center points. for in stance for a <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial design with <img src="http://latex.codecogs.com/gif.latex?&space;k" border="0"/> factors there are <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial points, <img src="http://latex.codecogs.com/gif.latex?&space;2k" border="0"/> axial points and <img src="http://latex.codecogs.com/gif.latex?&space;n_{c}" border="0"/> center points that could be determined. The axial points are placed at <img src="http://latex.codecogs.com/gif.latex?&space;\alpha" border="0"/> distance from the design center. The image below shows the visualization of this design for <img src="http://latex.codecogs.com/gif.latex?&space;k=&space;2" border="0"/>:
+This design is the most popular design for fitting second-order models. The CCD design consists of factorial points, axial or star points and center points. for in stance for a <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial design with <img src="http://latex.codecogs.com/gif.latex?&space;k" border="0"/> factors there are <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> factorial points, <img src="http://latex.codecogs.com/gif.latex?&space;2k" border="0"/> axial points and <img src="http://latex.codecogs.com/gif.latex?&space;n_{c}" border="0"/> center points that could be determined. The axial points are placed at <img src="http://latex.codecogs.com/gif.latex?&space;\alpha" border="0"/> distance from the design center. The image below shows the visualization of this design for <img src="http://latex.codecogs.com/gif.latex?&space;k=&space;3" border="0"/>:
 
-![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/005-Response-Surface-Method/Central-composite-design.png)
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/005-Response-Surface-Method/Central-Composite-Designs.png)
 
-as it can be seen in the graph, four blue points represent the 4 factorial points and the four red points represent the axial points. It is important for a model to have a stable variance of the predicted response at the points of interests of <img src="http://latex.codecogs.com/gif.latex?&space;\bold{x}" border="0"/>. Therefore, it was suggested by BOX and Hunter (1957) that the design should be rotatable. The rotatability means the varaince of the response is the same at all the points that are at the same distance from the design ceneter. The CCD can be rotatble by the choice of values for <img src="http://latex.codecogs.com/gif.latex?&space;\alpha" border="0"/> which depends on the number of factorial points. 
+This graph represents the CCD design for two-level factorial design with three factors. The red points represnt the factorial points on the corners of the cube. The green points represent the axial points or star points. The blue point represent the center point. It is important for a model to have a stable variance of the predicted response at the points of interests of <img src="http://latex.codecogs.com/gif.latex?&space;\bold{x}" border="0"/>. Therefore, it was suggested by BOX and Hunter (1957) that the design should be rotatable. The rotatability means the varaince of the response is the same at all the points that are at the same distance from the design ceneter. The CCD can be rotatble by the choice of values for <img src="http://latex.codecogs.com/gif.latex?&space;\alpha" border="0"/> which depends on the number of factorial points. 
 
 
-### Box-Behnken Design
-Box and Behnken (1960) proposed these types of designs which are three-level designs for fitting response surfaces. These designs are created by combining the <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> designs with incomplete block designs. These type of designs are rotatble or nearly rotatble and in terms of number of runs are very efficient. This design does not contain the upper and lower levels of the variables.
- 
+### Box-Behnken Design (BBD)
+Box and Behnken (1960) proposed these types of designs which are three-level designs for fitting response surfaces. These designs are created by combining the <img src="http://latex.codecogs.com/gif.latex?&space;2^{k}" border="0"/> designs with incomplete block designs. These type of designs are rotatble or nearly rotatble and in terms of number of runs are very efficient. This design does not contain the upper and lower levels of the variables. The image below shows the visualization of this design for <img src="http://latex.codecogs.com/gif.latex?&space;k=&space;3" border="0"/>:
+
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/005-Response-Surface-Method/Box-Behnken-designs.png)
+
+ This graph represents the Box-Behnken Design for two-level factorial design with three factors. As it can be seen in the graph the red points represents the factorial points and they are at the midpoints od the edges. The blue points also represents the center point for this design. By comparing the number of points between CCD and BBD on the graphs, it can be seen that BBD requires less number of runs.
 
 # Requirements
 * R v3.6.2
@@ -108,31 +111,6 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The Fractional Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> was performed using FrF2 package in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/002-fractional-factorial-design/output/2020-05-01``. The output includes the main effect graphs for train and test data, the interaction effect graphs of train and test data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors and interactions are not alised. 
-
-![Test Image 11](https://github.com/zaback-3958/ML-DoE/blob/master/003-Fractional-factorial-design-VII/output/2020-05-09/plot-main-effects-fractional-factorial-train-VII.png)
-
-This graph shows that the main effects maxnodes, nodesize, and classwt are very significant. The effect of mtry is also significant but it is not as strong as those three factors by looking at the estimated effects. 
-
-
-![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/003-Fractional-factorial-design-VII/output/2020-05-09/plot-main-effects-fractional-factorial-test-VII.png)
-
-This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, and the effect of mtry is not siginificant for test data.
-
-
-![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/003-Fractional-factorial-design-VII/output/2020-05-09/plot-interactions-fractional-factorial-train-VII.png)
-
-As it can be observed from the graph the interactions between the following factors are significant: nodesize:cutoff, nodesize:maxnodes, classwt:cutoff,cutoff:maxnodes.
-
-![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/003-Fractional-factorial-design-VII/output/2020-05-09/plot-interactions-fractional-factorial-test-VII.png)
-
-This graph shows that the interactions between the following factors are significant:
-nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
-
-As it was observed in the graphs for both train and test data the main effect cutoff is not significant, but its interaction with other factors is significant. 
-
-The comparison between the results of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VI}^{7-2}" border="0"/> and design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> shows that the main effect ``replace`` and its interactions  which was siginificant for the test data in the first design was not signinficant for the second design. The main effect ``cutoff`` is not siginificant in neither designs, but its interactions with other factors is significant. the main effect factor ``mtry`` was significant in both design for train data. 
-
-The comparison between the results of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> and foldover design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VI}^{7-2}" border="0"/> for train data shows that the similar main effects are significant in both design, however the interaction ``replace:classwt`` which is present for the foldover design is missing for design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/>. Furthermore, for test data, the main effect ``replace``  and its interactions with other factors is only significant for foldover design. The main effect ``cutoff`` is not siginificant in neither designs, but its interactions with other factors is significant. Since in the foldover design some of the two-factor interactions are still alised with each other, the significant interactions cannot be extracted. Therefore, the results of design <img src="http://latex.codecogs.com/gif.latex?&space;2_{VII}^{7-1}" border="0"/> with no alised factors provides better information about the siginificant main factor effects and interactions. 
+ 
 
 
