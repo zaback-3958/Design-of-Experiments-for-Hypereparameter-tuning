@@ -39,25 +39,25 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The foldover design was performed from package FrF2 in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/003-fractional-factorial-design/output/2020-05-04-01``. The output includes the main effect graphs for train and test data, the interaction effect graphs of train and test data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors are not alised, although, the interactions effects that were alised for design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> remained alised. The interaction effects of ``cutoff`` was aliased with some other interactions. 
+The foldover design was performed from package FrF2 in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/003-fractional-factorial-design/output/2020-05-04-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. As it can be seen in the output file ``stdout.R.runall``the main factors are not alised, although, the interactions effects that were alised for design <img src="http://latex.codecogs.com/gif.latex?&space;2_{IV}^{7-2}" border="0"/> remained alised. The interaction effects of ``cutoff`` was aliased with some other interactions. 
 
-![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-09/plot-main-effects-fractional-factorial-train-IV.png)
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-04-02/plot-main-effects-fractional-factorial-train-IV.png)
 
 This graph shows that the main effects maxnodes, nodesize, and classwt are very significant. The effect of mtry is also significant but it is not as strong as those three factors by looking at the estimated effects. 
 
 
-![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-09/plot-main-effects-fractional-factorial-test-IV.png)
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-04-02/plot-main-effects-fractional-factorial-valid-IV.png)
 
-This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, and the effect of mtry is not siginificant for test data.
+This graph also shows that the main effects maxnodes, nodesize, and classwt are very significant, and the effect of mtry is not siginificant for validation data.
 
 
-![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-09/plot-interactions-fractional-factorial-train-IV.png)
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-04-02/plot-interactions-fractional-factorial-train-IV.png)
 
 As it can be observed from the graph the interactions between the following factors are significant: nodesize:cutoff, nodesize:maxnodes, classwt:cutoff,cutoff:maxnodes.
 
-![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-09/plot-interactions-fractional-factorial-test-IV.png)
+![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/002-Foldover-design/output/2020-05-04-02/plot-interactions-fractional-factorial-valid-IV.png)
 
 This graph shows that the interactions between the following factors are significant:
 nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes   
 
-As it was observed in the graphs for both train and test data the main effect ``cutoff`` is not significant, but its interaction with other factors is significant. 
+As it was observed in the graphs for both train and validation data the main effect ``cutoff`` is not significant, but its interaction with other factors is significant. 
