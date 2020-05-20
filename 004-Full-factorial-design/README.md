@@ -44,25 +44,25 @@ The adult dataset is used for classification to predict whether income exceeds $
 
 
 # Main output files
-The Full Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2^{4}" border="0"/> was performed using DoE.base package in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/004-Full-factorial-design/output/2020-05-11-01``. The output includes the main effect graphs for train and test data, the interaction effect graphs of train and test data, the error log file and the outpput file. 
+The Full Factorial Design <img src="http://latex.codecogs.com/gif.latex?&space;2^{4}" border="0"/> was performed using DoE.base package in R and the output file and graphas can be seen in ``<LOCAL CLONED REPOSITORY>/ML-DoE/004-Full-factorial-design/output/2020-05-11-01``. The output includes the main effect graphs for train and validation data, the interaction effect graphs of train and validation data, the error log file and the outpput file. 
 
-![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-11-01/plot-main-effects-full-factorial-train-.png)
+![Test Image 1](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-20-01/plot-main-effects-full-factorial-train-.png)
 
 This graph shows that the main effects maxnodes, nodesize, and classwt are significant. 
 
 
-![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-11-01/plot-main-effects-full-factorial-test-.png)
+![Test Image 2](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-20-01/plot-main-effects-full-factorial-valid-.png)
 
 This graph also shows that the main effects maxnodes, nodesize, and classwt are significant.
 
 
-![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-11-01/plot-interactions-full-factorial-train-.png)
+![Test Image 3](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-20-01/plot-interactions-full-factorial-train-.png)
 
 As it can be observed from the graph the interactions between the following factors are significant: nodesize:cutoff, nodesize:maxnodes, classwt:cutoff,cutoff:maxnodes.
 
-![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-11-01/plot-interactions-full-factorial-test-.png)
+![Test Image 4](https://github.com/zaback-3958/ML-DoE/blob/master/004-Full-factorial-design/output/2020-05-20-01/plot-interactions-full-factorial-valid-.png)
 
 This graph shows that the interactions between the following factors are significant:
 nodesize:cutoff, nodesize:maxnodes, classwt:cutoff, cutoff:maxnodes 
 
-As it was observed in the graphs for both train and test data the main effect cutoff is not significant, but its interaction with other factors is significant. 
+As it was observed in the graphs for both train and validation data the main effect cutoff is not significant, but its interaction with other factors is significant. 
