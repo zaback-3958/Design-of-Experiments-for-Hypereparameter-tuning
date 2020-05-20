@@ -2,7 +2,7 @@
 rsm.models.design <- function(
 	DF.RFbbd.train   = NULL,
 	DF.RFbbd.valid   = NULL
-	#DF.RFbbd.test   = NULL
+	#DF.RFbbd.valid   = NULL
 	) {
 
 	this.function.name <- "rsm.models.design";
@@ -10,18 +10,19 @@ rsm.models.design <- function(
 	cat(paste0("starting: ",this.function.name,"()\n"));
 
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
+    # cat("\n print(DF.RFbbd.train))\n");
+    # print( DF.RFbbd.train );
     require(dplyr);
     require(FrF2);
     require(rsm)
 
 	### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-	
-	RF.rsm.FO.train <- rsm(DF.RFbbd.train[,"bbd.RF.train"] ~ FO(x1, x2, x3), data = DF.RFbbd.train)
+	RF.rsm.FO.train <- rsm(response_train ~ FO(x1, x2, x3), data = DF.RFbbd.train)
 
 	cat("\ print(summary(RF.rsm.FO.train) )\n");
 	print( print(summary(RF.rsm.FO.train) )   );
 
-	RF.rsm.FO.valid <- rsm(DF.RFbbd.valid[,"bbd.RF.valid"] ~ FO(x1, x2, x3), data = DF.RFbbd.valid)
+	RF.rsm.FO.valid <- rsm(response_valid ~ FO(x1, x2, x3), data = DF.RFbbd.valid)
 
 	cat("\ print(summary(RF.rsm.FO.valid) )\n");
 	print( print(summary(RF.rsm.FO.valid) )   );
@@ -52,12 +53,12 @@ rsm.models.design <- function(
 	print( print(summary(RF.rsm.PQ.valid) )   );
 
 	### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-	RF.rsm.SO.train <- rsm(DF.RFbbd.train[,"bbd.RF.train"] ~ SO(x1, x2, x3), data = DF.RFbbd.train)
+	RF.rsm.SO.train <- rsm(response_train ~ SO(x1, x2, x3), data = DF.RFbbd.train)
 
 	cat("\ print(summary(RF.rsm.SO.train) )\n");
 	print( print(summary(RF.rsm.SO.train) )   );
 
-	RF.rsm.SO.valid <- rsm(DF.RFbbd.valid[,"bbd.RF.valid"] ~ SO(x1, x2, x3), data = DF.RFbbd.valid)
+	RF.rsm.SO.valid <- rsm(response_valid ~ SO(x1, x2, x3), data = DF.RFbbd.valid)
 
 	cat("\ print(summary(RF.rsm.SO.valid) )\n");
 	print( print(summary(RF.rsm.SO.valid) )   );
@@ -88,15 +89,15 @@ rsm.models.design <- function(
 	print( print(press.result.valid )   );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-	# bbd.model.test <- lm(DF.RFbbd.test)
+	# bbd.model.valid <- lm(DF.RFbbd.valid)
 
-	# cat("\ print(summary(bbd.model.test) )\n");
-	# print( print(summary(bbd.model.test) )   );
+	# cat("\ print(summary(bbd.model.valid) )\n");
+	# print( print(summary(bbd.model.valid) )   );
 	
-	# press.result.test <- press.func(DF.input = bbd.model.test)
+	# press.result.valid <- press.func(DF.input = bbd.model.valid)
 
-	# cat("\ print(press.result.test )\n");
-	# print( print(press.result.test )   );
+	# cat("\ print(press.result.valid )\n");
+	# print( print(press.result.valid )   );
 
 	### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 	cat(paste0("\nexiting: ",this.function.name,"()"));

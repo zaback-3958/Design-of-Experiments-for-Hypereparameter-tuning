@@ -26,7 +26,8 @@ code.files <- c(
 	"bacc-measure.R",
 	"RF-rsm-results.R",
 	#"RF-results.R",
-	"rsm-models-results.R"
+	"rsm-models-results.R",
+	"rsm-models-final.R"
 	#"visualize-effects.R"
 	# "initializePlot.R",
 	# "visualize-data.R"
@@ -93,8 +94,8 @@ get.bbddes.Design <- bbdes.design(
 k = 3)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-# get.crossvalidation <- cross.validation(
-# DF.input = DF.adult)
+get.crossvalidation <- cross.validation(
+DF.input = DF.adult)
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 getRF.results <- RF.bbdes.results(
@@ -105,9 +106,12 @@ classes              = classes
 )
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.lmbbd <- rsm.models.design(
-DF.bbd.train = getRF.results[["DF.bbd.train"]],
-DF.bbd.valid = getRF.results[["DF.bbd.valid"]])
-#DF.bbd.test  = getRF.results[["DF.bbd.test"]])
+DF.RFbbd.train = getRF.results[["DF.bbdes.train"]],
+DF.RFbbd.valid = getRF.results[["DF.bbdes.valid"]])
+DF.bbd.test  = getRF.results[["DF.bbd.test"]])
+
+get.rsm.models <- rsm.models.final(
+DF.RFbbd.valid = getRF.results[["DF.bbdes.valid"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(

@@ -117,23 +117,44 @@ RF.bbdes.results <- function(
      bbdes.RF.train  <- c(bbdes.RF.train, mean.bacc.train)
      bbdes.RF.valid  <- c(bbdes.RF.valid, mean.bacc.valid)
      #bbdes.RF.test   <- c(bbdes.RF.test, mean.bacc.test)
+
+     cat("\n print(bbdes.RF.valid )\n");
+     print( bbdes.RF.valid  );
     
 }
 
     #design$response <- results5
+    Design$response_train <- bbdes.RF.train
+    bbdes.results.train <- Design;
+
+    Design <- Design[,1:ncol(Design)-1]
+
+    cat("\n print(Design))\n");
+    print( Design );
 
 
-    bbdes.results.train <- c(Design, bbdes.RF.train);
-    bbdes.results.valid <- c(Design, bbdes.RF.valid);
+    Design$response_valid <- bbdes.RF.valid
+    bbdes.results.valid <- Design;
+
+    #Design <- Design[,1:ncol(Design)-1]
+
+    # bbdes.results.train <- c(Design, bbdes.RF.train);
+    # bbdes.results.valid <- c(Design, bbdes.RF.valid);
     #bbdes.results.test <- add.response(Design, bbdes.RF.test)
 
+    cat("\n print(Design))\n");
+    print( Design );
 
-    cat("\n print(summary(bbdes.results.train))\n");
-    print( summary(bbdes.results.train) );
+    cat("\n print(bbdes.results.valid))\n");
+    print( bbdes.results.valid );
 
 
-    cat("\n print(summary(bbdes.results.valid))\n");
-    print( summary(bbdes.results.valid) );
+    # cat("\n print(summary(bbdes.results.train))\n");
+    # print( summary(bbdes.results.train) );
+
+
+    # cat("\n print(summary(bbdes.results.valid))\n");
+    # print( summary(bbdes.results.valid) );
 
 
 # write.csv(
@@ -148,8 +169,6 @@ RF.bbdes.results <- function(
     cat(paste0("\n",paste(rep("#",50),collapse=""),"\n"));
     return( list(
         DF.bbdes.train = bbdes.results.train,
-        #DF.bbdes.valid = bbdes.results.valid
-        DF.bbdes.test  = bbdes.results.test) );
+        DF.bbdes.valid = bbdes.results.valid))
+        #DF.bbdes.test  = bbdes.results.test) );
     }
-
-    

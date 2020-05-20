@@ -16,14 +16,15 @@ cross.validation <- function(
     randomInd = sample(createInd)
   
     trainset = DF.input[-which(randomInd == k),]
-    train    = DF.input[-which(randomInd == k),]
-    #test     = DF.input[ which(randomInd == k),]
+    #train    = DF.input[-which(randomInd == k),]
+    test     = DF.input[ which(randomInd == k),]
   
   
-    validationInd = sample(1:nrow(trainset), size = round(0.75*nrow(trainset)), replace=FALSE)
+    validationInd = sample(1:nrow(trainset), size = round(0.8*nrow(trainset)), replace=FALSE)
     train         = trainset[validationInd,]
     validation    = trainset[-validationInd,]
 
+    
 
  #    cat("\n str(train)\n");
 	# print(str(train ));
