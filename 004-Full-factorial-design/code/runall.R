@@ -110,8 +110,8 @@ classes              = classes
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 get.lmfrfc <- lm.fullfac.design(
 DF.fullfc.train = getRF.results[["DF.fullfc.train"]],
-#DF.fullfc.valid = getRF.results[["DF.fullfc.valid"]]
-DF.fullfc.test  = getRF.results[["DF.fullfc.test"]])
+DF.fullfc.valid = getRF.results[["DF.fullfc.valid"]])
+#DF.fullfc.test  = getRF.results[["DF.fullfc.test"]])
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 # visualize.effect(
