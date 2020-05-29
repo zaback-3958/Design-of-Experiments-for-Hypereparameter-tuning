@@ -1,6 +1,6 @@
 # Response Surface Methods
 Response Surface methodology (**RSM**) as (Montgomery, D.C. (2017). Design and Analysis of Experiments (9th). Hoboken, NJ.:Wiley)
-defines is a series of statistical and mathematica technique that are useful to optimize a reponse variable that is influenced by some variables. For instance an experimenter would be interested in finding the levels of variables <img src="http://latex.codecogs.com/gif.latex?&space;x_{1}" border="0"/>   and  <img src="http://latex.codecogs.com/gif.latex?&space;x_{2}" border="0"/> that maximize or minimize the response <img src="http://latex.codecogs.com/gif.latex?&space;y" border="0"/>. The response is a function of levels of these two variables as below:
+defines is a series of statistical and mathematical technique that are useful to optimize a response variable that is influenced by some variables. For instance an experimenter would be interested in finding the levels of variables <img src="http://latex.codecogs.com/gif.latex?&space;x_{1}" border="0"/>   and  <img src="http://latex.codecogs.com/gif.latex?&space;x_{2}" border="0"/> that maximize or minimize the response <img src="http://latex.codecogs.com/gif.latex?&space;y" border="0"/>. The response is a function of levels of these two variables as below:
 
 <img src="http://latex.codecogs.com/gif.latex?&space;y=&space;f(x_{1},x_{2})&space;+\epsilon" border="0"/>
 
